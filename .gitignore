@@ -1,4 +1,5 @@
-tests
+tests/
+logs/
 
 # JPEG
 *.jpg
