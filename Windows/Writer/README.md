@@ -4,6 +4,8 @@
 
 This is a standard US English QWERTY keyboard layout, with added common punctuation marks and common symbols.
 
+Required language pack: **English (United States)**
+
 The extra symbols can be entered with **AltGr** (right Alt) and **AltGr+Shift**, see tables below:
 
 _Note: **⟨AltGr⟩+e** enters a combining acute mark that will appear over any previuosly entered symbol — even digits. For example: ⟮áb́ćd́é ÁB́ĆD́É 1́2́3́  ́…́ @́⟯._
