@@ -1,1 +1,15 @@
 tests
+
+# JPEG
+*.jpg
+*.jpeg
+*.jpe
+*.jif
+*.jfif
+*.jfi
+
+# Graphics Interchange Format
+*.gif
+
+# Portable Network Graphics
+*.png
