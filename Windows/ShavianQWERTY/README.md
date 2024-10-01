@@ -3,8 +3,10 @@
 **Keyboard layout for entering Shavian characters from Unicode range U+10450-U+1047f.**
 
 This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/keyboard/english_shavian_qwerty/1.1.1/english_shavian_qwerty) made by **Ed Greville** under the MIT license.
+
 >_Actually the layout itself is based on the old‐style Shavian fonts which predate Keyman by about 3 decades. Probably the first such font was the famous Lionspaw by Lionel Ghoti, from around 1995-2000._
->_The differences: those old Shavian fonts were using forward slash ⟨/⟩ as a namer dot (instead of capital "G"). And instead of guillemets we had black squares. The custom was to use these black squares as a sort‐of CapsLock indicator — enclosing the capitalized text. The namer dot was used mostly for single words starting with a capital letter.
+
+> _Differences: those old Shavian fonts were using forward slash ⟨/⟩ as a namer dot (instead of capital "G"). And instead of guillemets we had black squares. The custom was to use these black squares as a sort‐of CapsLock indicator — enclosing the capitalized text. The namer dot was used mostly for single words starting with a capital letter.
 
 
 ### Unshifted:
