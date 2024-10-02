@@ -117,7 +117,7 @@ The perfect solution is a keyboard layout designed **specifically for your opera
 5. Build binaries `Project › Build DLL and Setup Package`
 6. When ready open the binaries folder and tun `setup.exe` to install.
 
-![Building Layout]("Windows/MSKLC.png")
+![Building Layout](./Windows/MSKLC.png "Building Keyboard Layout with MSKLC")
 
 -----
 
