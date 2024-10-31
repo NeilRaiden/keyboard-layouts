@@ -1,0 +1,79 @@
+// # English Writer QWERTY keyboard layout
+// _Copyright (c) 2024 Neil Raiden (AGPL v.3)_
+//
+// evdev:  writer:qwerty = +writer(qwerty)
+//
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "qwerty" {
+
+    include "us(basic)"
+
+    name[Group1]= "Writer (QWERTY)";
+
+    key <TLDE>	{ [ NoSymbol,	NoSymbol,	acute,		U2248		] };
+    key <AE01>	{ [ NoSymbol,	NoSymbol,	onesuperior,	U2081		] };
+    key <AE02>	{ [ NoSymbol,	NoSymbol,	twosuperior,	U2082		] };
+    key <AE03>	{ [ NoSymbol,	NoSymbol,	threesuperior,	U2083		] };
+    key <AE04>	{ [ NoSymbol,	NoSymbol,	U2074,		U2084		] };
+    key <AE05>	{ [ NoSymbol,	NoSymbol,	U2075,		U2085		] };
+    key <AE06>	{ [ NoSymbol,	NoSymbol,	U2076,		U2086		] };
+    key <AE07>	{ [ NoSymbol,	NoSymbol,	U2077,		U2087		] };
+    key <AE08>	{ [ NoSymbol,	NoSymbol,	U2078,		U2088		] };
+    key <AE09>	{ [ NoSymbol,	NoSymbol,	U2079,		U2089		] };
+    key <AE10>	{ [ NoSymbol,	NoSymbol,	U2070,		U2080		] };
+    key <AE11>	{ [ NoSymbol,	NoSymbol,	U2192,		U2190		] };
+    key <AE12>	{ [ NoSymbol,	NoSymbol,	U2260,		plusminus	] };
+	
+    key <AD01>	{ [ NoSymbol,	NoSymbol,	U2026,		U231C		] };
+    key <AD02>	{ [ NoSymbol,	NoSymbol,	U22EF,		U231D		] };
+    key <AD03>	{ [ NoSymbol,	NoSymbol,	U0301,		U231E		] };
+    key <AD04>	{ [ NoSymbol,	NoSymbol,	registered,	U231F		] };
+    key <AD05>	{ [ NoSymbol,	NoSymbol,	U2122,		VoidSymbol	] };
+    key <AD06>	{ [ NoSymbol,	NoSymbol,	U221A,		VoidSymbol	] };
+    key <AD07>	{ [ NoSymbol,	NoSymbol,	U2191,		VoidSymbol	] };
+    key <AD08>	{ [ NoSymbol,	NoSymbol,	VoidSymbol,	U02C8		] };
+    key <AD09>	{ [ NoSymbol,	NoSymbol,	VoidSymbol,	VoidSymbol	] };
+    key <AD10>	{ [ NoSymbol,	NoSymbol,	U2117,		U03C0		] };
+    key <AD11>	{ [ NoSymbol,	NoSymbol,	U27E8,		U27EE		] };
+    key <AD12>	{ [ NoSymbol,	NoSymbol,	U27E9,		U27EF		] };
+    key <BKSL>	{ [ NoSymbol,	NoSymbol,	U2022,		U25E6		] };
+
+    key <AC01>	{ [ NoSymbol,	NoSymbol,	U201C,		VoidSymbol	] };
+    key <AC02>	{ [ NoSymbol,	NoSymbol,	U201D,		VoidSymbol	] };
+    key <AC03>	{ [ NoSymbol,	NoSymbol,	U2193,		VoidSymbol	] };
+    key <AC04>	{ [ NoSymbol,	NoSymbol,	degree,		VoidSymbol	] };
+    key <AC05>	{ [ NoSymbol,	NoSymbol,	VoidSymbol,	VoidSymbol	] };
+    key <AC06>	{ [ NoSymbol,	NoSymbol,	U2010,		U2011		] };
+    key <AC07>	{ [ NoSymbol,	NoSymbol,	VoidSymbol,	VoidSymbol	] };
+    key <AC08>	{ [ NoSymbol,	NoSymbol,	guillemotleft,	U02CC		] };
+    key <AC09>	{ [ NoSymbol,	NoSymbol,	guillemotright,	VoidSymbol	] };
+    key <AC10>	{ [ NoSymbol,	NoSymbol,	section,	U02D0		] };
+    key <AC11>	{ [ NoSymbol,	NoSymbol,	multiply,	U2612		] };
+
+    key <AB01>	{ [ NoSymbol,	NoSymbol,	U2018,		Escape		] };
+    key <AB02>	{ [ NoSymbol,	NoSymbol,	U2019,		Escape		] };
+    key <AB03>	{ [ NoSymbol,	NoSymbol,	copyright,	cent		] };
+    key <AB04>	{ [ NoSymbol,	NoSymbol,	U2043,		VoidSymbol	] };
+    key <AB05>	{ [ NoSymbol,	NoSymbol,	periodcentered,	U25CB		] };
+    key <AB06>	{ [ NoSymbol,	NoSymbol,	U2013,		VoidSymbol	] };
+    key <AB07>	{ [ NoSymbol,	NoSymbol,	U2014,		mu		] };
+    key <AB08>	{ [ NoSymbol,	NoSymbol,	U2039,		U263A		] };
+    key <AB09>	{ [ NoSymbol,	NoSymbol,	U203A,		U2610		] };
+    key <AB10>	{ [ NoSymbol,	NoSymbol,	division,	U2611		] };
+
+    key <SPCE>	{ [ space,	space,		U2003,		U200B		] };
+
+    replace key <CAPS> {
+        type = "ALPHABETIC",
+        symbols = [ Escape, Escape ],
+        actions [Group1] = [ SetMods(modifiers=none), SetMods(modifiers=Lock,clearLocks) ]
+    };
+
+    replace key <ESC> { [ Alt_L, Alt_L ] };
+
+    include "shift(both_capslock_cancel)"
+
+    include "level3(alt_switch)"
+
+};
+

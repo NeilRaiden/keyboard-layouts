@@ -1,0 +1,79 @@
+// # English Writer+ ASERTH keyboard layout
+// _Copyright (c) 2024 Neil Raiden (AGPL v.3)_
+//
+// evdev:  writera:aserth   = +writera(aserth)
+//
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "aserth" {
+
+    include "us(basic)"
+
+    name[Group1]= "Writer+ (ASERTH)";
+
+    key <TLDE>	{[ NoSymbol,	NoSymbol,	U00B4,		U2248	]};
+    key <AE01>	{[ NoSymbol,	NoSymbol,	U00B9,		U2081	]};
+    key <AE02>	{[ NoSymbol,	NoSymbol,	U00B2,		U2082	]};
+    key <AE03>	{[ NoSymbol,	NoSymbol,	U00b3,		U2083	]};
+    key <AE04>	{[ NoSymbol,	NoSymbol,	U2074,		U2084	]};
+    key <AE05>	{[ NoSymbol,	NoSymbol,	U2075,		U2085	]};
+    key <AE06>	{[ NoSymbol,	NoSymbol,	U2076,		U2086	]};
+    key <AE07>	{[ NoSymbol,	NoSymbol,	U2077,		U2087	]};
+    key <AE08>	{[ NoSymbol,	NoSymbol,	U2078,		U2088	]};
+    key <AE09>	{[ NoSymbol,	NoSymbol,	U2079,		U2089	]};
+    key <AE10>	{[ NoSymbol,	NoSymbol,	U2070,		U2080	]};
+    key <AE11>	{[ NoSymbol,	NoSymbol,	U2192,		U2190	]};
+    key <AE12>	{[ NoSymbol,	NoSymbol,	U2260,		U00B1	]};
+
+    key <AD01>	{[ NoSymbol,	NoSymbol,	U2026,		U231C	]};
+    key <AD02>	{[ NoSymbol,	NoSymbol,	U22EF,		U231D	]};
+    key <AD03>	{[ d,		D,		U2193,		U231E	]};
+    key <AD04>	{[ f,		F,		U00B0,		U231F	]};
+    key <AD05>	{[ g,		G,		U025B,		U02A4	]};
+    key <AD06>	{[ NoSymbol,	NoSymbol,	U221A,		U0259	]};
+    key <AD07>	{[ NoSymbol,	NoSymbol,	U2191,		U028A	]};
+    key <AD08>	{[ k,		K,		U00A7,		U02C8	]};
+    key <AD09>	{[ p,		P,		U2117,		U03C0	]};
+    key <AD10>	{[ semicolon,	colon,		U00D7,		U02D0	]};
+    key <AD11>	{[ NoSymbol,	NoSymbol,	U27E8,		U27EE	]};
+    key <AD12>	{[ NoSymbol,	NoSymbol,	U27E9,		U27EF	]};
+    key <BKSL>	{[ NoSymbol,	NoSymbol,	U2022,		U25E6	]};
+
+    key <AC01>	{[ NoSymbol,	NoSymbol,	U201C,		U0251	]};
+    key <AC02>	{[ NoSymbol,	NoSymbol,	U201D,		U0283	]};
+    key <AC03>	{[ e,		E,		U0301,		U00F0	]};
+    key <AC04>	{[ r,		R,		U00AE,		U028D	]};
+    key <AC05>	{[ t,		T,		U2122,		U03B8	]};
+    key <AC06>	{[ NoSymbol,	NoSymbol,	U2010,		U2011	]};
+    key <AC07>	{[ n,		N,		endash,		U014B	]};
+    key <AC08>	{[ i,		I,		U026A,		U02CC	]};
+    key <AC09>	{[ o,		O,		U0252,		U0254	]};
+    key <AC10>	{[ l,		L,		U00AB,		U026B	]};
+    key <AC11>	{[ NoSymbol,	NoSymbol,	U00BB,		U2612	]};
+
+    key <AB01>	{[ NoSymbol,	NoSymbol,	U2018,		U0292	]};
+    key <AB02>	{[ NoSymbol,	NoSymbol,	U2019,		U00E6	]};
+    key <AB03>	{[ NoSymbol,	NoSymbol,	U00A9,		U00A2	]};
+    key <AB04>	{[ NoSymbol,	NoSymbol,	U2043,		U028C	]};
+    key <AB05>	{[ NoSymbol,	NoSymbol,	U00B7,		U25CB	]};
+    key <AB06>	{[ j,		J,		U025C,		U02A7	]};
+    key <AB07>	{[ NoSymbol,	NoSymbol,	emdash,		U00B5	]};
+    key <AB08>	{[ NoSymbol,	NoSymbol,	division,	U263A	]};
+    key <AB09>	{[ NoSymbol,	NoSymbol,	U2039,		U2610	]};
+    key <AB10>	{[ NoSymbol,	NoSymbol,	U203A,		U2611	]};
+
+    key <SPCE>	{[ space,	space,		U2003,		U200B	]};
+
+    replace key <CAPS> {
+        type = "ALPHABETIC",
+        symbols = [ Escape, Escape ],
+        actions [Group1] = [ SetMods(modifiers=none), SetMods(modifiers=Lock,clearLocks) ]
+    };
+
+    replace key <ESC> { [ Alt_L, Alt_L ] };
+
+    include "shift(both_capslock_cancel)"
+
+    include "level3(alt_switch)"
+
+};
+
