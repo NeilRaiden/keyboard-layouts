@@ -1,0 +1,192 @@
+# English (Phonemic) keyboard layout
+# Copyright (c) 2024 Neil Raiden (AGPL v.3)
+
+include "%L"
+
+# after modifications run command:
+# ibus restart
+
+# ## Unshifted:
+# ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──────┐
+# │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ bksp │
+# ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬────┤
+# │ tab │ɔɪ │ w │ ɛ │ r │ t │ ɑ │ ʌ │ ɪ │ ɒ │ p │ [ │ ] │ \  │
+# ├─────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┤
+# │ CapsL │ ə │ s │ d │ f │ g │ h │ j │ k │ l │ ; │ ' │  ent │
+# ├───────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴──────┤
+# │  shift  │ z │ɜːr│tʃ │ v │ b │ n │ m │ , │ . │ / │  shift │
+# ├──────┬──┴──┬┴───┴─┬─┴───┴───┴───┴───┴───┴─┬─┴───┴┬───────┤
+# │ ctrl │ win │ Lalt │         space         │ Ralt │  ctrl │
+# └──────┴─────┴──────┴───────────────────────┴──────┴───────┘
+
+# test 1:
+#<U17fe> : "ɔɪ-ɔ"
+#<U17ff> : "ɔɪ-ɔɪ"
+
+# test2: this works, but there is no option to switch between layouts other than deleting .XCompose and restarting "ibus restart".
+#<q> : "ɔɪ"
+#<w> : "w" 
+#<e> : "ɛ" 
+#<Q> : "aʊ"
+
+## test3: doesnt work :(
+## the XF86Launch[0-f] are returned by xkb (symbols file: "phonem")
+#<XF86Launch0> : "ɔɪ"  # q U0254 U026A
+#<XF86Launch1> : "aʊ"  # Q U0061 U028A
+#<XF86Launch2> : "ɪə"  # W U026A U0259
+#<XF86Launch3> : "eɪ"  # E U0065 U026A
+#<XF86Launch4> : "ɑːr" # R U0251 U02D0 U0072 (ɑːr)
+#<XF86Launch5> : "əʊ"  # O U0259 U028A
+#<XF86Launch6> : "ɔːr" # P U0254 U0072
+#<XF86Launch7> : "ər"  # D U0259 U0072
+#<XF86Launch8> : "aɪ"  # F U0061 U026A
+#<XF86Launch9> : "dʒ"  # J U0064 U0292
+#<XF86LaunchA> : "ɜːr" # x U025C U02D0 U0072
+#<XF86LaunchB> : "ɛər" # X U025B U0259 U0072 
+#<XF86LaunchC> : "tʃ"  # c U0074 U0283
+#<XF86LaunchD> : "ɪər" # C U026A U0259 U0072
+#<XF86LaunchE> : "ju"  # V U006A U0075
+
+## test 4: U00c0-U00cf from XKB (symbols file: "phony")
+## C0-CD : ÀÁÂÃÄÅÆÇÈÉÊËÌÍ
+#<U00C0> : "ɔɪ"  # q U0254 U026A
+#<U00C1> : "aʊ"  # Q U0061 U028A
+#<U00C2> : "ɪə"  # W U026A U0259
+#<U00C3> : "eɪ"  # E U0065 U026A
+#<U00C4> : "ɑːr" # R U0251 U02D0 U0072 (ɑːr)
+#<U00C5> : "əʊ"  # O U0259 U028A
+#<U00C6> : "ɔːr" # P U0254 U0072
+#<U00C7> : "ər"  # D U0259 U0072
+#<U00C8> : "aɪ"  # F U0061 U026A
+#<U00C9> : "dʒ"  # J U0064 U0292
+#<U00CA> : "ɜːr" # x U025C U02D0 U0072
+#<U00CB> : "ɛər" # X U025B U0259 U0072 
+#<U00CC> : "tʃ"  # c U0074 U0283
+#<U00CD> : "ɪər" # C U026A U0259 U0072
+
+# test 5: using noncharacters from unassigned range U+FDD0-U+FDEF
+<UFDD0> : "ɔɪ"  # q U0254 U026A
+<UFDD1> : "aʊ"  # Q U0061 U028A
+<UFDD2> : "ɪə"  # W U026A U0259
+<UFDD3> : "eɪ"  # E U0065 U026A
+<UFDD4> : "ɑːr" # R U0251 U02D0 U0072 (ɑːr)
+<UFDD5> : "əʊ"  # O U0259 U028A
+<UFDD6> : "ɔːr" # P U0254 U0072
+<UFDD7> : "ər"  # D U0259 U0072
+<UFDD8> : "aɪ"  # F U0061 U026A
+<UFDD9> : "dʒ"  # J U0064 U0292
+<UFDDA> : "ɜːr" # x U025C U02D0 U0072
+<UFDDB> : "ɛər" # X U025B U0259 U0072 
+<UFDDC> : "tʃ"  # c U0074 U0283
+<UFDDD> : "ɪər" # C U026A U0259 U0072
+
+## TAB row:
+#<Multi_key> <q> : "ɔɪ"
+#<Multi_key> <w> : "w" 
+#<Multi_key> <e> : "ɛ" 
+#<Multi_key> <r> : "r" 
+#<Multi_key> <t> : "t" 
+#<Multi_key> <y> : "ɑ" 
+#<Multi_key> <u> : "ʌ" 
+#<Multi_key> <i> : "ɪ" 
+#<Multi_key> <o> : "ɒ" 
+#<Multi_key> <p> : "p" 
+##<Multi_key> <[> : "[" 
+##<Multi_key> <]> : "]" 
+##<Multi_key> <\> : "\" 
+#
+## CAPSLock-Enter row:
+#<Multi_key> <a> : "ə" 
+#<Multi_key> <s> : "s" 
+#<Multi_key> <d> : "d" 
+#<Multi_key> <f> : "f" 
+#<Multi_key> <g> : "g" 
+#<Multi_key> <h> : "h" 
+#<Multi_key> <j> : "j" 
+#<Multi_key> <k> : "k" 
+#<Multi_key> <l> : "l" 
+##<Multi_key> <;> : ";" 
+##<Multi_key> <'> : "'" 
+#
+## SHIFT row:
+#<Multi_key> <z> : "z" 
+#<Multi_key> <x> : "ɜːr" 
+#<Multi_key> <c> : "tʃ" 
+#<Multi_key> <v> : "v" 
+#<Multi_key> <b> : "b" 
+#<Multi_key> <n> : "n" 
+#<Multi_key> <m> : "m" 
+##<Multi_key> <,> : "," 
+##<Multi_key> <.> : "." 
+##<Multi_key> </> : "/" 
+#
+## ## Shifted:
+## ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──────┐
+## │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ bksp │
+## ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬────┤
+## │ tab │aʊ │ɪə │eɪ │ɑːr│ θ │ ɔ │ ʊ │ i │əʊ │ɔːr│ ⟨ │ ⟩ │ |  │
+## ├─────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┤
+## │ CapsL │ æ │ ʃ │ər │aɪ │ · │ ð │dʒ │ « │ » │ ː │ " │  ent │
+## ├───────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴──────┤
+## │  shift  │ ʒ │ɛər│ɪər│ju │ ⸰ │ ŋ │ u │ ‹ │ › │ ? │  shift │
+## ├──────┬──┴──┬┴───┴─┬─┴───┴───┴───┴───┴───┴─┬─┴───┴┬───────┤
+## │ ctrl │ win │ Lalt │         space         │ Ralt │  ctrl │
+## └──────┴─────┴──────┴───────────────────────┴──────┴───────┘
+#
+## TAB row:
+#<Multi_key> <Q> : "aʊ"
+#<Multi_key> <W> : "ɪə"
+#<Multi_key> <E> : "eɪ"
+#<Multi_key> <R> : "ɑːr"
+#<Multi_key> <T> : "θ"
+#<Multi_key> <Y> : "ɔ"
+#<Multi_key> <U> : "ʊ"
+#<Multi_key> <I> : "i"
+#<Multi_key> <O> : "əʊ"
+#<Multi_key> <P> : "ɔːr"
+##<Multi_key> <{> : "⟨"
+##<Multi_key> <}> : "⟩"
+##<Multi_key> <|> : "|"
+#
+## CAPSLock-Enter row:
+#<Multi_key> <A> : "æ"
+#<Multi_key> <S> : "ʃ"
+#<Multi_key> <D> : "ər"
+#<Multi_key> <F> : "aɪ"
+#<Multi_key> <G> : "·"
+#<Multi_key> <H> : "ð"
+#<Multi_key> <J> : "dʒ"
+#<Multi_key> <K> : "«"
+#<Multi_key> <L> : "»"
+##<Multi_key> <:> : ":"
+##<Multi_key> <"> : "\""
+#
+## SHIFT row:
+#<Multi_key> <Z>  : "ʒ"
+#<Multi_key> <X>  : "ɛər"
+#<Multi_key> <C>  : "ɪər"
+#<Multi_key> <V>  : "ju"
+#<Multi_key> <B>  : "⸰"
+#<Multi_key> <N>  : "ŋ"
+#<Multi_key> <M>  : "u"
+##<Multi_key> <\<> : "‹"
+##<Multi_key> <\>> : "›"
+##<Multi_key> <?>  : "?"
+#
+#<Multi_key> <3> <3> : "¯\\_(ツ)_/¯" # Shrug. Katakana (ツ) 
+#
+## this requires Compose key that may be activated for a given layout:
+## either from command:
+##    setxkbmap -option compose:caps
+## or from XKB file.
+## for all users in /etc/??/??/00-keyboard ???:
+## Option "XkbOptions" "compose:caps"
+#
+## Notes:    (source: https://www.x.org/releases/current/doc/man/man5/Compose.5.xhtml)
+## There are several substitutions that can be made in the file name of the include instruction:
+##    %H -  expands to the user’s home directory (the $HOME environment variable)
+##    %L - expands to the name of the locale specific Compose file (i.e., "/usr/share/X11/locale/<localename>/Compose")
+##    %S - expands to the name of the system directory for Compose files (i.e., "/usr/share/X11/locale")
+## For example, you can include in your compose file the default Compose file by using:
+##    include "%L"
+## and then rewrite only the few rules that you need to change. New compose rules can be added, and previous ones replaced.
