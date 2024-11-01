@@ -150,6 +150,12 @@ xkb_symbols "phonem" {
 
     key <SPCE>	{[ space,	space,		emspace, U200B	]}; // U2003 M-space, U200B zero-width space
 
+    replace key <CAPS> {
+        type = "ALPHABETIC", symbols = [ Escape, Escape ],
+        actions [Group1] = [ SetMods(modifiers=none), SetMods(modifiers=Lock,clearLocks) ]    };
+    replace key <ESC> { [ Alt_L, Alt_L ] };
+    include "shift(both_capslock_cancel)"
     include "level3(alt_switch)"
+
 };
 
