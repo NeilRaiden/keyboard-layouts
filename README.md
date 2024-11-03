@@ -50,7 +50,7 @@ Some symbols are “obsoleted” and new ones recommended in their place. Not ev
 The symbols for English IPA phonemes are scattered across the several Unicode charsets:
 
  * Only the _thorn_ ⟨θ⟩ is in a Greek charset,  
- * all other IPA symbols are located in various Latin _supplement_ and _extension_ charsets.  
+ * all other IPA symbols are scattered throughout various Latin _supplement_ and _extension_ charsets.  
 
 So if you use the _CharacterMap_ to find those symbols, unknowingly you may be using similar, but the wrong ones.
 
@@ -73,10 +73,13 @@ The two processes involved in learning or acquiring a new language (like English
 2. Written  
     - **reading** (memorizing written words — building a _written/visual vocabulary_)  
     - **writing** (recalling and applying)  
- 
-Because of huge discrepancy between _written_ and _spoken_ English, the size of _audio_ and _visual_ vocabularies (that English learners build in their heads) are of **different sizes**. 
 
-Because of that, many people, especially non‑native speakers and some dyslectics, are unable to fully express their thoughts in writing. And because most non-native speakers acquire their vocabulary primarily through reading, they end up 
+>Note: writing in phonemic English is the best tool for building “**phonemic awareness**”
+
+Because of huge discrepancy between _written_ and _spoken_ English, the _audio_ and _visual_ vocabularies (that English learners build in their heads) are of **different sizes**. 
+
+Because of that, many people, especially non‑native speakers and some dyslectics, are unable to fully express their thoughts in writing. And because most non-native speakers acquire their vocabulary primarily through reading, and especially those who are self-taught do not learn the English phonemes, they end up “reading” from their _visual vocabulary_ applying spelling rules of their own language.
+Since many English vowels (schwa, strut, ash, long vowels, diphtongs) and the two consonants (thorn and eth) are unique to English — at least among the European languages — many non-native speakers use a shorter phonemic alphabet of their own language.
 
 Practicing (even only occasionally) a _phonetic_ or _phonemic_ writing may help you in closing the gap between your _written_ and _spoken_ English vocabularies.
 
@@ -127,14 +130,14 @@ Three most notable examples:
     * swap IOP with KL;
     * rotate: J → Y → N → J
 
-3. [QWERTY-Flip](https://nick-gravgaard.com/qwerty-flip/) — the **Writer+ (ASERTH)** layout presented here is based on one of the QWERTY-Flip layouts by Nick Gravgaard. See his project page: ([GitHub](https://github.com/nick-gravgaard/qwerty-flip)). Total of 14 keys relocated according to scheme:
+3. [QWERTY-Flip](https://nick-gravgaard.com/qwerty-flip/) — the **Writer+ (ASERTH)** layout presented here is based on the **QWERTY-Flip-Twist** layout by Nick Gravgaard. See his project page: ([GitHub](https://github.com/nick-gravgaard/qwerty-flip)). Total of 14 keys relocated according to scheme:
 
     * flip ERT with DFG
     * flip N with J, K with I
     * twist: L → ; → P → O → L
 
 
-Both ASERT and Minimak focus on **reducing the learning curve** while being almost as efficient as Colemak.
+ASERT, Minimak and QWERTY-flip layouts focus on **reducing the learning curve** while being almost as efficient as Colemak.
 
 ### Writer+ (ASERTH):
 
@@ -149,7 +152,7 @@ Both ASERT and Minimak focus on **reducing the learning curve** while being almo
 
 If you've already tried the **English Phonemic** keyboard layout, you might have noticed that a lot of English phonemes take 2 or even 3 IPA symbols. What a waste of space. That's where the Doom music—, əhɛm, that's where the **Shavian Alphabet** kicks in.
 
-The learning curve of Shavian Alphabet is definitely much steeper (in comparison to learning the English IPA symbols), but the benefits may outweigh that.  
+The learning curve of Shavian Alphabet is definitely much steeper (in comparison to learning the English IPA symbols), but the benefits may far outweigh that.  
 Here are some of them:
 
 1. Every English phoneme is represented by **a single symbol**.
@@ -181,4 +184,4 @@ The best solution is a Shavian keyboard layout designed **specifically for your 
 * Keyboard layout [Shavian (Imperial)](Linux/docs/ShawImp.md) for Linux
 
 -----
-Copyright (R) 2024 Neil Raiden (AGPL v3)
+Copyright (c) 2024 Neil Raiden (AGPL v3)
