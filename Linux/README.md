@@ -12,12 +12,12 @@
 
 Please note, that except for the **Shavian (QWERTY)** all other **Linux keyboard layouts** in this project are using the following remapping scheme to improve ergonomics of typing extended (Group2) symbols:
 
-1. **⟮LAlt⟯ = ⟮RAlt⟯** — the **⟮LAlt⟯** key produces the same effect as the **⟮RAlt⟯** key — this improves ergonomy and speed of typing symbols from the AltGR and AltGr+Shift (Group2) levels.
+1. **⟮LAlt⟯ = ⟮RAlt⟯** — the **⟮LAlt⟯** key produces the same effect as the **⟮RAlt⟯** key — this improves ergonomics and speed of typing symbols from the AltGR and AltGr+Shift (Group2) levels.
 2. **⟮Esc⟯ → LAlt** — the **LAlt** function is mapped to the **⟮Escape⟯** key
 3. **⟮CapsLock⟯ → Escape** — the **Escape** function is mapped to the **⟮CapsLock⟯** key
 4. **⟮LShift⟯+⟮RShift⟯ → CapsLock** — since many people (Oracle database designers, Bash script developers, etc) may still need the **CapsLock** functionality, it is still available by pressing both **⟮Shift⟯** keys at the same time. To exit capitalization press any of the **⟮Shift⟯** keys or the **⟮CapsLock⟯** key (now being an **ESC** key). Note that on many keyboards pressing both **⟮Shift⟯** keys still turns the CapsLock LED on.
 
-If you don't like this remappin scheme, please edit the symbols file and delete the following section:
+If you don't like this remapping scheme, please edit the symbols file and delete the following section:
 ```
     replace key <CAPS> {
         type = "ALPHABETIC", symbols = [ Escape, Escape ],
@@ -45,7 +45,7 @@ Currently there is no installation script — you have to perform a manual insta
 
 If your distro does that, you will have to place the custom symbols/layout files in `/usr/share/X11/xkb/symbols` instead of (local) `$HOME/.config/xkb/symbols` or (global) `/etc/xkb/symbols`.  
 
-As long as the file names are different from the default ones, your custom symbols files should not be overwritten during a next system update.
+As long as the file names are different from the default ones, your custom symbols files should not be overwritten during the next system update.
 
 ### Current user (local)
 
@@ -71,7 +71,7 @@ As long as the file names are different from the default ones, your custom symbo
     * go to "Keyboards"
     * under "Input sources" select "Add" or "+" 
     * select "English (United States)"
-    * you should be able to select any layout that you left in the `rules/evdev.xml` file (even if you don't have the corresponding file in the `symbols` folder.
+    * you should be able to select any layout that you left in the `rules/evdev.xml` file (even if you don't have the corresponding file in the `symbols` folder).
 8. Test the layout (you may need to activate the WIN+Space layout switch shortcut):
     * if the layout doesn't work, then see **Note 2** above (you may need to copy symbols files to `/usr/share/X11/xkb/symbols`)
 
@@ -80,7 +80,7 @@ As long as the file names are different from the default ones, your custom symbo
 1. Download files from this repository:
     * `evdev` and `evdev.xml` from `Linux/rules/` folder
     * layout file(s) of your choice from `Linux/symbols` folder
-2. Create system-wide `xkb` folder and subdirectories:
+2. Create system-wide `xkb` folder and sub-directories:
     * `sudo mkdir /etc/xkb`
     * `sudo mkdir /etc/xkb/rules`
     * `sudo mkdir /etc/xkb/symbols`
@@ -88,8 +88,9 @@ As long as the file names are different from the default ones, your custom symbo
     * `evdev` and `evdev.xml` to `/etc/xkb/rules`
     * layout files to `/etc/xkb/symbols`
 4. Edit `evdev.xml` file and delete the `<layout>...</layout>` sections for unwanted layouts.
-5. (Optional) copy the `XCompose` file to `/etc/xkb` and create links `$HOME/.XCompose` to that file. 
+5. (Optional) copy the `XCompose` file to `/etc/xkb` and for users who may want to use this layout create links in their home directories `$HOME/.XCompose` to that file. For example:
+    * `ln -s /etc/xkb/XCompose /home/johndoe/.XCompose`
 6. Test the layout, if it is discovered by the XKB but still does not work, then see **Note 2** (you may have to put the symbols files in `/usr/share/X11/xkb/symbols`).
 
 -----
-Copyright (r) 2024 Neil Raiden (AGPL v3)
+Copyright (c) 2024 Neil Raiden (AGPL v3)
