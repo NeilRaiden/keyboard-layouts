@@ -2,15 +2,15 @@
 # Copyright (c) 2024 Neil Raiden (AGPL v.3)
 
 # Note:
-#  * XKB does not allow to type more than one Unicode point per keypress
+#  * XKB does not allow to type more than one Unicode point per key press
 #  * The English (Phonemic) keyboard layout requires to type 14 phonemes up to 3 unicode points in length
-#  * sincgle-symbol unicode point are produced by layout defined in /usr/share/X11/xkb/symbols/phonem
-#  * for longer sequences the layout sends out Unicode points from unassigned range U+FDD0-U+FDEF (aka noncharacters)
-#  * those noncharacters are then converted by ~/.XCompose to proper phonem sequences
+#  * single-symbol code point are produced by layout defined in /usr/share/X11/xkb/symbols/phonem
+#  * for longer sequences the layout sends out Unicode points from unassigned range U+FDD0-U+FDEF (aka non-characters)
+#  * those non-characters are then converted by ~/.XCompose to proper phoneme sequences
 #
 ## Notes:    (source: https://www.x.org/releases/current/doc/man/man5/Compose.5.xhtml)
 ## There are several substitutions that can be made in the file name of the include instruction:
-##    %H -  expands to the user’s home directory (the $HOME environment variable)
+##    %H - expands to the user’s home directory (the $HOME environment variable)
 ##    %L - expands to the name of the locale specific Compose file (i.e., "/usr/share/X11/locale/<localename>/Compose")
 ##    %S - expands to the name of the system directory for Compose files (i.e., "/usr/share/X11/locale")
 ## For example, you can include in your compose file the default Compose file by using:
