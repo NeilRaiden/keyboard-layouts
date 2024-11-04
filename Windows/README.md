@@ -56,5 +56,5 @@ Please note: **NONE of these two fully supports Unicode.** Again, Windows is waa
 
 The only layout from this project that semi‑works with OSK.exe is the **English (Phonemic)** — but only in the *Unshifted* and *Shifted* layers.
 
-
 -----
+Copyright (c) 2024 Neil Raiden (AGPL v3)
