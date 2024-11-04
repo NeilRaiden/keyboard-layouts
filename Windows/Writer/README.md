@@ -10,7 +10,7 @@ The extra symbols can be entered with **AltGr** (right Alt) and **AltGr+Shift**,
 > For example: ⟮áb́ćd́é ÁB́ĆD́É 1́2́3́  ́…́ ☺́⟯.
 
 
-### With this keyboard layout you can enter:
+### With this keyboard layout you can type in Notepad:
 
 ```
  • black bullets (like this one) and also these:  
@@ -23,25 +23,32 @@ The extra symbols can be entered with **AltGr** (right Alt) and **AltGr+Shift**,
  • M—dash, N–dash, real‐hyphen, non‑break hyphen  
  • a combining acute mark to indicate foreign accent: cliché, résumé, exposé, café.  
  • ellipsis: ⟨…⟩  
- • enclose some IPA phonemes, or whatever else you like with angle brackets: ⟨a⟩  
+ • enclose some IPA phonemes, or whatever else you like with:  
+    ◦ angle brackets: ⟨a⟩  
+    ◦ rounded square brackets: ⟮a⟯
  • superscript and subscript numerals for:  
     ◦ endless footnotes and endnotes: ¹²³⁴⁵⁶⁷⁸⁹⁰  
     ◦ math formulas: 2³=8, ³√(8)=2  
     ◦ fractions: 2 tsp = ²/₃ Tbsp = 5000 µL  
     ◦ Subscript numerals for chemical formulas: CO₂ + 2·H₂O → CH₄ + 2·O₂  
- • more math: π ≈ 3.141595 ± 0.0000001 or so ⟮÷×≠≈±⟯  
+ • more math: π ≈ 3.141595 ± 0.0000001 or so. ⟮other math symbols: ÷×≠≈±⟯  
  • BuJo for [Bullet Journal](https://bulletjournal.com/) enthusiasts:  
     · to-do tasks  
     × tasks completed  
     ○ events  
     ÷ (extra) for those "divided attention" thingz you did that stole your focus.  
-    + (extra) and old standard plus for tasks done but unplanned, that are still in-line with your goals.  
+    + the PLUS symbol for tasks done but unplanned, that are still in-line with your goals.  
  • corners:  
     ◦ placeholders:  
         ⌜       ⌝    Make a placeholder for a picture,  
            pic       that you may want to add later  
         ⌞       ⌟    after converting to doc, HTML, etc.  
     ◦ or maybe quoted text:   ⌜ quote here ⌟  
+ • checkbox lists:  
+    ☐ - empty box (aka “ballot box”)  
+    ☑ - box with a check-mark  
+    ☒ - box crossed  
+ • arrows: →←↑↓
  • and it will not cost you a single 1¢  
  • although this layout is ©opyrighted —  don't worry, it's AGPL license. ☺  
 ```
