@@ -60,7 +60,6 @@ This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/ke
 └─────────┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴────────┘
 ```
 
-
 ### Spaces
 
 | Layer | Unicode | Whitespace name |
@@ -69,6 +68,20 @@ This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/ke
 | Shifted | U+0020 | regular space |
 | AltGr | U+2003 | Em-space - width equal to font height |
 | AltGr+Shift | U+200b | zero-width space |
+
+-----
+
+### Unshifted:
+![](ShawPlus1.png)
+
+### Unshifted:
+![](ShawPlus2.png)
+
+### Unshifted:
+![](ShawPlus3.png)
+
+### Unshifted:
+![](ShawPlus4.png)
 
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)
