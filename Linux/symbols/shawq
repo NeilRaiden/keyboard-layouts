@@ -56,8 +56,8 @@ xkb_symbols "qwerty" {
     key <AB05>	{[	U1045A,		U2E30		]};
     key <AB06>	{[	U1046F,		U10459		]};
     key <AB07>	{[	U10465,		U10475		]};
-    key <AB08>	{[	comma,		less		]};
-    key <AB09>	{[	period,		greater		]};
+    key <AB08>	{[	comma,		U2039		]};
+    key <AB09>	{[	period,		U203A		]};
     key <AB10>	{[	slash,		question	]};
 
 };
