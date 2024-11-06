@@ -72,7 +72,7 @@ xkb_symbols "phonem" {
     key <AD01> {[ UFDD0,	UFDD1,		U2026,		U231C	]}; //q: ɔɪ     aʊ     … (ellipsis) ⌜ (top-L corner)
     key <AD02> {[ w,		UFDD2,		U22EF,		U231D	]}; //w: w      ɪə     ⋯ (hor elli) ⌝ (top-R corner)
     key <AD03> {[ U025B,	UFDD3,		U0301,		U231E	]}; //e: ɛ      eɪ     é (acute ac) ⌞ (bot-L corner)
-    key <AD04> {[ r,		UFDD4,		U00AE,		U231F	]}; //r: r      ɑr     · (registrd) ⌟ (bot-R corner)
+    key <AD04> {[ r,		UFDD4,		registered,	U231F	]}; //r: r      ɑr     · (registrd) ⌟ (bot-R corner)
     key <AD05> {[ t,		U03B8,		U2122,		U03B8	]}; //t: t      θ      ™ (trademak) θ (theta)
     key <AD06> {[ U0251,	U0254,		U221A,		U0259	]}; //y: ɑ      ɔ      √ (sq root)  ə (schwa)
     key <AD07> {[ U028C,	U028A,		U2191,		U028A	]}; //u: ʌ      ʊ      ↑ (up arrow) ʊ (upsilon)
