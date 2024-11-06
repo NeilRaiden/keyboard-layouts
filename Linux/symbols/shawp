@@ -96,5 +96,8 @@ xkb_symbols "plus" {
     // both LAlt and RAlt switch to level3
     include "level3(alt_switch)"
 
+    // compose key
+    include "compose(paus)"
+
 };
 
