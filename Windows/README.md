@@ -40,9 +40,11 @@ When compilation of the KLC file is complete, simply open the binaries folder an
 
 -----
 
-## On-Screen Keyboards (OSK)
+## On-Screen Keyboards
 
-Windows provides two On‑Screen Keyboards:
+When learning new keyboard layout it may be helpful to use an On-Screen Keyboard.
+
+Microsoft Windows provides two On‑Screen Keyboards:
 
  * Old **OSK.exe** (`c:\Windows\System32\osk.exe`) — to start, press `WinKey+Ctrl+O`
  * New **TabTip.exe** (`c:\Program Files\Common Files\microsoft shared\ink\TabTip.exe`) - TabTip stands for **Tab**let **T**ext **I**nput **P**anel — part of the Inking feature (WinKey+I › Devices › Pen & Windows Ink)
@@ -52,9 +54,16 @@ To start either one:
  * osk.exe — `WinKey+Ctrl+o`
  * tabtip.exe — right‑click system clock, select `Show touch keyboard button`. Click the keyboard button.
 
-Please note: **NONE of these two fully supports Unicode.** Again, Windows is waaaaay behind Linux.
+Please note: **NONE of these supports Unicode**, so instead of Shavian symbols you'll see blank rectangles.
 
 The only layout from this project that semi‑works with OSK.exe is the **English (Phonemic)** — but only in the *Unshifted* and *Shifted* layers.
+
+Alternatives you may find on the Internet:
+
+* [Free Virtual keyboard](https://freevirtualkeyboard.com/) — available as portable and as installer, but doesn't allow to change font, so Shavian is displayed as blocks.
+* On-Screen Keyboard Portable from PortableApps.com — not really portable (installer). It is only a launcher for native Windows OSK.exe. Don't even bother.
+* [Keyman](https://keyman.com/) — nice but takes over 200MB of space.
+
 
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)

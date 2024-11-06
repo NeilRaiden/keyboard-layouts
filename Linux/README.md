@@ -93,5 +93,21 @@ As long as the file names are different from the default ones, your custom symbo
     * `ln -s /etc/xkb/XCompose /home/johndoe/.XCompose`
 6. Test the layout, if it is discovered by the XKB but still does not work, then see **Note 2** (you may have to put the symbols files in `/usr/share/X11/xkb/symbols`).
 
+
+### On-Screen Keyboards
+
+When learning a new keyboard layout (Colemak, ASERT, Shavian) it may be helpful to use an On-Screen Keyboard.
+Most (if not all) Linux distros provide at least one option. Usually you can activate it in `Settings > Accessibility > Typing > Screen keyboard`.
+
+* [Ubuntu](https://help.ubuntu.com/stable/ubuntu-help/keyboard-osk.html.en)  
+* [Gnome](https://help.gnome.org/users/gnome-help/stable/keyboard-osk.html.en)
+* [KDE Virtual Keyboard](https://store.kde.org/p/1132203/)
+* [Maliit](https://maliit.github.io/)
+* [Onboard](https://launchpad.net/onboard).
+
+At least one of these should be available for your distro. Search your software repository.
+
+
+
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)

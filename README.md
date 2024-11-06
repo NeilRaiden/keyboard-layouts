@@ -189,6 +189,10 @@ The best solution is a Shavian keyboard layout designed **specifically for your 
 * read more: [Linux layouts](Linux/README.md) — Linux layouts are simple text files, no need to compile.
 * read more: [Windows layouts](Windows/README.md) — Windows layouts need to be compiled, then installed.
 
+## On-screen keyboards
+
+* [Windows](Windows/README.md#On-Screen-Keyboards)
+* [Linux](Linux/README.md#On-Screen-Keyboards)
 
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)
