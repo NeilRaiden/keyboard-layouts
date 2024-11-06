@@ -91,42 +91,42 @@ xkb_symbols "imperial" {
     key <AE11> { [	U10461,		parenright,	bracketright,	greater		] }; // 𐑡 ) ] >  ;
     key <AE12> { [	U10454,		equal,		underscore,	plus		] }; // 𐑔 = _ +  ;
 
-    key <AD01> { [	U1046D,		q,		Q				] }; // 𐑭 q Q    ;
-    key <AD02> { [	U10477,		w,		W				] }; // 𐑷 w W    ;
-    key <AD03> { [	U10475,		e,		E				] }; // 𐑵 e E    ;
-    key <AD04> { [	U10471,		r,		R				] }; // 𐑱 r R    ;
-    key <AD05> { [	U10473,		t,		T				] }; // 𐑳 t T    ;
-    key <AD06> { [	U10453,		y,		Y				] }; // 𐑓 y Y    ;
-    key <AD07> { [	U1045E,		u,		U				] }; // 𐑞 u U    ;
-    key <AD08> { [	U10464,		i,		I				] }; // 𐑤 i I    ;
-    key <AD09> { [	U10465,		o,		O				] }; // 𐑥 o O    ;
-    key <AD10> { [	U10452,		p,		P				] }; // 𐑒 p P    ;
-    key <AD11> { [	U10462,		exclam,		braceleft			] }; // 𐑢 ! {    ;
-    key <AD12> { [	U10463,		ampersand, 	braceright			] }; // 𐑣 & }    ;
+    key <AD01> { [	U1046D,		q,		Q,		VoidSymbol	] }; // 𐑭 q Q    ;
+    key <AD02> { [	U10477,		w,		W,		VoidSymbol	] }; // 𐑷 w W    ;
+    key <AD03> { [	U10475,		e,		E,		VoidSymbol	] }; // 𐑵 e E    ;
+    key <AD04> { [	U10471,		r,		R,		VoidSymbol	] }; // 𐑱 r R    ;
+    key <AD05> { [	U10473,		t,		T,		VoidSymbol	] }; // 𐑳 t T    ;
+    key <AD06> { [	U10453,		y,		Y,		VoidSymbol	] }; // 𐑓 y Y    ;
+    key <AD07> { [	U1045E,		u,		U,		VoidSymbol	] }; // 𐑞 u U    ;
+    key <AD08> { [	U10464,		i,		I,		VoidSymbol	] }; // 𐑤 i I    ;
+    key <AD09> { [	U10465,		o,		O,		VoidSymbol	] }; // 𐑥 o O    ;
+    key <AD10> { [	U10452,		p,		P,		VoidSymbol	] }; // 𐑒 p P    ;
+    key <AD11> { [	U10462,		exclam,		braceleft,	VoidSymbol	] }; // 𐑢 ! {    ;
+    key <AD12> { [	U10463,		ampersand, 	braceright,	VoidSymbol	] }; // 𐑣 & }    ;
     key <BKSL> { [	U10460,		asciitilde,	bar,		backslash	] }; // 𐑠 ~ | \  ;
 
-    key <AC01> { [	U1046A,		a,		A				] }; // 𐑪 a A    ;
-    key <AC02> { [	U10468,		s,		S				] }; // 𐑨 s S    ;
-    key <AC03> { [	U10466,		d,		D				] }; // 𐑦 d D    ;
-    key <AC04> { [	U10469,		f,		F				] }; // 𐑩 f F    ;
-    key <AC05> { [	U10467,		g,		G				] }; // 𐑧 g G    ;
-    key <AC06> { [	U10450,		h,		H				] }; // 𐑐 h H ‐  ; ‐ hyphen
-    key <AC07> { [	U1046F,		j,		J				] }; // 𐑯 j J    ; 
-    key <AC08> { [	U10451,		k,		K				] }; // 𐑑 k K    ; 
-    key <AC09> { [	U1046E,		l,		L				] }; // 𐑮 l L    ; 
+    key <AC01> { [	U1046A,		a,		A,		VoidSymbol	] }; // 𐑪 a A    ;
+    key <AC02> { [	U10468,		s,		S,		VoidSymbol	] }; // 𐑨 s S    ;
+    key <AC03> { [	U10466,		d,		D,		VoidSymbol	] }; // 𐑦 d D    ;
+    key <AC04> { [	U10469,		f,		F,		VoidSymbol	] }; // 𐑩 f F    ;
+    key <AC05> { [	U10467,		g,		G,		VoidSymbol	] }; // 𐑧 g G    ;
+    key <AC06> { [	U10450,		h,		H,		VoidSymbol	] }; // 𐑐 h H ‐  ; ‐ hyphen
+    key <AC07> { [	U1046F,		j,		J,		VoidSymbol	] }; // 𐑯 j J    ; 
+    key <AC08> { [	U10451,		k,		K,		VoidSymbol	] }; // 𐑑 k K    ; 
+    key <AC09> { [	U1046E,		l,		L,		VoidSymbol	] }; // 𐑮 l L    ; 
     key <AC10> { [	U10455,		apostrophe,	U00AB,		U2039		] }; // 𐑕 ' « ‹  ; « U00ab (guillemotleft)
     key <AC11> { [	U1045B,		quotedbl,	U00BB,		U203A		] }; // 𐑛 " » ›  ; » U00bb (guillemotright)
 
-    key <AB01> { [	U1047E,		z,		Z				] }; // 𐑾 z Z   ;  
-    key <AB02> { [	U10472,		x,		X				] }; // 𐑲 x X   ; 
-    key <AB03> { [	U10474,		c,		C				] }; // 𐑴 c C   ;  
+    key <AB01> { [	U1047E,		z,		Z,		VoidSymbol	] }; // 𐑾 z Z   ;  
+    key <AB02> { [	U10472,		x,		X,		VoidSymbol	] }; // 𐑲 x X   ; 
+    key <AB03> { [	U10474,		c,		C,		VoidSymbol	] }; // 𐑴 c C   ;  
     key <AB04> { [	U10470,		v,		V,		U2043		] }; // 𐑰 v V ⁃ ; ⁃ (U2043 hyphen-bullet)
     key <AB05> { [	U1045A,		b,		B,		U25CB		] }; // 𐑚 b B ○ ; ○ (U25cb white circle)
     key <AB06> { [	U1045D,		n,		N,		U2013		] }; // 𐑝 n N – ; – (N-dash) 
     key <AB07> { [	U1045F,		m,		M,		U2014		] }; // 𐑟 m M — ; — (M-dash)
     key <AB08> { [	comma,		semicolon,	U201C,		U2018		] }; // , ; “ ‘ ;
     key <AB09> { [	period,		colon,		U201D,		U2019		] }; // . : ” ’ ;
-    key <AB10> { [	slash,		question,	U2026				] }; // / ? …   ; … (ellipsis)
+    key <AB10> { [	slash,		question,	U2026,		VoidSymbol	] }; // / ? …   ; … (ellipsis)
 
     key <SPCE> { [ 	space,		space,		U2003,		U200B		] }; // U2003 M-space, U200B zero-width space
 
