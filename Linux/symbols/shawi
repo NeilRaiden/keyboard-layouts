@@ -110,7 +110,7 @@ xkb_symbols "imperial" {
     key <AC03> { [	U10466,		d,		D,		VoidSymbol	] }; // 𐑦 d D    ;
     key <AC04> { [	U10469,		f,		F,		VoidSymbol	] }; // 𐑩 f F    ;
     key <AC05> { [	U10467,		g,		G,		VoidSymbol	] }; // 𐑧 g G    ;
-    key <AC06> { [	U10450,		h,		H,		VoidSymbol	] }; // 𐑐 h H ‐  ; ‐ hyphen
+    key <AC06> { [	U10450,		h,		H,		U2010		] }; // 𐑐 h H ‐  ; ‐ hyphen
     key <AC07> { [	U1046F,		j,		J,		VoidSymbol	] }; // 𐑯 j J    ; 
     key <AC08> { [	U10451,		k,		K,		VoidSymbol	] }; // 𐑑 k K    ; 
     key <AC09> { [	U1046E,		l,		L,		VoidSymbol	] }; // 𐑮 l L    ; 
@@ -142,6 +142,9 @@ xkb_symbols "imperial" {
 
     // both LAlt and RAlt switch to level3
     include "level3(alt_switch)"
+
+    // compose key
+    include "compose(paus)"
 
 };
 
