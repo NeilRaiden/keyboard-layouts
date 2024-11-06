@@ -1,11 +1,10 @@
 // English (Phonemes) keyboard layout
 // Copyright (c) 2024 Neil Raiden (AGPL v.3)
 //
-// * This layout is based on "Writer+ QWERTY", except that level1 and level2 symbols type 
-//   English phonemes (including diphtongs) instead of latin symbols.
-// * The layout of the phonemes is based on Shavian QWERTY.
-// * The XCompose (on some Linux distros) doesn't convert multi-byte keysyms like U+FDDO,
-//   this layout is sendig single-byte code points from Latin-1 charset (U+00C0-U+00CF).
+// * The levels 1 and 2 (phonemes) are based on Shavian QWERTY.
+// * The levels 3 and 4 are based on Writer+ QWERTY
+// * The XCompose (on some Linux distros) doesn't convert multi-byte keysyms like U+FDDO (used by version 1 of this layout),
+//   because of that this layout is sendig single-byte code points from Latin-1 charset (U+00C0-U+00CF).
 //   Be aware that if you use any other keyboard layout that produces characters listed below,
 //   they will be converted into English phonemes:
 //   U+00C0-00CF: À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï"
