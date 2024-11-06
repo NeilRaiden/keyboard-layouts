@@ -75,5 +75,7 @@ xkb_symbols "aserth" {
 
     include "level3(alt_switch)"
 
+    include "compose(paus)"
+
 };
 
