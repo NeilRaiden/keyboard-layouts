@@ -1,14 +1,7 @@
 # English (Phonemic) keyboard layout
+#
 # Copyright (c) 2024 Neil Raiden (AGPL v.3)
 
-# Note:
-#  * XKB does not allow to type more than one Unicode point per key press
-#  * The English (Phonemic) keyboard layout requires to type 14 phonemes up to 3 unicode points in length
-#  * single-symbol code point are produced by layout defined in /usr/share/X11/xkb/symbols/phonem
-#  * for longer sequences the layout sends out Unicode points from unassigned range U+FDD0-U+FDEF (aka non-characters)
-#  * those non-characters are then converted by ~/.XCompose to proper phoneme sequences
-#
-## Notes:    (source: https://www.x.org/releases/current/doc/man/man5/Compose.5.xhtml)
 ## There are several substitutions that can be made in the file name of the include instruction:
 ##    %H - expands to the user’s home directory (the $HOME environment variable)
 ##    %L - expands to the name of the locale specific Compose file (i.e., "/usr/share/X11/locale/<localename>/Compose")
@@ -49,18 +42,18 @@ include "%L"
 # └──────┴─────┴──────┴───────────────────────┴──────┴───────┘
 #
 # using noncharacters from unassigned range U+FDD0-U+FDEF
-<UFDD0> : "ɔɪ"  # q U0254 U026A
-<UFDD1> : "aʊ"  # Q U0061 U028A
-<UFDD2> : "ɪə"  # W U026A U0259
-<UFDD3> : "eɪ"  # E U0065 U026A
-<UFDD4> : "ɑːr" # R U0251 U02D0 U0072 (ɑːr)
-<UFDD5> : "əʊ"  # O U0259 U028A
-<UFDD6> : "ɔːr" # P U0254 U0072
-<UFDD7> : "ər"  # D U0259 U0072
-<UFDD8> : "aɪ"  # F U0061 U026A
-<UFDD9> : "dʒ"  # J U0064 U0292
-<UFDDA> : "ɜːr" # x U025C U02D0 U0072
-<UFDDB> : "ɛər" # X U025B U0259 U0072 
-<UFDDC> : "tʃ"  # c U0074 U0283
-<UFDDD> : "ɪər" # C U026A U0259 U0072
+<UFDD0> : "ɔɪ"
+<UFDD1> : "aʊ"
+<UFDD2> : "ɪə"
+<UFDD3> : "eɪ"
+<UFDD4> : "ɑːr"
+<UFDD5> : "əʊ"
+<UFDD6> : "ɔːr"
+<UFDD7> : "ər"
+<UFDD8> : "aɪ"
+<UFDD9> : "dʒ"
+<UFDDA> : "ɜːr"
+<UFDDB> : "ɛər"
+<UFDDC> : "tʃ"
+<UFDDD> : "ɪər"
 

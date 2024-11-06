@@ -9,19 +9,19 @@ include "%L"
 # ibus restart
 
 # Version 2: using characters from Latin-1 range U+00C0-00CF:
-<U00C0> : "ɔɪ"  # q U0254 U026A        // À #define XK_Agrave
-<U00C1> : "aʊ"  # Q U0061 U028A        // Á #define XK_Aacute
-<U00C2> : "ɪə"  # W U026A U0259        // Â #define XK_Acircumflex
-<U00C3> : "eɪ"  # E U0065 U026A        // Ã #define XK_Atilde
-<U00C4> : "ɑːr" # R U0251 U02D0 U0072  // Ä #define XK_Adiaeresis
-<U00C5> : "əʊ"  # O U0259 U028A        // Å #define XK_Aring
-<U00C6> : "ɔːr" # P U0254 U0072        // Æ #define XK_AE
-<U00C7> : "ər"  # D U0259 U0072        // Ç #define XK_Ccedilla
-<U00C8> : "aɪ"  # F U0061 U026A        // È #define XK_Egrave
-<U00C9> : "dʒ"  # J U0064 U0292        // É #define XK_Eacute
-<U00CA> : "ɜːr" # x U025C U02D0 U0072  // Ê #define XK_Ecircumflex
-<U00CB> : "ɛər" # X U025B U0259 U0072  // Ë #define XK_Ediaeresis
-<U00CC> : "tʃ"  # c U0074 U0283        // Ì #define XK_Igrave
-<U00CD> : "ɪər" # C U026A U0259 U0072  // Í #define XK_Iacute
-<U00CE> : "ju"  # V U006A U0075        // Î #define XK_Icircumflex
+<U00C0> : "ɔɪ"
+<U00C1> : "aʊ"
+<U00C2> : "ɪə"
+<U00C3> : "eɪ"
+<U00C4> : "ɑːr"
+<U00C5> : "əʊ"
+<U00C6> : "ɔːr"
+<U00C7> : "ər"
+<U00C8> : "aɪ"
+<U00C9> : "dʒ"
+<U00CA> : "ɜːr"
+<U00CB> : "ɛər"
+<U00CC> : "tʃ"
+<U00CD> : "ɪər"
+<U00CE> : "ju"
 # ------------
