@@ -2,14 +2,14 @@
 
 ## Layouts
 
- * [English (Phonemic)](Linux/docs/Phonemic.md)
- * [English (Phonemic2)](Linux/docs/Phonemic2.md)
- * [Shavian (Imperial)](Linux/docs/ShawImp.md)
- * [Shavian (QWERTY)](Linux/docs/ShawQ.md)
- * [Shavian+ (QWERTY)](Linux/docs/ShawPlus.md)
- * [Writer (QWERTY)](Linux/docs/writer.md)
- * [Writer+ (QWERTY)](Linux/docs/writer.md)
- * [Writer+ (ASERTH)](Linux/docs/writer.md)
+ * [English (Phonemic)](docs/Phonemic.md)
+ * [English (Phonemic2)](docs/Phonemic2.md)
+ * [Shavian (Imperial)](docs/ShawImp.md)
+ * [Shavian (QWERTY)](docs/ShawQ.md)
+ * [Shavian+ (QWERTY)](docs/ShawPlus.md)
+ * [Writer (QWERTY)](docs/Writer.md)
+ * [Writer+ (QWERTY)](docs/WriterPlus.md)
+ * [Writer+ (ASERTH)](docs/WriterASERT.md)
 
 Please note, that except for the **Shavian (QWERTY)** all other **Linux keyboard layouts** in this project are using the following remapping scheme to improve ergonomics of typing extended (Group2) symbols:
 
@@ -17,6 +17,9 @@ Please note, that except for the **Shavian (QWERTY)** all other **Linux keyboard
 2. **⟮Esc⟯ → LAlt** — the **LAlt** function is mapped to the **⟮Escape⟯** key
 3. **⟮CapsLock⟯ → Escape** — the **Escape** function is mapped to the **⟮CapsLock⟯** key
 4. **⟮LShift⟯+⟮RShift⟯ → CapsLock** — since many people (Oracle database designers, Bash script developers, etc) may still need the **CapsLock** functionality, it is still available by pressing both **⟮Shift⟯** keys at the same time. To exit capitalization press any of the **⟮Shift⟯** keys or the **⟮CapsLock⟯** key (now being an **ESC** key). Note that on many keyboards pressing both **⟮Shift⟯** keys still turns the CapsLock LED on.
+
+![](docs/ModifierKeys.png)
+
 
 If you don't like this remapping scheme, please edit the symbols file and delete the following section:
 ```
@@ -105,8 +108,8 @@ Most (if not all) Linux distros provide at least one option. Usually you can act
 * [Maliit](https://maliit.github.io/)
 * [Onboard](https://launchpad.net/onboard).
 
-At least one of these should be available for your distro. Search your software repository.
-
+At least one of these should be available for your distro.  
+Search your software repository for keywords: “onboard”, “maliit”, “kvkbd”, or simply “keyboard”. 
 
 
 -----
