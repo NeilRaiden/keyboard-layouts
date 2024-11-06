@@ -184,4 +184,11 @@ The best solution is a Shavian keyboard layout designed **specifically for your 
 * Keyboard layout [Shavian (Imperial)](Linux/docs/ShawImp.md) for Linux
 
 -----
+## Compilation and installation
+
+* read more: [Linux layouts](Linux/README.md) — Linux layouts are simple text files, no need to compile.
+* read more: [Windows layouts](Windows/README.md) — Windows layouts need to be compiled, then installed.
+
+
+-----
 Copyright (c) 2024 Neil Raiden (AGPL v3)
