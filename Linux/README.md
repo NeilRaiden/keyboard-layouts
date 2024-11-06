@@ -2,7 +2,8 @@
 
 ## Layouts
 
- * [English (Phonemic)](Linux/docs/phonem.md)
+ * [English (Phonemic)](Linux/docs/Phonemic.md)
+ * [English (Phonemic2)](Linux/docs/Phonemic2.md)
  * [Shavian (Imperial)](Linux/docs/ShawImp.md)
  * [Shavian (QWERTY)](Linux/docs/ShawQ.md)
  * [Shavian+ (QWERTY)](Linux/docs/ShawPlus.md)
