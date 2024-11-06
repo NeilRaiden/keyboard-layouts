@@ -11,6 +11,10 @@
  * [Writer+ (QWERTY)](docs/WriterPlus.md)
  * [Writer+ (ASERTH)](docs/WriterASERT.md)
 
+-----
+
+### Modifier keys
+
 Please note, that except for the **Shavian (QWERTY)** all other **Linux keyboard layouts** in this project are using the following remapping scheme to improve ergonomics of typing extended (Group2) symbols:
 
 1. **⟮LAlt⟯ = ⟮RAlt⟯** — the **⟮LAlt⟯** key produces the same effect as the **⟮RAlt⟯** key — this improves ergonomics and speed of typing symbols from the AltGR and AltGr+Shift (Group2) levels.
@@ -19,7 +23,6 @@ Please note, that except for the **Shavian (QWERTY)** all other **Linux keyboard
 4. **⟮LShift⟯+⟮RShift⟯ → CapsLock** — since many people (Oracle database designers, Bash script developers, etc) may still need the **CapsLock** functionality, it is still available by pressing both **⟮Shift⟯** keys at the same time. To exit capitalization press any of the **⟮Shift⟯** keys or the **⟮CapsLock⟯** key (now being an **ESC** key). Note that on many keyboards pressing both **⟮Shift⟯** keys still turns the CapsLock LED on.
 
 ![](docs/ModifierKeys.png)
-
 
 If you don't like this remapping scheme, please edit the symbols file and delete the following section:
 ```
@@ -30,6 +33,29 @@ If you don't like this remapping scheme, please edit the symbols file and delete
     include "shift(both_capslock_cancel)"
     include "level3(alt_switch)"
 ```
+
+### Compose key
+
+Most layouts in this project map the **Compose Key** (aka Multi_key) to the **⟮Pause⟯** key.
+If you don't use or don't like this feature, then please delete the following line from the symbols file:
+```
+    include "compose(paus)"
+```
+
+If you like to use Compose Key for typing rarely used symbols, but you'd prefer to map it to a different key, then use the following command to check for available options, and edit the symbols file that you've installed:
+```
+grep compose /usr/share/X11/xkb/rules/evdev.lst
+```
+
+If you've never used the Compose Key before, and you'd like to try it, then either:
+
+* activate Compose Key in `Settings > Keyboard > Compose Key` (depends on your distro)
+* install any of the layouts from this project, then (in a console, in a text editor, etc):
+    - press the ⟮Pause⟯ key: the cursor will change to "·", 
+    - type “12” ­— it will change automatically to “½”. 
+
+There are many more composition strings that this feature may convert on the fly. For the list of those strings check:
+`/usr/share/X11/locale/$LANG/Compose`, where `$LANG` you can check with the `locale` command. That file contains more than 5,000 entries, so don't use the `cat` command.
 
 -----
 
@@ -96,6 +122,7 @@ As long as the file names are different from the default ones, your custom symbo
     * `ln -s /etc/xkb/XCompose /home/johndoe/.XCompose`
 6. Test the layout, if it is discovered by the XKB but still does not work, then see **Note 2** (you may have to put the symbols files in `/usr/share/X11/xkb/symbols`).
 
+-----
 
 ### On-Screen Keyboards
 
