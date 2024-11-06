@@ -14,7 +14,7 @@ Notes:
  * the single-symbol code points are produced by layout defined in `/usr/share/X11/xkb/symbols/phonem`
  * and for the 2-3 symbols sequences this layout sends out Unicode points from unassigned range **U+FDD0-U+FDEF** (aka non-characters)
  * those non-characters are then converted by `~/.XCompose` to proper phoneme sequences
- * the XCompose file on some Linux distros does not convert 2-byte Unicode points (like U+FDD0) — in that case try [English (Phonemic2)](Phonem2.md)
+ * the XCompose file on some Linux distros does not convert 2-byte Unicode points (like U+FDD0) — in that case try [English (Phonemic2)](Phonemic2.md)
 
 Phonemic (uses `/phonemes/`):  
 
