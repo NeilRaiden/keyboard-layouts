@@ -1,11 +1,12 @@
 ! option = symbols
-  writer:qwerty    = +writer(qwerty)
-  writera:aserth   = +writera(aserth)
-  writerp:plus     = +writerp(plus)
-  shawq:qwerty     = +shawq(qwerty)
-  shawp:plus       = +shawp(plus)
-  shawi:imperial   = +shawi(imperial)
-  phonem:phonem    = +phonem(phonem)
+  writer:qwerty     = +writer(qwerty)
+  writera:aserth    = +writera(aserth)
+  writerp:plus      = +writerp(plus)
+  shawq:qwerty      = +shawq(qwerty)
+  shawp:plus        = +shawp(plus)
+  shawi:imperial    = +shawi(imperial)
+  phonem:phonem     = +phonem(phonem)
+  phonem2:phonem    = +phonem2(phonem)
 
 // syntax:
 // evdev.xml_name:option_name = +symbols_file_name(xkb_symbols)

@@ -1,8 +1,6 @@
 // # English (Phonemic) keyboard layout
 // Copyright (c) 2024 Neil Raiden (AGPL v.3)
 //
-// ### notes:
-//
 // ## Unshifted:
 // ```
 // ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──────┐
@@ -31,70 +29,30 @@
 // │ ctrl │ win │ Lalt │         space         │ Ralt │  ctrl │
 // └──────┴─────┴──────┴───────────────────────┴──────┴───────┘
 // ```
-// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬────────┐
-// │ ~ ≈ │ ! ₁ │ @ ₂ │ # ₃ │ $ ₄ │ % ₅ │ ^ ₆ │ & ₇ │ * ₈ │ ( ₉ │ ) ₀ │ _ ← │ + ± │   bksp │ 
-// │ ` ´ │ 1 ¹ │ 2 ² │ 3 ³ │ 4 ⁴ │ 5 ⁵ │ 6 ⁶ │ 7 ⁷ │ 8 ⁸ │ 9 ⁹ │ 0 ⁰ │ - → │ = ≠ │        │ 
-// ├─────┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬──────┤
-// │ tab   │ 𐑬 ⌜ │ 𐑾 ⌝ │ 𐑱 ⌞ │ 𐑸 ⌟ │ 𐑔 θ │ 𐑷 ə │ 𐑫 ʊ │ 𐑰 ˈ │ 𐑴 ɔ │ 𐑹 π │ { ⟮ │ } ⟯ │ | ◦  │
-// │       │ 𐑶 … │ 𐑢 ⋯ │ 𐑧 é │ 𐑮 ® │ 𐑑 ™ │ 𐑭 √ │ 𐑳 ↑ │ 𐑦 ɪ │ 𐑪 ɒ │ 𐑐 ℗ │ [ ⟨ │ ] ⟩ │ \ •  │
-// ├───────┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴──────┤
-// │ CapsL   │ 𐑨 ɑ │ 𐑖 ʃ │ 𐑼 ð │ 𐑲 ʍ │ · ʤ │ 𐑞 ‑ │ 𐑡 ʧ │ « ˌ │ » ɫ │ : ː │ " ☒ │   enter  │
-// │         │ 𐑩 “ │ 𐑕 ” │ 𐑛 ↓ │ 𐑓 ° │ 𐑜 ɛ │ 𐑣 ‐ │ 𐑘 ɜ │ 𐑒 ≤ │ 𐑤 ≥ │ ; § │ ' × │          │
-// ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──────────┤
-// │    shift   │ 𐑠 ʒ │ 𐑺 æ │ 𐑽 ¢ │ 𐑿 ʌ │ ⸰ ○ │ 𐑙 ŋ │ 𐑵 µ │ ‹ ☺ │ › ☐ │ ? ☑ │    shift    │
-// │            │ 𐑟 ‘ │ 𐑻 ’ │ 𐑗 © │ 𐑝 ⁃ │ 𐑚 · │ 𐑯 – │ 𐑥 — │ , < │ . > │ / ÷ │             │
-// ├───────┬────┴─┬───┴──┬──┴─────┴─────┴─────┴─────┴─────┴──┬──┴───┬─┴─────┼──────┬──────┤
-// │       │      │      │ space            zero-width space │      │       │      │      │
-// │ ctrl  │ win  │  alt │ space                    M-space  │ Ralt │       │      │ ctrl │
-// └───────┴──────┴──────┴───────────────────────────────────┴──────┴───────┴──────┴──────┘
-// ```
 // --------------------
 // Unused Unicode range U+FDD0-U+FDEF
 // These code points will be translated by ~/.XCompose according to following table:
-// UFDD0 = ɔɪ  // q U0254 U026A
-// UFDD1 = aʊ  // Q U0061 U028A
-// UFDD2 = ɪə  // W U026A U0259
-// UFDD3 = eɪ  // E U0065 U026A
-// UFDD4 = ɑːr // R U0251 U02D0 U0072
-// UFDD5 = əʊ  // O U0259 U028A
-// UFDD6 = ɔːr // P U0254 U0072
-// UFDD7 = ər  // D U0259 U0072
-// UFDD8 = aɪ  // F U0061 U026A
-// UFDD9 = dʒ  // J U0064 U0292
-// UFDDA = ɜːr // x U025C U02D0 U0072
-// UFDDB = ɛər // X U025B U0259 U0072 
-// UFDDC = tʃ  // c U0074 U0283
-// UFDDD = ɪər // C U026A U0259 U0072
-// UFDDE = ju  // V U006A U0075
+// <UFDD0> : "ɔɪ"  # q U0254 U026A
+// <UFDD1> : "aʊ"  # Q U0061 U028A
+// <UFDD2> : "ɪə"  # W U026A U0259
+// <UFDD3> : "eɪ"  # E U0065 U026A
+// <UFDD4> : "ɑːr" # R U0251 U02D0 U0072
+// <UFDD5> : "əʊ"  # O U0259 U028A
+// <UFDD6> : "ɔːr" # P U0254 U0072
+// <UFDD7> : "ər"  # D U0259 U0072
+// <UFDD8> : "aɪ"  # F U0061 U026A
+// <UFDD9> : "dʒ"  # J U0064 U0292
+// <UFDDA> : "ɜːr" # x U025C U02D0 U0072
+// <UFDDB> : "ɛər" # X U025B U0259 U0072 
+// <UFDDC> : "tʃ"  # c U0074 U0283
+// <UFDDD> : "ɪər" # C U026A U0259 U0072
+// <UFDDE> : "ju"  # V U006A U0075
+// note: you may copy the above table directly to your $HOME/.XCompose file
 // --------------------
-// if you use a rare/never used keysym in the keymap definition, then a global Xmodmap to make THAT keysym output the various unicode characters you need, this'll work.
-// In the keymap:
-//     key <AB04>  { [ v, V, XF86LaunchA, XF86LaunchB ] };
-// In a global Xmodmap: (perhaps loaded from /etc/profile.d ?)
-//     keysym XF86LaunchA = U0056 U0331
-//     keysym XF86LaunchB = U0076 U0331
-//There are quite a few unused/special-use keysyms, I chose the LaunchA/B as an example.
-//  XF86Launch[0,1,2..D,E,F]  - 16 total
-// full list: /usr/include/X11/XF86keysym.h
-// --------------------
-// it is possible to use the Unicode code directly in xkb keyboard layout definition files in /usr/share/X11/xkb/symbols/ or to use with keysym using this format U#### or 0x100####.
-//Example:
-//	key <AD04> { [        r, R,           U200F,        U200E           ] };
-//Or to define new keysym:
-//	xmodmap -e "keysym RLM = U200F"
-//For permanent keysym, add to ~/.xmodmap file:
-//	keysym RLM = U200F
-//References:
-//	Custom xkb layout in which one key creates two Unicode code points
-//	FOSS Localization/Annex B: Technical Aspects
-//	Creating and Compiling Custom Keymaps for Linux
-// --------------------
-
 
 default partial alphanumeric_keys modifier_keys
 xkb_symbols "phonem" {
 
-//    include "us(basic)"
     name[Group1]= "English (Phonemic)";
 
     key <TLDE>	{[ grave,	asciitilde,	U00B4,		U2248	]}; // ` ~ ´ (acute accent)  ≈ (almost equal)
@@ -113,7 +71,7 @@ xkb_symbols "phonem" {
 
     key <AD01> {[ UFDD0,	UFDD1,		U2026,		U231C	]}; //q: ɔɪ     aʊ     … (ellipsis) ⌜ (top-L corner)
     key <AD02> {[ w,		UFDD2,		U22EF,		U231D	]}; //w: w      ɪə     ⋯ (hor elli) ⌝ (top-R corner)
-    key <AD03> {[ U025b,	UFDD3,		U0301,		U231E	]}; //e: ɛ      eɪ     é (acute ac) ⌞ (bot-L corner)
+    key <AD03> {[ U025B,	UFDD3,		U0301,		U231E	]}; //e: ɛ      eɪ     é (acute ac) ⌞ (bot-L corner)
     key <AD04> {[ r,		UFDD4,		U00AE,		U231F	]}; //r: r      ɑr     · (registrd) ⌟ (bot-R corner)
     key <AD05> {[ t,		U03B8,		U2122,		U03B8	]}; //t: t      θ      ™ (trademak) θ (theta)
     key <AD06> {[ U0251,	U0254,		U221A,		U0259	]}; //y: ɑ      ɔ      √ (sq root)  ə (schwa)
@@ -145,17 +103,24 @@ xkb_symbols "phonem" {
     key <AB06>	{[ n,		U014B,		U2013,		U014B	]}; //n: n      ŋ          – (N-dash)      ŋ (engma)
     key <AB07>	{[ m,		u,		U2014,		U00B5	]}; //m: m      u          — (M-dash)      µ (micro)
     key <AB08>	{[ comma,	U2039,		less,		U263A	]}; //   ,      ‹ (s guil) < (less)        ☺ (smiley)
-    key <AB09>	{[ period,	U203a,		greater,	U2610	]}; //   .      › (s guil) > (greater)     ☐ (ballot)
+    key <AB09>	{[ period,	U203A,		greater,	U2610	]}; //   .      › (s guil) > (greater)     ☐ (ballot)
     key <AB10>	{[ slash,	question,	U00F7,		U2611	]}; //   /      ?          ÷ (division)    ☑ (w/ check)
 
-    key <SPCE>	{[ space,	space,		emspace, U200B	]}; // U2003 M-space, U200B zero-width space
+    key <SPCE>	{[ space,	space,		emspace,	U200B	]}; // U2003 M-space, U200B zero-width space
 
     replace key <CAPS> {
-        type = "ALPHABETIC", symbols = [ Escape, Escape ],
-        actions [Group1] = [ SetMods(modifiers=none), SetMods(modifiers=Lock,clearLocks) ]    };
+        type = "ALPHABETIC", 
+        symbols = [ Escape, Escape ],
+        actions [Group1] = [ SetMods(modifiers=none), SetMods(modifiers=Lock,clearLocks) ]
+    };
+
     replace key <ESC> { [ Alt_L, Alt_L ] };
+
     include "shift(both_capslock_cancel)"
+
     include "level3(alt_switch)"
+
+    include "compose(paus)"
 
 };
 

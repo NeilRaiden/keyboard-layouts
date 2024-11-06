@@ -61,8 +61,17 @@
     <layout>
       <configItem>
         <name>phonem</name>
-        <shortDescription>phonemic</shortDescription>
+        <shortDescription>phonem</shortDescription>
         <description>English (Phonemic)</description>
+        <countryList><iso3166Id>US</iso3166Id></countryList>
+        <languageList><iso639Id>eng</iso639Id></languageList>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>phonem2</name>
+        <shortDescription>phonem2</shortDescription>
+        <description>English (Phonemic2)</description>
         <countryList><iso3166Id>US</iso3166Id></countryList>
         <languageList><iso639Id>eng</iso639Id></languageList>
       </configItem>

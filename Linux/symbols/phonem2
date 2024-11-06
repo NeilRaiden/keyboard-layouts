@@ -1,0 +1,147 @@
+// English (Phonemes) keyboard layout
+// Copyright (c) 2024 Neil Raiden (AGPL v.3)
+//
+// * This layout is based on "Writer+ QWERTY", except that level1 and level2 symbols type 
+//   English phonemes (including diphtongs) instead of latin symbols.
+// * The layout of the phonemes is based on Shavian QWERTY.
+// * The XCompose (on some Linux distros) doesn't convert multi-byte keysyms like U+FDDO,
+//   this layout is sendig single-byte code points from Latin-1 charset (U+00C0-U+00CF).
+//   Be aware that if you use any other keyboard layout that produces characters listed below,
+//   they will be converted into English phonemes:
+//   U+00C0-00CF: À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï"
+
+// ## Unshifted:
+// ```
+// ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──────┐
+// │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ bksp │
+// ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬────┤
+// │ tab │ɔɪ │ w │ ɛ │ r │ t │ ɑ │ ʌ │ ɪ │ ɒ │ p │ [ │ ] │ \  │
+// ├─────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┤
+// │ CapsL │ ə │ s │ d │ f │ g │ h │ j │ k │ l │ ; │ ' │  ent │
+// ├───────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴──────┤
+// │  shift  │ z │ɜːr│tʃ │ v │ b │ n │ m │ , │ . │ / │  shift │
+// ├──────┬──┴──┬┴───┴─┬─┴───┴───┴───┴───┴───┴─┬─┴───┴┬───────┤
+// │ ctrl │ win │ Lalt │         space         │ Ralt │  ctrl │
+// └──────┴─────┴──────┴───────────────────────┴──────┴───────┘
+// ```
+// ## Shifted:
+// ```
+// ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──────┐
+// │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ bksp │
+// ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬────┤
+// │ tab │aʊ │ɪə │eɪ │ɑːr│ θ │ ɔ │ ʊ │ i │əʊ │ɔːr│ ⟨ │ ⟩ │ |  │
+// ├─────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┤
+// │ CapsL │ æ │ ʃ │ər │aɪ │ · │ ð │dʒ │ « │ » │ ː │ " │  ent │
+// ├───────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴──────┤
+// │  shift  │ ʒ │ɛər│ɪər│ju │ ⸰ │ ŋ │ u │ ‹ │ › │ ? │  shift │
+// ├──────┬──┴──┬┴───┴─┬─┴───┴───┴───┴───┴───┴─┬─┴───┴┬───────┤
+// │ ctrl │ win │ Lalt │         space         │ Ralt │  ctrl │
+// └──────┴─────┴──────┴───────────────────────┴──────┴───────┘
+// ```
+// --------------------
+// Latin-1 Supplement:
+// A0-AF:  ¡¢£¤¥¦§¨©ª«¬­®¯ (A0=no-break space, AD=soft hyphen)
+// B0-BF: °±²³´µ¶·¸¹º»¼½¾¿
+// C0-CF: ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏ    <<< this line
+// D0-DF: ÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß
+// E0-EF: àáâãäåæçèéêëìíîï
+// F0-FF: ðñòóôõö÷øùúûüýþÿ
+//
+// keysyms from: /usr/include/X11/keysymdef.h
+// block: C0-CF: ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏ
+// These code points will be translated by ~/.XCompose according to following table:
+// .XCompose:
+// <U00C0> : ɔɪ  # q U0254 U026A        // À #define XK_Agrave                        0x00c0  /* U+00C0 LATIN CAPITAL LETTER A WITH GRAVE */
+// <U00C1> : aʊ  # Q U0061 U028A        // Á #define XK_Aacute                        0x00c1  /* U+00C1 LATIN CAPITAL LETTER A WITH ACUTE */
+// <U00C2> : ɪə  # W U026A U0259        // Â #define XK_Acircumflex                   0x00c2  /* U+00C2 LATIN CAPITAL LETTER A WITH CIRCUMFLEX */
+// <U00C3> : eɪ  # E U0065 U026A        // Ã #define XK_Atilde                        0x00c3  /* U+00C3 LATIN CAPITAL LETTER A WITH TILDE */
+// <U00C4> : ɑːr # R U0251 U02D0 U0072  // Ä #define XK_Adiaeresis                    0x00c4  /* U+00C4 LATIN CAPITAL LETTER A WITH DIAERESIS */
+// <U00C5> : əʊ  # O U0259 U028A        // Å #define XK_Aring                         0x00c5  /* U+00C5 LATIN CAPITAL LETTER A WITH RING ABOVE */
+// <U00C6> : ɔːr # P U0254 U0072        // Æ #define XK_AE                            0x00c6  /* U+00C6 LATIN CAPITAL LETTER AE */
+// <U00C7> : ər  # D U0259 U0072        // Ç #define XK_Ccedilla                      0x00c7  /* U+00C7 LATIN CAPITAL LETTER C WITH CEDILLA */
+// <U00C8> : aɪ  # F U0061 U026A        // È #define XK_Egrave                        0x00c8  /* U+00C8 LATIN CAPITAL LETTER E WITH GRAVE */
+// <U00C9> : dʒ  # J U0064 U0292        // É #define XK_Eacute                        0x00c9  /* U+00C9 LATIN CAPITAL LETTER E WITH ACUTE */
+// <U00CA> : ɜːr # x U025C U02D0 U0072  // Ê #define XK_Ecircumflex                   0x00ca  /* U+00CA LATIN CAPITAL LETTER E WITH CIRCUMFLEX */
+// <U00CB> : ɛər # X U025B U0259 U0072  // Ë #define XK_Ediaeresis                    0x00cb  /* U+00CB LATIN CAPITAL LETTER E WITH DIAERESIS */
+// <U00CC> : tʃ  # c U0074 U0283        // Ì #define XK_Igrave                        0x00cc  /* U+00CC LATIN CAPITAL LETTER I WITH GRAVE */
+// <U00CD> : ɪər # C U026A U0259 U0072  // Í #define XK_Iacute                        0x00cd  /* U+00CD LATIN CAPITAL LETTER I WITH ACUTE */
+// <U00CE> : ju  # V U006A U0075        // Î #define XK_Icircumflex                   0x00ce  /* U+00CE LATIN CAPITAL LETTER I WITH CIRCUMFLEX */
+// UNUSED                                  Ï #define XK_Idiaeresis                    0x00cf  /* U+00CF LATIN CAPITAL LETTER I WITH DIAERESIS */
+// --------------------
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "phonem" {
+
+    include "us(basic)"
+
+    name[Group1]= "English (Phonem2)";
+
+    key <TLDE>	{[ NoSymbol,	NoSymbol,	U00B4,		U2248	]};
+    key <AE01>	{[ NoSymbol,	NoSymbol,	U00B9,		U2081	]};
+    key <AE02>	{[ NoSymbol,	NoSymbol,	U00B2,		U2082	]};
+    key <AE03>	{[ NoSymbol,	NoSymbol,	U00b3,		U2083	]};
+    key <AE04>	{[ NoSymbol,	NoSymbol,	U2074,		U2084	]};
+    key <AE05>	{[ NoSymbol,	NoSymbol,	U2075,		U2085	]};
+    key <AE06>	{[ NoSymbol,	NoSymbol,	U2076,		U2086	]};
+    key <AE07>	{[ NoSymbol,	NoSymbol,	U2077,		U2087	]};
+    key <AE08>	{[ NoSymbol,	NoSymbol,	U2078,		U2088	]};
+    key <AE09>	{[ NoSymbol,	NoSymbol,	U2079,		U2089	]};
+    key <AE10>	{[ NoSymbol,	NoSymbol,	U2070,		U2080	]};
+    key <AE11>	{[ NoSymbol,	NoSymbol,	U2192,		U2190	]};
+    key <AE12>	{[ NoSymbol,	NoSymbol,	U2260,		U00B1	]};
+
+    key <AD01>  {[ U00C0,	U00C1,		U2026,		U231C	]}; //q: À=ɔɪ Á=aʊ    … (ellipsis)  ⌜ (top-L corner)
+    key <AD02>  {[ w,		U00C2,		U22EF,		U231D	]}; //w:  w   Â=ɪə    ⋯ (hor elli)  ⌝ (top-R corner)
+    key <AD03>  {[ U025B,	U00C3,		U0301,		U231E	]}; //e: ɛ=ɛ  Ã=eɪ    é (acute ac)  ⌞ (bot-L corner)
+    key <AD04>  {[ r,		U00C4,		U00AE,		U231F	]}; //r:  r   Ä=ɑr    · (registrd)  ⌟ (bot-R corner)
+    key <AD05>  {[ t,		U03B8,		U2122,		U03B8	]}; //t:  t    θ      ™ (trademak)  θ (theta)
+    key <AD06>  {[ U0251,	U0254,		U221A,		U0259	]}; //y:  ɑ    ɔ      √ (sq root)   ə (schwa)
+    key <AD07>  {[ U028C,	U028A,		U2191,		U028A	]}; //u:  ʌ    ʊ      ↑ (up arrow)  ʊ (upsilon)
+    key <AD08>  {[ U026A,	i,		U026A,		U02C8	]}; //i:  ɪ    i      ɪ (small I)   ˈ (high stress)
+    key <AD09>  {[ U0252,	U00C5,		U0252,		U0254	]}; //o:  ɒ   Å=əʊ    ɒ (tur alph)  ɔ (open o)
+    key <AD10>  {[ p,		U00C6,		U2117,		U03C0	]}; //p:  p   Æ=ɔr    ℗ (sound co)  π (pie)
+    key <AD11>  {[ bracketleft,	braceleft,	U27E8,		U27EE	]}; //    [    {      ⟨ (angle br)  ⟮ (math flat paren)
+    key <AD12>  {[ bracketright, braceright,	U27E9,		U27EF	]}; //    ]    }      ⟩ (angle br)  ⟯ (math flat paren)
+    key <BKSL>  {[ backslash,	bar,		U2022,		U25E6	]}; //    \    |      • (bullet)    ◦ (white bullet)
+
+    key <AC01>	{[ U0259,	U00E6,		U201C,		U0251	]}; //a:  ə    æ      “ (L d quot)  ɑ (alpha)
+    key <AC02>	{[ s,		U0283,		U201D,		U0283	]}; //s:  s    ʃ      ” (R d quot)  ʃ (esh)
+    key <AC03>	{[ d,		U00C7,		U2193,		U00F0	]}; //d:  d   Ç=ər    ↓ (down arr)  ð (eth)
+    key <AC04>	{[ f,		U00C8,		U00B0,		U028D	]}; //f:  f   È=aɪ    ° (degree)    ʍ (turned w)
+    key <AC05>	{[ g,		periodcentered,	U025B,		U02A4	]}; //g:  g    ·(UB7) ɛ (open E)    ʤ (dezsh)
+    key <AC06>	{[ h,		U00F0,		U2010,		U2011	]}; //h:  h    ð      ‐ (hyphen)    ‑ (no-br hyphen)
+    key <AC07>	{[ j,		U00C9,		U025C,		U02A7	]}; //j:  j   É=dʒ    ɜ (rev openE) ʧ (tesh)
+    key <AC08>	{[ k,		guillemotleft,	U2264,		U02CC	]}; //k:  k    «(Uab) ≤ (less or)   ˌ (low stress)
+    key <AC09>	{[ l,		guillemotright,	U2265,		U026B	]}; //l:  l    »(Ubb) ≥ (great or)  ɫ (dark L)
+    key <AC10>	{[ semicolon,	U02D0,		U00A7,		colon	]}; //    ;    ː (tri colon)   § (section)   : (colon)
+    key <AC11>	{[ apostrophe,	quotedbl,	U00D7,		U2612	]}; //    '    "      × (multipl)   ☒ (box with x) 
+
+    key <AB01>	{[ z,		U0292,		U2018,		U0292	]}; //z:  z     ʒ     ‘ (L sing quo)  ʒ (ezh)
+    key <AB02>	{[ U00CA,	U00CB,		U2019,		U00E6	]}; //x: Ê=ɜːr Ë=ɛər  ’ (R sing quo)  æ (ash)
+    key <AB03>	{[ U00CC,	U00CD,		U00A9,		U00A2	]}; //c: Ì=tʃ  Í=ɪər  © (copyright)   ¢ (cent)
+    key <AB04>	{[ v,		U00CE,		U2043,		U028C	]}; //v:  v    Î=ju   ⁃ (hyphen bul)  ʌ (turn V)
+    key <AB05>	{[ b,		U2E30,		U00B7,		U25CB	]}; //b:  b     ⸰     · (bullet)      ○ (wh circle)
+    key <AB06>	{[ n,		U014B,		U2013,		U014B	]}; //n:  n     ŋ     – (N-dash)      ŋ (engma)
+    key <AB07>	{[ m,		u,		U2014,		U00B5	]}; //m:  m     u     — (M-dash)      µ (micro)
+    key <AB08>	{[ comma,	U2039,		less,		U263A	]}; //    ,     ‹     < (less)        ☺ (smiley)
+    key <AB09>	{[ period,	U203A,		greater,	U2610	]}; //    .     ›     > (greater)     ☐ (ballot)
+    key <AB10>	{[ slash,	question,	U00F7,		U2611	]}; //    /     ?     ÷ (division)    ☑ (w/ check)
+
+    key <SPCE>	{[ space,	space,		emspace,	U200B	]}; // U2003 M-space, U200B zero-width space
+
+    replace key <CAPS> {
+        type = "ALPHABETIC", 
+        symbols = [ Escape, Escape ],
+        actions [Group1] = [ SetMods(modifiers=none), SetMods(modifiers=Lock,clearLocks) ]
+    };
+
+    replace key <ESC> { [ Alt_L, Alt_L ] };
+
+    include "shift(both_capslock_cancel)"
+
+    include "level3(alt_switch)"
+
+    include "compose(paus)"
+
+};
+
