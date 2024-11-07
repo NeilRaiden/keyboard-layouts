@@ -2,7 +2,18 @@
 
 What problems does this project aim to solve?
 
-## 1. Keyboard Layouts — for writers, authors, editors, publishers, students.
+ 1. [Writer QWERTY](#1-writer-qwerty) for typing common punctuation and typography symbols
+ 2. [English Phonemic](#2-english-phonemic) for typing in IPA symbols
+ 3. [Writer+ ASERTH](#3-writer+-aserth) for more efficient typing
+ 4. [Shavian Layouts](#4-shavian-layouts) for typing in Shavian Alphabet
+ 5. [Compilation and installation](#compilation-and-installation)
+ 6. [On-screen keyboards](#on-screen-keyboards)
+
+-----
+
+## 1. Writer QWERTY
+
+(_for typing most common punctuation marks straight from the keyboard_)
 
 ### Problem:
 
@@ -41,7 +52,9 @@ Occasionally some English teachers may need to type **English IPA phonemes**.
 
 -----
 
-## 2. Keyboard layout (English Phonemic) - for learners of spoken English.
+## 2. English Phonemic
+
+(_for learners of spoken English - to type in English IPA symbols_)
 
 ### Problem:
 
@@ -90,7 +103,9 @@ The **English Phonemic** keyboard layout may help you with that.
 
 -----
 
-## 3. Keyboard layout (Writer+ ASERTH)
+## 3. Writer+ ASERTH
+
+(_for more efficient typing_)
 
 ### Problem:
 
@@ -146,7 +161,9 @@ ASERT, Minimak and QWERTY-flip layouts focus on **reducing the learning curve** 
 
 -----
 
-## 4. Keyboard layouts for Shavian Alphabet.
+## 4. Shavian Layouts
+
+(_for typing in Shavian Alphabet_)
 
 ### Problem:
 
