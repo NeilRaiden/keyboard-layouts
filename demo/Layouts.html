@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"> <!-- HTML5 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <!-- HTML4 -->
+	<!-- match width with phone device widths -->
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="Neil Raiden - demo of keyboard layouts." />
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/trabajo" type="text/css"/>
+<style type="text/css">
+/* global CSS variables */
+:root {
+	--spacerwidth: 14px;
+	--keysheight:  28px;
+	--keyfontsize: 12pt;
+	--bodyopacity:  0.8;
+	--defaultfont: Higgins;
+}
+/* Adobe Blank 2 from */
+@font-face {
+    font-family: AdobeBlank2;
+    src: url("data:font/opentype;base64,T1RUTwAKAIAAAwAgQ0ZGIN6nWacAAAfMAAABMURTSUcAAAABAAAJCAAAAAhPUy8yAF+xmwAAARAAAABgY21hcAE0tLwAAAasAAABAGhlYWQIOsNZAAAArAAAADZoaGVhB1oD7wAAAOQAAAAkaG10eAPoAHwAAAkAAAAACG1heHAAAlAAAAABCAAAAAZuYW1lc0mXUAAAAXAAAAU6cG9zdP+4ADIAAAesAAAAIAABAAAAAgBB1Q6SE18PPPUAAwPoAAAAANKdP6AAAAAA0p0/oAB8/4gDbANwAAAAAwACAAAAAAAAAAEAAANw/4gAAAPoAHwAfANsAAEAAAAAAAAAAAAAAAAAAAACAABQAAACAAAAAwPoAZAABQAAAooCWAAAAEsCigJYAAABXgAyANwAAAAAAAAAAAAAAAD3/67/+9///w/gAD8AAAAAQURCTwBAAAD//wNw/4gAAANwAHhgLwH/AAAAAAAAAAAAAAAgAAAAAAALAIoAAwABBAkAAACUAAAAAwABBAkAAQAaAJQAAwABBAkAAgAOAK4AAwABBAkAAwA4ALwAAwABBAkABAAaAJQAAwABBAkABQB0APQAAwABBAkABgAWAWgAAwABBAkACAA0AX4AAwABBAkACwA0AbIAAwABBAkADQKWAeYAAwABBAkADgA0BHwAQwBvAHAAeQByAGkAZwBoAHQAIACpACAAMgAwADEAMwAsACAAMgAwADEANQAgAEEAZABvAGIAZQAgAFMAeQBzAHQAZQBtAHMAIABJAG4AYwBvAHIAcABvAHIAYQB0AGUAZAAgACgAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGEAZABvAGIAZQAuAGMAbwBtAC8AKQAuAEEAZABvAGIAZQAgAEIAbABhAG4AawAgADIAUgBlAGcAdQBsAGEAcgAyAC4AMAAwADEAOwBBAEQAQgBPADsAQQBkAG8AYgBlAEIAbABhAG4AawAyADsAQQBEAE8AQgBFAFYAZQByAHMAaQBvAG4AIAAyAC4AMAAwADEAOwBQAFMAIAAyAC4AMAAwADEAOwBoAG8AdABjAG8AbgB2ACAAMQAuADAALgA4ADgAOwBtAGEAawBlAG8AdABmAC4AbABpAGIAMgAuADUALgA2ADUAMAAxADIAQQBkAG8AYgBlAEIAbABhAG4AawAyAEEAZABvAGIAZQAgAFMAeQBzAHQAZQBtAHMAIABJAG4AYwBvAHIAcABvAHIAYQB0AGUAZABoAHQAdABwADoALwAvAHcAdwB3AC4AYQBkAG8AYgBlAC4AYwBvAG0ALwB0AHkAcABlAC8AVABoAGkAcwAgAEYAbwBuAHQAIABTAG8AZgB0AHcAYQByAGUAIABpAHMAIABsAGkAYwBlAG4AcwBlAGQAIAB1AG4AZABlAHIAIAB0AGgAZQAgAFMASQBMACAATwBwAGUAbgAgAEYAbwBuAHQAIABMAGkAYwBlAG4AcwBlACwAIABWAGUAcgBzAGkAbwBuACAAMQAuADEALgAgAFQAaABpAHMAIABGAG8AbgB0ACAAUwBvAGYAdAB3AGEAcgBlACAAaQBzACAAZABpAHMAdAByAGkAYgB1AHQAZQBkACAAbwBuACAAYQBuACAAIgBBAFMAIABJAFMAIgAgAEIAQQBTAEkAUwAsACAAVwBJAFQASABPAFUAVAAgAFcAQQBSAFIAQQBOAFQASQBFAFMAIABPAFIAIABDAE8ATgBEAEkAVABJAE8ATgBTACAATwBGACAAQQBOAFkAIABLAEkATgBEACwAIABlAGkAdABoAGUAcgAgAGUAeABwAHIAZQBzAHMAIABvAHIAIABpAG0AcABsAGkAZQBkAC4AIABTAGUAZQAgAHQAaABlACAAUwBJAEwAIABPAHAAZQBuACAARgBvAG4AdAAgAEwAaQBjAGUAbgBzAGUAIABmAG8AcgAgAHQAaABlACAAcwBwAGUAYwBpAGYAaQBjACAAbABhAG4AZwB1AGEAZwBlACwAIABwAGUAcgBtAGkAcwBzAGkAbwBuAHMAIABhAG4AZAAgAGwAaQBtAGkAdABhAHQAaQBvAG4AcwAgAGcAbwB2AGUAcgBuAGkAbgBnACAAeQBvAHUAcgAgAHUAcwBlACAAbwBmACAAdABoAGkAcwAgAEYAbwBuAHQAIABTAG8AZgB0AHcAYQByAGUALgBoAHQAdABwADoALwAvAHMAYwByAGkAcAB0AHMALgBzAGkAbAAuAG8AcgBnAC8ATwBGAEwAAAAAAAEAAwAKAAAADAANAAAAAAD0AAAAAAAAABMAAAAAAADX/wAAAAEAAOAAAAD9zwAAAAEAAP3wAAD//QAAAAEAAQAAAAH//QAAAAEAAgAAAAL//QAAAAEAAwAAAAP//QAAAAEABAAAAAT//QAAAAEABQAAAAX//QAAAAEABgAAAAb//QAAAAEABwAAAAf//QAAAAEACAAAAAj//QAAAAEACQAAAAn//QAAAAEACgAAAAr//QAAAAEACwAAAAv//QAAAAEADAAAAAz//QAAAAEADQAAAA3//QAAAAEADgAAAA7//QAAAAEADwAAAA///QAAAAEAEAAAABD//QAAAAEAAwAAAAAAAP+1ADIAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAIAAQEBDEFkb2JlQmxhbmsyAAEBAS34G/gciwwe+B0B+B4Ci/sM+gD6BAUeKgAfDB+NDCL3Uw/3WRH3Vgwl96wMJAAFAQEGDlZjcEFkb2JlSWRlbnRpdHlDb3B5cmlnaHQgMjAxMywgMjAxNSBBZG9iZSBTeXN0ZW1zIEluY29ycG9yYXRlZCAoaHR0cDovL3d3dy5hZG9iZS5jb20vKS5BZG9iZSBCbGFuayAyQWRvYmVCbGFuazItMgAAAAABAAAAAAIBAUxO+nz7DLf6JLcB9xC3+Sy3A/cQ+gQV/nz5hPp8B/1Y/icV+dIH98X8MwWmsBX7xfg3Bfj2BqZiFf3SB/vF+DMFcGYV98X8NwX89gYOiw4AAQEBCfgfDCaX97kS+46LHAVGiwa9Cr0LAAAAA+gAfAAAAAAAAAABAAAAAA==");
+}
+
+/* font faces */
+@font-face {
+	font-family:Andagii;
+	src: url('./fonts/ANDAGII.TTF');
+	src: url('./fonts/ANDAGII.TTF') format('truetype');
+}
+@font-face {
+	font-family:Cafe;
+	src: url('./fonts/CafeMajestic-Regular.otf');
+	src: url('./fonts/CafeMajestic-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family:CafeI;
+	src: url('./fonts/CafeMajestic-Inline.otf');
+	src: url('./fonts/CafeMajestic-Inline.otf') format('opentype');
+}
+@font-face {
+	font-family:DoolittI;
+	src: url('./fonts/DoolittleGaramond-Italic.otf');
+	src: url('./fonts/DoolittleGaramond-Italic.otf') format('opentype');
+}	
+@font-face {
+	font-family:DoolittR;
+	src: url('./fonts/DoolittleGaramond-Regular.otf');
+	src: url('./fonts/DoolittleGaramond-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family:Ghotic;
+	src: url('./fonts/EslGothicUnicode.ttf');
+	src: url('./fonts/EslGothicUnicode.ttf') format('truetype');
+}
+@font-face {
+	font-family:Fairfax;
+	src: url('./fonts/FairfaxHD.ttf');
+	src: url('./fonts/FairfaxHD.ttf') format('truetype');
+}
+@font-face {
+	font-family:Higgins;
+	src: url('./fonts/HenryHigginsSans-Regular.otf');
+	src: url('./fonts/HenryHigginsSans-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family:IntAliaR;
+	src: url('./fonts/InterAlia-Regular.woff2');
+	src: url('./fonts/InterAlia-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family:IntAliaI;
+	src: url('./fonts/InterAlia-Italic.woff2');
+	src: url('./fonts/InterAlia-Italic.woff2') format('woff2');
+}
+@font-face {
+	font-family:IntAliaB;
+	src: url('./fonts/InterAlia-Bold.woff2');
+	src: url('./fonts/InterAlia-Bold.woff2') format('woff2');
+}
+@font-face {
+	font-family:IntAliaBI;
+	src: url('./fonts/InterAlia-BoldItalic.woff2');
+	src: url('./fonts/InterAlia-BoldItalic.woff2') format('woff2');
+}
+@font-face {
+	font-family:MPH;
+	src: url('./fonts/MPH-2B-Damase_v2.ttf');
+	src: url('./fonts/MPH-2B-Damase_v2.ttf') format('truetype');
+}
+@font-face {
+	font-family:Noto;
+	src: url('./fonts/NotoSansShavian-Regular.ttf');
+	src: url('./fonts/NotoSansShavian-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family:Ormin;
+	src: url('./fonts/Ormin-Regular.otf');
+	src: url('./fonts/Ormin-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family:Trabajo;
+	src: url('./fonts/Trabajo.otf');
+	src: url('./fonts/Trabajo.otf') format('opentype');
+}
+@font-face {
+	font-family: 'TrabajoRegular';
+	font-weight: normal;
+	font-style: normal;
+}
+/* SegoeUI-Historic is only on Microsoft Windows machines */
+@font-face {
+	font-family:Segoe;
+//	src: url('./fonts/SegoeUI-Historic.ttf');
+	src: url('c:/Windows/Fonts/seguihis.ttf');
+	src: url(c:/Windows/Fonts/seguihis.ttf) format('truetype');
+}
+/* ----------- styles ----------- */
+body { 
+	font-family: var(--defaultfont), Segoe; 
+/*	background-color: transparent; */
+	background-color: rgba(232, 232, 255, 0.9);
+	background:none transparent;
+/*	opacity: 0.7; */
+	opacity: var(--bodyopacity);
+	text-align: center;
+	font-size: 10pt;
+}
+h1	{	text-align: center; }
+h3	{	text-align: center; }
+p   {
+	font-weight: normal;
+	text-align: left;
+}
+/* ----------- registry tweak ----------- */
+#regkey { text-align:center; font-family:monospace; }
+pre red { color: red; }
+pre blu { color: blue; }
+pre sil { background-color: silver; }
+pre lg { background-color: lightgreen; font-weight: bold; }
+pre ly { background-color: yellow; font-weight: bold; }
+li red { color: red; }
+li blu { color: blue; }
+li sil { background-color: silver; }
+li lg { background-color: lightgreen; font-weight: bold; }
+li ly { background-color: yellow; font-weight: bold; }
+/* ---- reg tweak styles end ------ */
+.pAndagii   { font-family: Andagii, AdobeBlank2;   font-size: 16pt; }
+.pCafeI     { font-family: CafeI, AdobeBlank2;     font-size: 16pt; }
+.pCafeR     { font-family: CafeR, AdobeBlank2;     font-size: 16pt; }
+.pDoolittI  { font-family: DoolittI, AdobeBlank2;  font-size: 16pt; }
+.pDoolittR  { font-family: DoolittR, AdobeBlank2;  font-size: 16pt; }
+.pGhotic    { font-family: Ghotic, AdobeBlank2;    font-size: 16pt; }
+.pFairfax   { font-family: Fairfax, AdobeBlank2;   font-size: 16pt; }
+.pHiggins   { font-family: Higgins, AdobeBlank2;   font-size: 16pt; }
+.pIntAliaR  { font-family: IntAliaR, AdobeBlank2;  font-size: 16pt; }
+.pIntAliaI  { font-family: IntAliaI, AdobeBlank2;  font-size: 16pt; }
+.pIntAliaB  { font-family: IntAliaB, AdobeBlank2;  font-size: 16pt; }
+.pIntAliaBI { font-family: IntAliaBI, AdobeBlank2; font-size: 16pt; }
+.pMPH       { font-family: MPH, AdobeBlank2;       font-size: 16pt; }
+.pNoto      { font-family: Noto, AdobeBlank2;      font-size: 16pt; }
+.pOrmin     { font-family: Ormin, AdobeBlank2;     font-size: 16pt; }
+.pTrabajo   { font-family: Trabajo, AdobeBlank2;   font-size: 16pt; }
+.pSegoe     { font-family: Segoe, AdobeBlank2;     font-size: 16pt; }
+ul { text-align: left; font-weight:normal; }
+ol { text-align: left; font-weight:normal; }
+textarea {
+	font-family: var(--defaultfont), Segoe; 
+	font-size: 14pt;
+	margin-left: auto;
+	margin-right: auto;
+}
+.rounded-corners {
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: separate;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: WhiteSmoke; /* #F5F5F5 */
+/*	Gainsboro; /* #DCDCDC; */
+}
+.rounded-corners td {
+	border-collapse: separate;
+	border-radius: 7px;
+	border: 1px solid black;
+	width: 12px;
+	height: 12px;
+	text-align: center;
+	background-color: Silver;
+}
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 7px;
+	border: 1px solid black;
+}
+th { 	background-color: LightSteelBlue; }
+td {
+	border: 0px solid black;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-align: left;
+	font-size: 10pt;
+/*	border-style: none none solid none; */
+}
+.bton {
+/*	background-color: Silver;
+/*	Silver; #C0C0C0
+/*	SlateGrey; #708090
+/*	LightSlateGrey; #778899
+/*	LightSteelBlue; #B0C4DE
+/*	LightGray; #D3D3D3 */
+/*	Gray; #808080 */
+/*	DimGray #696969 */
+/*	DarkGrey; #A9A9A9 */
+	display: table;
+	border: none;
+	border-radius: 7px;
+	color: black;
+	text-align: center;
+/*	font-size: 16pt; */
+	font-family: var(--defaultfont), Segoe;
+	font-size: var(--keyfontsize);
+	font-weight: bold;
+	padding: 3px;
+	width: 100%;
+	height: var(--keysheight);
+	cursor: pointer;
+}
+.bton:hover {	background-color: RoyalBlue; }
+.btonpressed {
+	background-color: RoyalBlue;
+	margin:0; /* doesnt do a thing */
+	padding: 5px;
+	display: table;
+	border: none;
+	border-radius: 7px;
+	color: black;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+.trSpacer td {
+	width: var(--spacerwidth);
+	height: 0px;
+	border: 0px;
+}
+.divtab {
+	display: table;
+	width: auto;
+	margin: auto; /* shrink and center */
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+.divrow {
+	display: table-row;
+}
+.divcell {
+	display: table-cell;
+	border: 0px solid #ddd;
+}
+.divcellch {
+	display: table-cell;
+	padding: 3px;
+	border: 0px solid #ddd;
+	font-size:14pt;
+	font-style:bold;
+}
+.desc {
+	width: 400px;
+	border:0px solid blue;
+	padding-left:10px;
+	font-size:11pt;
+}
+</style>
+
+<script>
+const emptY = [
+	'','','','','','','','','','','','','','','','','','','','','','','','','','',
+	'','','','','','','','','','','','','','','','','','','','','' ];
+
+// English QWERTY (standard)
+const qwertyA = [
+	'`','1','2','3','4','5','6','7','8','9','0','-','=',
+	'q','w','e','r','t','y','u','i','o','p','[',']','\\',
+	'a','s','d','f','g','h','j','k','l',';', "'",
+	'z','x','c','v','b','n','m',',','.','/' ];
+const qwertyB = [
+	'~','!','@','#','$','%','^','&','*','(',')','_','+',
+	'Q','W','E','R','T','Y','U','I','O','P','{','}','|',
+	'A','S','D','F','G','H','J','K','L',':','\"',
+	'Z','X','C','V','B','N','M','<','>','?' ];
+
+// English Writer (&#x0301 - combining acute mark on layerC:keyE example:⟨é⟩)
+const writerA = [ 
+	'`','1','2','3','4','5','6','7','8','9','0','-','=',
+	'q','w','e','r','t','y','u','i','o','p','[',']','\\',
+	'a','s','d','f','g','h','j','k','l',';','\'',
+	'z','x','c','v','b','n','m',',','.','/' ];
+const writerB = [ 
+	'~','!','@','#','$','%','^','&','*','(',')','_','+',
+	'Q','W','E','R','T','Y','U','I','O','P','{','}','|',
+	'A','S','D','F','G','H','J','K','L',':','\"',
+	'Z','X','C','V','B','N','M','<','>','?' ];
+const writerC = [ 
+	'´','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹','⁰','→','≠',
+	'…','⋯','́','®','™','√','↑','','','℗','⟨','⟩','•',
+	'“','”','↓','°','','‐','','«','»','§','×',
+	'‘','’','©','⁃','·','–','—','‹','›','÷' ];
+const writerD = [ 
+	'≈','₁','₂','₃','₄','₅','₆','₇','₈','₉','₀','←','±',
+	'⌜','⌝','⌞','⌟', '', '', '','ˈ', '','π','⟮','⟯','◦',
+	 '', '', '', '', '','‑', '','ˌ', '','ː','☒',
+	 '', '','¢', '','○', '','µ','☺','☐','☑' ];
+
+// English Writer+
+const writepA = [ 
+	'`','1','2','3','4','5','6','7','8','9','0','-','=',
+	'q','w','e','r','t','y','u','i','o','p','[',']','\\',
+	'a','s','d','f','g','h','j','k','l',';', '\'',
+	'z','x','c','v','b','n','m',',','.','/' ];
+const writepB = [ 
+	'~','!','@','#','$','%','^','&','*','(',')','_','+',
+	'Q','W','E','R','T','Y','U','I','O','P','{','}','|',
+	'A','S','D','F','G','H','J','K','L',':','\"',
+	'Z','X','C','V','B','N','M','<','>','?' ];
+const writepC = [ 
+	'´','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹','⁰','→','≠',
+	'…','⋯','́','®','™','√','↑','ɪ','ɒ','℗','⟨','⟩','•',
+	'“','”','↓','°','ɛ','‐','ɜ','«','»','§','×',
+	'‘','’','©','⁃','·','–','—','‹','›','÷' ];
+const writepD = [ 
+	'≈','₁','₂','₃','₄','₅','₆','₇','₈','₉','₀','←','±',
+	'⌜','⌝','⌞','⌟','θ','ə','ʊ','ˈ','ɔ','π','⟮','⟯','◦',
+	'ɑ','ʃ','ð','ʍ','ʤ','‑','ʧ','ˌ','ɫ','ː','☒',
+	'ʒ','æ','¢','ʌ','○','ŋ','µ','☺','☐','☑' ];
+
+// English Phonemic
+const phonemA = [ 
+	 '`',   '1',   '2',   '3', '4', '5',  '6', '7',  '8',  '9',   '0', '-',  '=',
+	'ɔɪ',   'w',   'ɛ',   'r', 't', 'ɑ',  'ʌ', 'ɪ',  'ɒ',  'p',   '[', ']', '\\',
+	 'ə',   's',   'd',   'f', 'g', 'h',  'j', 'k',  'l',  ';',   "'",
+	 'z', 'ɜːr',  'tʃ',   'v', 'b', 'n',  'm', ',',  '.',  '/' ];
+const phonemB = [ 
+	 '~',   '!',   '@',   '#', '$', '%',  '^', '&',  '*',   '(',  ')', '_',  '+',
+	'aʊ',  'ɪə',  'eɪ', 'ɑːr', 'θ', 'ɔ',  'ʊ', 'i', 'əʊ', 'ɔːr',  '⟨', '⟩',  '|',
+	 'æ',   'ʃ',  'ər',  'aɪ', '·', 'ð', 'dʒ', '«',  '»',   'ː', '\"',
+	 'ʒ', 'ɛər', 'ɪər',  'ju', '⸰', 'ŋ',  'u', '‹',  '›',   '?' ];
+const phonemC = [ 
+	 '´',   '¹',   '²',   '³', '⁴', '⁵', '⁶',  '⁷',  '⁸',   '⁹',  '⁰', '→',  '≠',
+	 '…',   'ʍ',   'ɜ',   'ɹ',  '',  '', '↑',  'ˈ',   '',    '',  '{', '}',  '•',
+	 '“',   '”',   '↓',   '°',  '', '‐', 'ʤ',  'ˌ',  'ɫ',   ':',  '×',
+	 '‘',   '’',   'ʧ',   '⁃', '·', '–', '—',  '<',  '>',   '÷' ];
+const phonemD = [ 
+	 '≈',   '₁',   '₂',   '₃', '₄', '₅', '₆',  '₇', '₈',    '₉',  '₀', '←',  '±',
+	 '⌜',   '⌝',   '⌞',   '⌟',  '',  '',  '',   '',  '',    'π',  '⟮', '⟯',  '◦',
+	  '',    '',    '',    '',  '', '‑',  '',   '',  '',    '§',  '☒',
+	  '',    '',    '',    '', '○',  '', 'µ',  '☺', '☐',    '☑' ];
+
+// Shaw QWERTY (Keyman) - classic
+const shawqwA = [
+	'`','1','2','3','4','5','6','7','8','9','0','-','=',
+	'𐑶','𐑢','𐑧','𐑮','𐑑','𐑭','𐑳','𐑦','𐑪','𐑐','[',']','\\',
+	'𐑩','𐑕','𐑛','𐑓','𐑜','𐑣','𐑘','𐑒','𐑤',';', "'",
+	'𐑟','𐑻','𐑗','𐑝','𐑚','𐑯','𐑥',',','.','/' ];
+const shawqwB = [ 
+	'~','!','@','#','$','%','^','&','*','(',')','_','+',
+	'𐑬','𐑾','𐑱','𐑸','𐑔','𐑷','𐑫','𐑰','𐑴','𐑹','{','}','|',
+	'𐑨','𐑖','𐑼','𐑲','·','𐑞','𐑡','«','»',':','\"',
+	'𐑠','𐑺','𐑽','𐑿','⸰','𐑙','𐑵','‹','›','?'  ];
+
+// Shaw QWERTY+ (A+B = Shavian QWERTY ; D = Writer+ ; C guillemets replaced by "≤" and "≥")
+const shawqpA = shawqwA;
+const shawqpB = shawqwB;
+const shawqpC = [
+	'´','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹','⁰','→','≠',
+	'…','⋯','́','®','™','√','↑','ɪ','ɒ','℗','⟨','⟩','•',
+	'“','”','↓','°','ɛ','‐','ɜ','≤','≥','§','×',
+	'‘','’','©','⁃','·','–','—','‹','›','÷' ];
+const shawqpD = writepD;
+
+// Shaw Imperial (Neil Raiden version)
+const shawImA = [ 
+	'⸰','·','𐑬','𐑻','𐑫','𐑺','𐑜','𐑖','𐑗','𐑙','𐑘','𐑡','𐑔',
+	'𐑭','𐑷','𐑵','𐑱','𐑳','𐑓','𐑞','𐑤','𐑥','𐑒','𐑢','𐑣','𐑠',  
+	'𐑪','𐑨','𐑦','𐑩','𐑧','𐑐','𐑯','𐑑','𐑮','𐑕','𐑛',
+	'𐑾','𐑲','𐑴','𐑰','𐑚','𐑝','𐑟',',','.','/' ];
+const shawImB = [ 
+    '◦','•','𐑶','𐑸','𐑿','𐑹','𐑼','𐑽','*','-','(',')','=',
+	'q','w','e','r','t','y','u','i','o','p',"!",'&','~', 
+    'a','s','d','f','g','h','j','k','l','\'','"',
+	'z','x','c','v','b','n','m',';',':','?' ];
+const shawImC = [ 
+    '0','1','2','3','4','5','6','7','8','9','[',']','_',
+    'Q','W','E','R','T','Y','U','I','O','P','{','}','|',
+    'A','S','D','F','G','H','J','K','L','«','»',
+    'Z','X','C','V','B','N','M','“','”','…' ];
+const shawImD = [
+    '`','´','@','#','$','%','^','&','×','÷','<','>', '+',
+	 '', '', '', '', '', '', '', '', '', '', '', '','\\',
+	 '', '', '', '', '','‐', '', '', '','‹','›',
+	 '', '', '','⁃','○','–','—','‘','’','' ];
+
+// Shaw 2L (as published on Keyman; author: Haley Halcyon, license: MIT)
+// * - extended Shavian:  𐑢︀*=⟨xʷ⟩ or ⟨ʍ⟩, 𐑤︀*=⟨ɫ⟩, 𐑺︀*=⟨ɛ⟩ or ⟨ɛə⟩, 𐑻︀*=⟨ɜ⟩ or ⟨ɜː⟩, 𐑜︀*=⟨ɣ⟩, 𐑒︀*=⟨x⟩
+// * U+10452, U+FE00 : 𐑒︀ : IPA: /x/ (soft h)
+// * U+1045C, U+FE00 : 𐑜︀ : IPA: /ɣ/ (hard H)
+// * U+10462, U+FE00 : 𐑢︀ : IPA: /ʍ/ /hw/ (when? where? who whacked whom with what and why, which hwas hwitnessed by whom?)
+// * U+10464, U+FE00 : 𐑤︀ : IPA: /ɬ/ (dark /l/ or velarized /l/)
+// * U+1047A, U+FE00 : 𐑺︀ : IPA: /ɛə/ or /eə/ or «𐑧𐑩»
+// * U+1047B, U+FE00 : 𐑻︀ : IPA: /ɜː/
+// the only font capable of displaying extended Shavian symbols is InterAlia!
+const shaw2LA = [
+	'`','1','2','3','4','5','6','7','8','9','0','-', '=',
+	'𐑵','𐑧','𐑨','𐑭','𐑬','·','𐑝','𐑢','𐑞','𐑣','[',']','\\',
+	'𐑤','𐑦','𐑩','𐑯','𐑷','𐑖','𐑑','𐑕','𐑒','𐑐',"'",
+	'𐑪','𐑳','𐑼','𐑴','«','»','𐑗',',','.','/' ];
+const shaw2LB = [
+	'~', '!', '@', '#', '$', '%', '^', '&', '*', '(',  ')', '_',  '+',
+	'𐑿', '𐑱', '𐑲', '𐑸', '𐑶', '⸰', '𐑓', '𐑘', '𐑔', '𐑙',  '{', '}',  '|',
+	'𐑮', '𐑰', '𐑾', '𐑥', '𐑹', '𐑠', '𐑛', '𐑟', '𐑜', '𐑚', '\"',
+	'𐑺', '𐑻', '𐑽', '𐑫', '‹', '›', '𐑡', ';', ':', '?' ];
+const shaw2LC = [
+	 '',  '', '¥', '£', '€', '‰',  '',  '',  '',  '',  '', '—', '≠',
+	 '',  '',  '',  '',  '',  '',  '', '𐑢︀', '𐑞',  '',  '',  '',  '',
+	'𐑤︀',  '',  '',  '',  '',  '',  '',  '', '𐑒︀',  '',  '',
+	 '',  '',  '',  '', '“', '”',  '', '<', '>', '‽' ];
+const shaw2LD = [
+	 '', '', '', '', '', '', '', '', '', '', '','–','≈',
+	 '', '', '', '', '', '', '', '', '', '', '', '', '',
+	 '', '', '', '', '', '', '', '','𐑜︀', '', '',
+	'𐑺︀','𐑻︀', '', '','‘','’', '','≤','≥', '' ];
+
+// English (ASERTH)
+// based on QWERTY-Flip keyboard layout by Nick Gravgaard (https://nick-gravgaard.com/qwerty-flip/)
+// source:; https://github.com/nick-gravgaard/qwerty-flip
+// based on letter usage statistics by Peter Norvig (https://norvig.com/mayzner.html)
+const aserthA = [
+	'`','1','2','3','4','5','6','7','8','9','0','-','=',
+	'q','w','d','f','g','y','u','k','p',';','[',']','\\',
+	'a','s','e','r','t','h','n','i','o','l', "'",
+	'z','x','c','v','b','j','m',',','.','/' ];
+const aserthB = [
+	'~','!','@','#','$','%','^','&','*','(',')','_','+',
+	'Q','W','D','F','G','Y','U','K','P',':','{','}','|',
+	'A','S','E','R','T','H','N','I','O','L','\"',
+	'Z','X','C','V','B','J','M','<','>','?' ];
+const aserthC = [ 
+	'´','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹','⁰','→','≠',
+	'…','⋯','↓','°','ɛ','√','↑','§','℗','×','⟨','⟩','•',
+	'“','”','́','®','™','‐','–','ɪ','ɒ','«','»',
+	'‘','’','©','⁃','·','ɜ','—','÷','‹','›' ];
+const aserthD = [ 
+	'≈','₁','₂','₃','₄','₅','₆','₇','₈','₉','₀','←','±',
+	'⌜','⌝','⌞','⌟','ʤ','ə','ʊ','ˈ','π','ː','⟮','⟯','◦',
+	'ɑ','ʃ','ð','ʍ','θ','‑','ŋ','ˌ','ɔ','ɫ','☒',
+	'ʒ','æ','¢','ʌ','○','ʧ','µ','☺','☐','☑' ];
+
+/* Your Own Custom Keyboard Layout */
+/* If you are reading this, that means either you are:
+ · trying to modify (or make corrections to) an existing layout, or
+ · trying to create a new one
+If it's the first option, then simply modify any of the tables defined above.
+If it's the second option, then here is how you do it:
+ 1. Modify and un‐comment the layout tables below (customA, customB, customC, customD)
+ 2. The "custom_" tables are already added to the laoutSwitch() function — no need to do anything
+ 3. If you want to make it default, then change the "const keys[ABCD] = ..." definitions at the bottom of this <script> section
+ 4. Modify and un‐comment the <tr>...</tr> in the <div id="kboardTable"...> tag
+ 5. Save and refresh page with F5
+ 6. Oh, and remember to update the "Copyright (c) 202_ Your Name (AGPL v3)" line 
+Good Luck! :)
+*/
+/* custom tables * /
+// unshifted:
+const customA = [
+	'','','','','','','','','','','','','',
+	 'T','h','i','s','','i','s','','Y','o','u','r','',
+	  'c','u','s','t','o','m','','','','','',
+	   '','','','','l','a','y','o','u','t' ];
+// shifted:
+const customB = [ 
+	'','','','','','','','','','','','','',
+	 '','','','','','','','','','','','','',
+	  '','','','','','','','','','','',
+	   '','','','','','','','','','' ];
+// AltGR (aka right-alt):
+const customC = [ 
+	'','','','','','','','','','','','','',
+	 '','','','','','','','','','','','','',
+	  '','','','','','','','','','','',
+	   '','','','','','','','','','' ];
+// AltGr + Shift:
+const customD = [ 
+	'','','','','','','','','','','','','',
+	 '','','','','','','','','','','','','',
+	  '','','','','','','','','','','',
+	   '','','','','','','','','','' ];
+/* */
+/* ----------- functions ----------- */
+function layoutLoad() {
+	let butId = "";
+	for ( let i=0; i<47; i++ ) {
+		butId = "kA" + i;
+		var buttonID = document.getElementById(butId);
+		buttonID.innerText = keysA[i];
+//		buttonID.innerHTML = keysA[i];
+		butId = "kB" + i;
+		buttonID = document.getElementById(butId);
+		buttonID.innerText = keysB[i];
+//		buttonID.innerHTML = keysB[i];
+		butId = "kC" + i;
+		buttonID = document.getElementById(butId);
+		buttonID.innerText = keysC[i];
+//		buttonID.innerHTML = keysC[i];
+		butId = "kD" + i;
+		buttonID = document.getElementById(butId);
+		buttonID.innerText = keysD[i];
+//		buttonID.innerHTML = keysD[i];
+	}
+}
+function keyA(key) { insertChar(keysA[key]); }
+function keyB(key) { insertChar(keysB[key]); }
+function keyC(key) { insertChar(keysC[key]); }
+function keyD(key) { insertChar(keysD[key]); }
+function layoutSwitch(laiout) {
+	let kbName = "English QWERTY";
+	let x=0;
+  	let z=4;
+  	document.getElementById(currentLayout + 'Desc').style.display = 'none';
+  	currentLayout=laiout;
+  	document.getElementById(currentLayout + 'Desc').style.display = 'block';
+	switch(laiout) {
+		case "qwerty"    : keysA=qwertyA; keysB=qwertyB; keysC=emptY;   keysD=emptY;   kbName="English QWERTY";   x=0;z=0; break;
+		case "phonemic"  : keysA=phonemA; keysB=phonemB; keysC=phonemC; keysD=phonemD; kbName="English Phonemic"; x=1;z=1; break;
+		case "writer"    : keysA=writerA; keysB=writerB; keysC=writerC; keysD=writerD; kbName="Writer QWERTY";    x=0;z=2; break;
+		case "writerPlus": keysA=writepA; keysB=writepB; keysC=writepC; keysD=writepD; kbName="Writer+ QWERTY";   x=0;z=3; break;
+		case "aserth"    : keysA=aserthA; keysB=aserthB; keysC=aserthC; keysD=aserthD; kbName="Writer+ ASERTH";   x=0;z=4; break; // (QWERTY-Flip)
+		case "shawQwerty": keysA=shawqwA; keysB=shawqwB; keysC=emptY;   keysD=emptY;   kbName="Shavian QWERTY";   x=1;z=5; break; // (Keyman version)
+		case "shawPlus"  : keysA=shawqwA; keysB=shawqwB; keysC=shawqpC; keysD=writepD; kbName="Shavian+ QWERTY";  x=1;z=6; break; // 
+		case "shawEmpire": keysA=shawImA; keysB=shawImB; keysC=shawImC; keysD=shawImD; kbName="Shavian Imperial"; x=0;z=7; break; // 
+		case "shaw2L"    : keysA=shaw2LA; keysB=shaw2LB; keysC=shaw2LC; keysD=shaw2LD; kbName="Shavian 2-Layer";  x=0;z=8; break; // 
+		case "custom"    : keysA=customA; keysB=customB; keysC=customC; keysD=customD; kbName="Custom Layout";    x=0;z=10; break; // Your Own Custom Layout
+	}
+	layerSwitch("kbA");
+	document.getElementById("kboardButton").innerText = kbName;
+	//reload all buttons with symbols from new layout
+	layoutLoad();
+	var cheatButton = document.getElementById('cheatButton');
+	if ( x == 1 ) {
+		cheatButton.style.display='inline-block';
+	}
+	else {
+		cheatButton.style.display='none';
+		document.getElementById('cheatTable').style.display='none';
+	}
+}
+function insertChar(ch) {
+	const textArea = document.getElementById('txtWin');
+	textArea.focus();
+	const cursorPos = textArea.selectionStart;
+	let text = textArea.value;
+	let newTextA = text.slice(0,cursorPos);
+	let newTextB = text.slice(cursorPos);
+	textArea.value = newTextA + ch + newTextB;
+	textArea.setSelectionRange(cursorPos+ch.length, cursorPos+ch.length);
+}
+function copyToClip() {
+	var copyText = document.getElementById("txtWin");
+	copyText.focus();
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); // For mobile devices
+	navigator.clipboard.writeText(copyText.value);
+	//alert("Copied to clipboard: \n" + copyText.value);
+}
+function clearTextArea() {
+	const textArea = document.getElementById('txtWin');
+	textArea.focus();
+//	textArea.innerHTML = "";
+	textArea.value = "";
+	textArea.setSelectionRange(0, 0);
+}
+function backSpace() {
+	let textArea = document.getElementById('txtWin');
+	let cursorSta = textArea.selectionStart;
+	let cursorEnd = textArea.selectionEnd;
+	textArea.focus();
+	let text = textArea.value;
+	let letter = text.charAt(cursorSta - 2);
+
+	if ( cursorSta < cursorEnd ) {
+		// delete selection = same as DEL
+		textArea.value = text.slice(0,cursorSta) + text.slice(cursorEnd);
+		textArea.setSelectionRange(cursorSta, cursorSta);
+	}
+	else {
+		if ( cursorSta > 0 ) {
+		// if (Unicode char) then { delete 2 bytes } else { delete 1 byte }
+			if ( letter == "\uD801" ) { 
+				// Unicode char detected: delete 2 bytes
+				textArea.value = text.slice(0,cursorSta-2) + text.slice(cursorSta);
+				// set cursor position -2
+				textArea.setSelectionRange(cursorSta-2, cursorSta-2);
+			}
+			else {
+				// ASCII char detected: delete a single byte
+				textArea.value = text.slice(0,cursorSta-1) + text.slice(cursorSta);
+				// set cursor position -1
+				textArea.setSelectionRange(cursorSta-1, cursorSta-1);
+			}
+		}
+		else {
+			// cursor at 0 = do nothing
+			textArea.setSelectionRange(cursorSta, cursorSta);
+		}
+	}
+}
+function deleteChar() {
+	const textArea = document.getElementById('txtWin');
+	let cursorSta = textArea.selectionStart;
+	let cursorEnd = textArea.selectionEnd;
+	textArea.focus();
+	let text = textArea.value;
+	let letter = text.charAt(cursorSta);
+	if ( cursorSta < text.length ) {
+		// if cursor start equals cursor end, delete one character (1 or 2 bytes), else delete range
+		if ( cursorSta == cursorEnd ) {
+			if ( letter == "\uD801" ) { cursorEnd +=2 } else { cursorEnd += 1; }
+		}
+		textArea.value = text.slice(0,cursorSta) + text.slice(cursorEnd);
+	}
+	else {
+		// if cursor at the end of text - do nothing - reposition the cursor
+		textArea.setSelectionRange(cursorSta, cursorSta);
+	}
+	textArea.setSelectionRange(cursorSta, cursorSta);
+}
+function layerSwitch(kb) {
+	const kbA = document.getElementById("kbA"); // lowercase
+	const kbB = document.getElementById("kbB"); // uppercase (Shift)
+	const kbC = document.getElementById('kbC'); // AltGr
+	const kbD = document.getElementById('kbD'); // AltGr+Shift
+	kbA.style.display = 'none';
+	kbB.style.display = 'none';
+	kbC.style.display = 'none';
+	kbD.style.display = 'none';
+	currentLayer = kb;
+	switch (kb) {
+		case "kbA": kbA.style.display = 'block'; break;
+		case "kbB": kbB.style.display = 'block'; break;
+		case "kbC": kbC.style.display = 'block'; break;
+		case "kbD": kbD.style.display = 'block'; break;
+	}
+}
+function showWindow(wind) {
+	const windId = document.getElementById(wind + 'Table');
+	const buttonId = document.getElementById(wind + 'Button');
+	if ( windId.style.display == "none" ) {
+		windId.style.display = 'table';
+		buttonId.style.backgroundColor = 'royalblue'; // works - but leaves border somewhat thick-black
+		//buttonId.style.background = 'royalblue';		// works - but leaves thick border even after reset
+		//buttonId.bgcolor = 'royalblue';					// doesn't do a thing
+		//document.getElementById("button").className = 'button_color';   // change class name
+	}
+	else {
+		windId.style.display = 'none';
+		buttonId.style.backgroundColor  = '';
+	}
+}
+function specialKey(spcKey) {
+	var spcKeyId = document.getElementById(spcKey);
+	if ( spcKeyId.style.display == 'table' ) {
+		spcKeyId.style.display = 'none';
+	}
+	else {
+		spcKeyId.style.display = 'table';
+	}
+}
+function changeTxtAreaFontSize(valu) {
+	var txtWin = document.getElementById("txtWin");
+	textAreaFontSize += valu;
+	txtWin.style.fontSize = textAreaFontSize + "pt";
+	document.getElementById('txtAfontSize').innerHTML = textAreaFontSize +"&nbsp;";
+}
+function changeKboardFontSize(valu) {
+//	var rs = getComputedStyle(r);		// Get the values of the global root CSS variables
+//	alert("The --keyfontsize is: " + rs.getPropertyValue('--keyfontsize'));
+	kboardFontSize += valu;
+	r.style.setProperty('--keyfontsize', kboardFontSize + 'pt');
+	document.getElementById('kbFontSize').innerHTML = kboardFontSize + "&nbsp;";
+}
+function changeKeyboardWidth(valu) {
+	kboardSpacerWidth += valu;
+	r.style.setProperty('--spacerwidth', kboardSpacerWidth + 'px');
+	document.getElementById('kbKeySize').innerHTML = kboardSpacerWidth + "&nbsp;";
+}
+function changeKeysHeight(valu) {
+	kboardKeysHeight += valu;
+	r.style.setProperty('--keysheight', kboardKeysHeight + 'px');
+	document.getElementById('kbKeyHigh').innerHTML = kboardKeysHeight + "&nbsp;";
+}
+function changeOpacity(v) {
+	let bO = bodyOpacity;
+	if( ( bO > 0.2 && bO < 0.9 )  ||  ( bO <= 0.2 && v > 0 ) || ( bO >= 0.9 && v < 0 ) ) {
+		bodyOpacity += v;
+		r.style.setProperty('--bodyopacity', bodyOpacity);
+		document.getElementById('bodOpacit').innerHTML = bodyOpacity.toFixed(1) + '&nbsp;' ;
+	}
+}
+function changeFont(selObj) {
+	var selectedIndex = selObj.selectedIndex;
+	var selectedText = selObj.options[selectedIndex].text;
+	var selectedValue = selObj.options[selectedIndex].value;
+	console.log("Selected font:" + selectedText + " index: " +selectedIndex + " value: " + selectedValue);
+	r.style.setProperty('--defaultfont', selectedValue );
+}
+function fontDetector() {
+	const fontFaceSet = document.fonts;
+	const fontList = [	'ANDAGII.TTF','CafeMajestic-Inline.otf','CafeMajestic-Regular.otf',
+						'DoolittleGaramond-Italic.otf','DoolittleGaramond-Regular.otf',
+						'EslGothicUnicode.ttf','FairfaxHD.ttf','HenryHigginsSans-Regular.otf',
+						'InterAlia-Regular.woff2','InterAlia-Italic.woff2','InterAlia-Bold.woff2','InterAlia-BoldItalic.woff2',
+						'MPH-2B-Damase_v2.ttf','NotoSansShavian-Regular.ttf','Ormin-Regular.otf','Trabajo.otf' ];
+	const fontShortList = [ 'Andagii','CafeI','CafeR','DoolittI','DoolittR','Ghotic','Fairfax','Higgins',
+							'IntAliaR','IntAliaI','IntAliaB','IntAliaBI','MPH','Noto','Ormin','Trabajo' ];
+
+	const fontIds = ['anda','cafi','cafe','dool','door','goth','fair','higg','alia','alii','alib','albi','mphd','noto','ormi','trab'];
+	var fontSelector = document.getElementById('fontSelect').getElementsByTagName("option");
+
+	for ( let i=0; i<fontIds.length; i++ ) {
+		let tdId = document.getElementById(fontIds[i]);
+		var fontFace = new FontFace(fontShortList[i], 'url(./fonts/'+fontList[i]+')');
+		fontFace.load().then(fond => {
+			// font is loaded, make it available:
+				document.fonts.add(fond);
+				tdId.innerText = '☑';
+				tdId.style.color = 'RoyalBlue';
+				fontSelector[i].disabled = false;
+		}).catch((error) => {
+			// fallback font is used or font loading failed
+				tdId.innerText = '☒';
+				tdId.style.color = 'Red';
+				fontSelector[i].disabled = true;
+		});
+	}
+	// check SegoeUI-Historic separately - this is Windows-only font.
+		tdId = document.getElementById('sego');
+		var fontFace = new FontFace('SegoeUI-Historic', 'url(c:/Windows/Fonts/seguihis.ttf)');
+		fontFace.load().then(() => {
+			// font is loaded
+				tdId.innerText = '☑';
+				tdId.style.color = 'RoyalBlue';
+		}).catch((error) => {
+			// fallback font is used or font loading failed
+				tdId.innerText = '☒';
+				tdId.style.color = 'Red';
+		});
+}
+// global variables - important: some of these variables have their corresponding counterpart in the ":root" CSS global variables
+var textAreaFontSize  =  14; 	// textarea font-size (default 14pt)
+var kboardFontSize    =  12; 	// class .bton font-size (default 14pt)
+var kboardSpacerWidth =  14;	// keys width (default 12px)  - CSS variable ""
+var kboardKeysHeight  =  28;	// keys height (default 25px) - CSS variable "--keysheight"
+var bodyOpacity       = 0.8;	// CSS variable: --bodyopacity
+var defaultFont  = 'Higgins';   // CSS variable: --defaultfont
+var r = document.querySelector(':root'); 	// Get the root element
+/*   default keyboard layout - on startup will be loaded at the end of page */
+var currentLayer = 'kbA';
+var currentLayout = 'writerPlus';
+var keysA = writepA;
+var keysB = writepB;
+var keysC = writepC;
+var keysD = writepD;
+</script>
+	<title>Keyboard Layouts</title>
+</head>
+<body>
+	<div><!-- textArea -->
+		<form accept-charset="UTF-8"><textarea cols="50" rows="7" id="txtWin" autofocus></textarea></form>
+	</div>
+	<div id="cheatTable" class="divtab" style="display:none;border: 1px solid #ddd;"> <!-- cheat sheet -->
+		<div class="divrow">
+		<div class="divcellch">a<br>𐑩<br>ə</div>
+		<div class="divcellch">b<br>𐑚<br>b</div>
+		<div class="divcellch">c<br>𐑗<br>tʃ</div>
+		<div class="divcellch">d<br>𐑛<br>d</div>
+		<div class="divcellch">e<br>𐑧<br>ɛ</div>
+		<div class="divcellch">f<br>𐑓<br>f</div>
+		<div class="divcellch">g<br>𐑜<br>g</div>
+		<div class="divcellch">h<br>𐑣<br>h</div>
+		<div class="divcellch">i<br>𐑦<br>ɪ</div>
+		<div class="divcellch">j<br>𐑘<br>j</div>
+		<div class="divcellch">k<br>𐑒<br>k</div>
+		<div class="divcellch">l<br>𐑤<br>l</div>
+		<div class="divcellch">m<br>𐑥<br>m</div>
+		<div class="divcellch">n<br>𐑯<br>n</div>
+		<div class="divcellch">o<br>𐑪<br>ɒ</div>
+		<div class="divcellch">p<br>𐑐<br>p</div>
+		<div class="divcellch">q<br>𐑶<br>ɔɪ</div>
+		<div class="divcellch">r<br>𐑮<br>r</div>
+		<div class="divcellch">s<br>𐑕<br>s</div>
+		<div class="divcellch">t<br>𐑑<br>t</div>
+		<div class="divcellch">u<br>𐑳<br>ʌ</div>
+		<div class="divcellch">v<br>𐑝<br>v</div>
+		<div class="divcellch">w<br>𐑢<br>w</div>
+		<div class="divcellch">x<br>𐑻<br>ɜːr</div>
+		<div class="divcellch">y<br>𐑭<br>ɑ</div>
+		<div class="divcellch">z<br>𐑟<br>z</div>
+		<div class="divcellch">A<br>𐑨<br>æ</div>
+		<div class="divcellch">B<br>⸰<br>⸰</div>
+		<div class="divcellch">C<br>𐑽<br>ɪər</div>
+		<div class="divcellch">D<br>𐑼<br>ər</div>
+		<div class="divcellch">E<br>𐑱<br>eɪ</div>
+		<div class="divcellch">F<br>𐑲<br>aɪ</div>
+		<div class="divcellch">G<br>·<br>·</div>
+		<div class="divcellch">H<br>𐑞<br>ð</div>
+		<div class="divcellch">I<br>𐑰<br>i</div>
+		<div class="divcellch">J<br>𐑡<br>dʒ</div>
+		<div class="divcellch">K<br>«<br>«</div>
+		<div class="divcellch">L<br>»<br>»</div>
+		<div class="divcellch">M<br>𐑵<br>u</div>
+		<div class="divcellch">N<br>𐑙<br>ŋ</div>
+		<div class="divcellch">O<br>𐑴<br>əʊ</div>
+		<div class="divcellch">P<br>𐑹<br>ɔːr</div>
+		<div class="divcellch">Q<br>𐑬<br>aʊ</div>
+		<div class="divcellch">R<br>𐑸<br>ɑːr</div>
+		<div class="divcellch">S<br>𐑖<br>ʃ</div>
+		<div class="divcellch">T<br>𐑔<br>θ</div>
+		<div class="divcellch">U<br>𐑫<br>ʊ</div>
+		<div class="divcellch">V<br>𐑿<br>ju</div>
+		<div class="divcellch">W<br>𐑾<br>ɪə</div>
+		<div class="divcellch">X<br>𐑺<br>ɛər</div>
+		<div class="divcellch">Y<br>𐑷<br>ɔ</div>
+		<div class="divcellch">Z<br>𐑠<br>ʒ</div>
+		</div>
+	</div>
+	<div style="margin: 5px;padding: 0px;"> <!-- buttons (Clear, ON/OFF, Options, About -->
+		<button onclick="clearTextArea()">Clear</button>
+		<button id="kboardButton"  onclick="showWindow('kboard')">Writer+ QWERTY</button>
+		<button id="optionsButton" onclick="showWindow('options')">Options</button>
+		<button id="fontsButton"   onclick="showWindow('fonts')">Fonts</button>
+		<button id="aboutButton"   onclick="showWindow('about')">About</button>
+		<button id="cheatButton"   onclick="showWindow('cheat')" style="display:none">☺</button>
+	</div>
+
+<div id="kbA" style="display: block;"> <!-- ----------- KEYBOARD A (unshifted)        ----------- -->
+<!-- strangely the table doesn't keep alignment - so dirty trick here: write 29 empty columns :) -->
+<table class="rounded-corners" >
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+	<tr>
+		<td colspan="2"><button id="kA0"  class="bton" onclick="keyA(0)"></button></td>
+		<td colspan="2"><button id="kA1"  class="bton" onclick="keyA(1)"></button></td>
+		<td colspan="2"><button id="kA2"  class="bton" onclick="keyA(2)"></button></td>
+		<td colspan="2"><button id="kA3"  class="bton" onclick="keyA(3)"></button></td>
+		<td colspan="2"><button id="kA4"  class="bton" onclick="keyA(4)"></button></td>
+		<td colspan="2"><button id="kA5"  class="bton" onclick="keyA(5)"></button></td>
+		<td colspan="2"><button id="kA6"  class="bton" onclick="keyA(6)"></button></td>
+		<td colspan="2"><button id="kA7"  class="bton" onclick="keyA(7)"></button></td>
+		<td colspan="2"><button id="kA8"  class="bton" onclick="keyA(8)"></button></td>
+		<td colspan="2"><button id="kA9"  class="bton" onclick="keyA(9)"></button></td>
+		<td colspan="2"><button id="kA10" class="bton" onclick="keyA(10)"></button></td>
+		<td colspan="2"><button id="kA11" class="bton" onclick="keyA(11)"></button></td>
+		<td colspan="2"><button id="kA12" class="bton" onclick="keyA(12)"></button></td>
+		<td colspan="3"><button class="bton" onclick="backSpace()">BKSP</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button class="bton" onclick="insertChar('\t')">TAB</button></td>
+		<td colspan="2"><button id="kA13" class="bton" onclick="keyA(13)"></button></td>
+		<td colspan="2"><button id="kA14" class="bton" onclick="keyA(14)"></button></td>
+		<td colspan="2"><button id="kA15" class="bton" onclick="keyA(15)"></button></td>
+		<td colspan="2"><button id="kA16" class="bton" onclick="keyA(16)"></button></td>
+		<td colspan="2"><button id="kA17" class="bton" onclick="keyA(17)"></button></td>
+		<td colspan="2"><button id="kA18" class="bton" onclick="keyA(18)"></button></td>
+		<td colspan="2"><button id="kA19" class="bton" onclick="keyA(19)"></button></td>
+		<td colspan="2"><button id="kA20" class="bton" onclick="keyA(20)"></button></td>
+		<td colspan="2"><button id="kA21" class="bton" onclick="keyA(21)"></button></td>
+		<td colspan="2"><button id="kA22" class="bton" onclick="keyA(22)"></button></td>
+		<td colspan="2"><button id="kA23" class="bton" onclick="keyA(23)"></button></td>
+		<td colspan="2"><button id="kA24" class="bton" onclick="keyA(24)"></button></td>
+		<td colspan="2"><button id="kA25" class="bton" onclick="keyA(25)"></button></td>
+	</tr>
+	<tr>
+		<td colspan="4"><button class="bton" onclick="copyToClip()">Copy</button></td>
+		<td colspan="2"><button id="kA26" class="bton" onclick="keyA(26)"></button></td>
+		<td colspan="2"><button id="kA27" class="bton" onclick="keyA(27)"></button></td>
+		<td colspan="2"><button id="kA28" class="bton" onclick="keyA(28)"></button></td>
+		<td colspan="2"><button id="kA29" class="bton" onclick="keyA(29)"></button></td>
+		<td colspan="2"><button id="kA30" class="bton" onclick="keyA(30)"></button></td>
+		<td colspan="2"><button id="kA31" class="bton" onclick="keyA(31)"></button></td>
+		<td colspan="2"><button id="kA32" class="bton" onclick="keyA(32)"></button></td>
+		<td colspan="2"><button id="kA33" class="bton" onclick="keyA(33)"></button></td>
+		<td colspan="2"><button id="kA34" class="bton" onclick="keyA(34)"></button></td>
+		<td colspan="2"><button id="kA35" class="bton" onclick="keyA(35)"></button></td>
+		<td colspan="2"><button id="kA36" class="bton" onclick="keyA(36)"></button></td>
+		<td colspan="3"><button class="bton" onclick="insertChar('\n')">ENT</button></td>
+	</tr>
+	<tr>
+		<td colspan="5"><button class="bton" onclick="layerSwitch('kbB')">SHIFT</button></td>
+		<td colspan="2"><button id="kA37" class="bton" onclick="keyA(37)"></button></td>
+		<td colspan="2"><button id="kA38" class="bton" onclick="keyA(38)"></button></td>
+		<td colspan="2"><button id="kA39" class="bton" onclick="keyA(39)"></button></td>
+		<td colspan="2"><button id="kA40" class="bton" onclick="keyA(40)"></button></td>
+		<td colspan="2"><button id="kA41" class="bton" onclick="keyA(41)"></button></td>
+		<td colspan="2"><button id="kA42" class="bton" onclick="keyA(42)"></button></td>
+		<td colspan="2"><button id="kA43" class="bton" onclick="keyA(43)"></button></td>
+		<td colspan="2"><button id="kA44" class="bton" onclick="keyA(44)"></button></td>
+		<td colspan="2"><button id="kA45" class="bton" onclick="keyA(45)"></button></td>
+		<td colspan="2"><button id="kA46" class="bton" onclick="keyA(46)"></button></td>
+		<td colspan="4"><button class="bton" onclick="layerSwitch('kbB')">SHIFT</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('WIN')">&#x229E;</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('ALT')">ALT</button></td>
+		<td colspan="11"><button class="bton" onclick="insertChar(' ')">SPACE</button></td>
+		<td colspan="3"><button  class="bton" onclick="layerSwitch('kbC')">ALT</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="deleteChar()">DEL</button></td>
+	</tr>
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+</table>
+</div>
+<div id="kbB" style="display: none;">  <!-- ----------- KEYBOARD B (Shifted)           ----------- -->
+<table class="rounded-corners" >
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+	<tr>
+		<td colspan="2"><button id="kB0"  class="bton" onclick="keyB(0)"></button></td>
+		<td colspan="2"><button id="kB1"  class="bton" onclick="keyB(1)"></button></td>
+		<td colspan="2"><button id="kB2"  class="bton" onclick="keyB(2)"></button></td>
+		<td colspan="2"><button id="kB3"  class="bton" onclick="keyB(3)"></button></td>
+		<td colspan="2"><button id="kB4"  class="bton" onclick="keyB(4)"></button></td>
+		<td colspan="2"><button id="kB5"  class="bton" onclick="keyB(5)"></button></td>
+		<td colspan="2"><button id="kB6"  class="bton" onclick="keyB(6)"></button></td>
+		<td colspan="2"><button id="kB7"  class="bton" onclick="keyB(7)"></button></td>
+		<td colspan="2"><button id="kB8"  class="bton" onclick="keyB(8)"></button></td>
+		<td colspan="2"><button id="kB9"  class="bton" onclick="keyB(9)"></button></td>
+		<td colspan="2"><button id="kB10" class="bton" onclick="keyB(10)"></button></td>
+		<td colspan="2"><button id="kB11" class="bton" onclick="keyB(11)"></button></td>
+		<td colspan="2"><button id="kB12" class="bton" onclick="keyB(12)"></button></td>
+		<td colspan="3"><button class="bton" onclick="backSpace()">BKSP</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button class="bton" onclick="insertChar('\t')">TAB</button></td>
+		<td colspan="2"><button id="kB13" class="bton" onclick="keyB(13)"></button></td>
+		<td colspan="2"><button id="kB14" class="bton" onclick="keyB(14)"></button></td>
+		<td colspan="2"><button id="kB15" class="bton" onclick="keyB(15)"></button></td>
+		<td colspan="2"><button id="kB16" class="bton" onclick="keyB(16)"></button></td>
+		<td colspan="2"><button id="kB17" class="bton" onclick="keyB(17)"></button></td>
+		<td colspan="2"><button id="kB18" class="bton" onclick="keyB(18)"></button></td>
+		<td colspan="2"><button id="kB19" class="bton" onclick="keyB(19)"></button></td>
+		<td colspan="2"><button id="kB20" class="bton" onclick="keyB(20)"></button></td>
+		<td colspan="2"><button id="kB21" class="bton" onclick="keyB(21)"></button></td>
+		<td colspan="2"><button id="kB22" class="bton" onclick="keyB(22)"></button></td>
+		<td colspan="2"><button id="kB23" class="bton" onclick="keyB(23)"></button></td>
+		<td colspan="2"><button id="kB24" class="bton" onclick="keyB(24)"></button></td>
+		<td colspan="2"><button id="kB25" class="bton" onclick="keyB(25)"></button></td>
+	</tr>
+	<tr>
+		<td colspan="4"><button class="bton" onclick="copyToClip()">Copy</button></td>
+		<td colspan="2"><button id="kB26" class="bton" onclick="keyB(26)"></button></td>
+		<td colspan="2"><button id="kB27" class="bton" onclick="keyB(27)"></button></td>
+		<td colspan="2"><button id="kB28" class="bton" onclick="keyB(28)"></button></td>
+		<td colspan="2"><button id="kB29" class="bton" onclick="keyB(29)"></button></td>
+		<td colspan="2"><button id="kB30" class="bton" onclick="keyB(30)"></button></td>
+		<td colspan="2"><button id="kB31" class="bton" onclick="keyB(31)"></button></td>
+		<td colspan="2"><button id="kB32" class="bton" onclick="keyB(32)"></button></td>
+		<td colspan="2"><button id="kB33" class="bton" onclick="keyB(33)"></button></td>
+		<td colspan="2"><button id="kB34" class="bton" onclick="keyB(34)"></button></td>
+		<td colspan="2"><button id="kB35" class="bton" onclick="keyB(35)"></button></td>
+		<td colspan="2"><button id="kB36" class="bton" onclick="keyB(36)"></button></td>
+		<td colspan="3"><button class="bton" onclick="insertChar('\n')">ENT</button></td>
+	</tr>
+	<tr>
+		<td colspan="5"><button class="btonpressed" onclick="layerSwitch('kbA')">SHIFT</button></td>
+		<td colspan="2"><button id="kB37" class="bton" onclick="keyB(37)"></button></td>
+		<td colspan="2"><button id="kB38" class="bton" onclick="keyB(38)"></button></td>
+		<td colspan="2"><button id="kB39" class="bton" onclick="keyB(39)"></button></td>
+		<td colspan="2"><button id="kB40" class="bton" onclick="keyB(40)"></button></td>
+		<td colspan="2"><button id="kB41" class="bton" onclick="keyB(41)"></button></td>
+		<td colspan="2"><button id="kB42" class="bton" onclick="keyB(42)"></button></td>
+		<td colspan="2"><button id="kB43" class="bton" onclick="keyB(43)"></button></td>
+		<td colspan="2"><button id="kB44" class="bton" onclick="keyB(44)"></button></td>
+		<td colspan="2"><button id="kB45" class="bton" onclick="keyB(45)"></button></td>
+		<td colspan="2"><button id="kB46" class="bton" onclick="keyB(46)"></button></td>
+		<td colspan="4"><button class="btonpressed" onclick="layerSwitch('kbA')">SHIFT</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('WIN')">&#x229E;</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('ALT')">ALT</button></td>
+		<td colspan="11"><button class="bton" onclick="insertChar(' ')">SPACE</button></td>
+		<td colspan="3"><button  class="bton" onclick="layerSwitch('kbD')">ALT</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="deleteChar()">DEL</button></td>
+	</tr>
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+</table>
+</div>
+<div id="kbC" style="display: none;">  <!-- ----------- KEYBOARD C (right ALT)         ----------- -->
+<table class="rounded-corners" >
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+	<tr>
+		<td colspan="2"><button id="kC0"  class="bton" onclick="keyC(0)"></button></td>
+		<td colspan="2"><button id="kC1"  class="bton" onclick="keyC(1)"></button></td>
+		<td colspan="2"><button id="kC2"  class="bton" onclick="keyC(2)"></button></td>
+		<td colspan="2"><button id="kC3"  class="bton" onclick="keyC(3)"></button></td>
+		<td colspan="2"><button id="kC4"  class="bton" onclick="keyC(4)"></button></td>
+		<td colspan="2"><button id="kC5"  class="bton" onclick="keyC(5)"></button></td>
+		<td colspan="2"><button id="kC6"  class="bton" onclick="keyC(6)"></button></td>
+		<td colspan="2"><button id="kC7"  class="bton" onclick="keyC(7)"></button></td>
+		<td colspan="2"><button id="kC8"  class="bton" onclick="keyC(8)"></button></td>
+		<td colspan="2"><button id="kC9"  class="bton" onclick="keyC(9)"></button></td>
+		<td colspan="2"><button id="kC10" class="bton" onclick="keyC(10)"></button></td>
+		<td colspan="2"><button id="kC11" class="bton" onclick="keyC(11)"></button></td>
+		<td colspan="2"><button id="kC12" class="bton" onclick="keyC(12)"></button></td>
+		<td colspan="3"><button class="bton" onclick="backSpace()">BKSP</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button class="bton" onclick="insertChar('\t')">TAB</button></td>
+		<td colspan="2"><button id="kC13" class="bton" onclick="keyC(13)"></button></td>
+		<td colspan="2"><button id="kC14" class="bton" onclick="keyC(14)"></button></td>
+		<td colspan="2"><button id="kC15" class="bton" onclick="keyC(15)"></button></td>
+		<td colspan="2"><button id="kC16" class="bton" onclick="keyC(16)"></button></td>
+		<td colspan="2"><button id="kC17" class="bton" onclick="keyC(17)"></button></td>
+		<td colspan="2"><button id="kC18" class="bton" onclick="keyC(18)"></button></td>
+		<td colspan="2"><button id="kC19" class="bton" onclick="keyC(19)"></button></td>
+		<td colspan="2"><button id="kC20" class="bton" onclick="keyC(20)"></button></td>
+		<td colspan="2"><button id="kC21" class="bton" onclick="keyC(21)"></button></td>
+		<td colspan="2"><button id="kC22" class="bton" onclick="keyC(22)"></button></td>
+		<td colspan="2"><button id="kC23" class="bton" onclick="keyC(23)"></button></td>
+		<td colspan="2"><button id="kC24" class="bton" onclick="keyC(24)"></button></td>
+		<td colspan="2"><button id="kC25" class="bton" onclick="keyC(25)"></button></td>
+	</tr>
+	<tr>
+		<td colspan="4"><button class="bton" onclick="copyToClip()">Copy</button></td>
+		<td colspan="2"><button id="kC26" class="bton" onclick="keyC(26)"></button></td>
+		<td colspan="2"><button id="kC27" class="bton" onclick="keyC(27)"></button></td>
+		<td colspan="2"><button id="kC28" class="bton" onclick="keyC(28)"></button></td>
+		<td colspan="2"><button id="kC29" class="bton" onclick="keyC(29)"></button></td>
+		<td colspan="2"><button id="kC30" class="bton" onclick="keyC(30)"></button></td>
+		<td colspan="2"><button id="kC31" class="bton" onclick="keyC(31)"></button></td>
+		<td colspan="2"><button id="kC32" class="bton" onclick="keyC(32)"></button></td>
+		<td colspan="2"><button id="kC33" class="bton" onclick="keyC(33)"></button></td>
+		<td colspan="2"><button id="kC34" class="bton" onclick="keyC(34)"></button></td>
+		<td colspan="2"><button id="kC35" class="bton" onclick="keyC(35)"></button></td>
+		<td colspan="2"><button id="kC36" class="bton" onclick="keyC(36)"></button></td>
+		<td colspan="3"><button class="bton" onclick="insertChar('\n')">ENT</button></td>
+	</tr>
+	<tr>
+		<td colspan="5"><button class="bton" onclick="layerSwitch('kbD')">SHIFT</button></td>
+		<td colspan="2"><button id="kC37" class="bton" onclick="keyC(37)"></button></td>
+		<td colspan="2"><button id="kC38" class="bton" onclick="keyC(38)"></button></td>
+		<td colspan="2"><button id="kC39" class="bton" onclick="keyC(39)"></button></td>
+		<td colspan="2"><button id="kC40" class="bton" onclick="keyC(40)"></button></td>
+		<td colspan="2"><button id="kC41" class="bton" onclick="keyC(41)"></button></td>
+		<td colspan="2"><button id="kC42" class="bton" onclick="keyC(42)"></button></td>
+		<td colspan="2"><button id="kC43" class="bton" onclick="keyC(43)"></button></td>
+		<td colspan="2"><button id="kC44" class="bton" onclick="keyC(44)"></button></td>
+		<td colspan="2"><button id="kC45" class="bton" onclick="keyC(45)"></button></td>
+		<td colspan="2"><button id="kC46" class="bton" onclick="keyC(46)"></button></td>
+		<td colspan="4"><button class="bton" onclick="layerSwitch('kbD')">SHIFT</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('WIN')">&#x229E;</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('ALT')">ALT</button></td>
+		<td colspan="11"><button class="bton" onclick="insertChar('&emsp;')">EM SPACE</button></td> <!-- &#8192 -->
+		<td colspan="3"><button  class="btonpressed" onclick="layerSwitch('kbA')">ALT</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="deleteChar()">DEL</button></td>
+	</tr>
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+</table>
+</div>
+<div id="kbD" style="display: none;">  <!-- ----------- KEYBOARD D (right ALT + SHIFT) ----------- -->
+<table class="rounded-corners" >
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+	<tr>
+		<td colspan="2"><button id="kD0"  class="bton" onclick="keyD(0)"></button></td>
+		<td colspan="2"><button id="kD1"  class="bton" onclick="keyD(1)"></button></td>
+		<td colspan="2"><button id="kD2"  class="bton" onclick="keyD(2)"></button></td>
+		<td colspan="2"><button id="kD3"  class="bton" onclick="keyD(3)"></button></td>
+		<td colspan="2"><button id="kD4"  class="bton" onclick="keyD(4)"></button></td>
+		<td colspan="2"><button id="kD5"  class="bton" onclick="keyD(5)"></button></td>
+		<td colspan="2"><button id="kD6"  class="bton" onclick="keyD(6)"></button></td>
+		<td colspan="2"><button id="kD7"  class="bton" onclick="keyD(7)"></button></td>
+		<td colspan="2"><button id="kD8"  class="bton" onclick="keyD(8)"></button></td>
+		<td colspan="2"><button id="kD9"  class="bton" onclick="keyD(9)"></button></td>
+		<td colspan="2"><button id="kD10" class="bton" onclick="keyD(10)"></button></td>
+		<td colspan="2"><button id="kD11" class="bton" onclick="keyD(11)"></button></td>
+		<td colspan="2"><button id="kD12" class="bton" onclick="keyD(12)"></button></td>
+		<td colspan="3"><button class="bton" onclick="backSpace()">BKSP</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button class="bton" onclick="insertChar('\t')">TAB</button></td>
+		<td colspan="2"><button id="kD13" class="bton" onclick="keyD(13)"></button></td>
+		<td colspan="2"><button id="kD14" class="bton" onclick="keyD(14)"></button></td>
+		<td colspan="2"><button id="kD15" class="bton" onclick="keyD(15)"></button></td>
+		<td colspan="2"><button id="kD16" class="bton" onclick="keyD(16)"></button></td>
+		<td colspan="2"><button id="kD17" class="bton" onclick="keyD(17)"></button></td>
+		<td colspan="2"><button id="kD18" class="bton" onclick="keyD(18)"></button></td>
+		<td colspan="2"><button id="kD19" class="bton" onclick="keyD(19)"></button></td>
+		<td colspan="2"><button id="kD20" class="bton" onclick="keyD(20)"></button></td>
+		<td colspan="2"><button id="kD21" class="bton" onclick="keyD(21)"></button></td>
+		<td colspan="2"><button id="kD22" class="bton" onclick="keyD(22)"></button></td>
+		<td colspan="2"><button id="kD23" class="bton" onclick="keyD(23)"></button></td>
+		<td colspan="2"><button id="kD24" class="bton" onclick="keyD(24)"></button></td>
+		<td colspan="2"><button id="kD25" class="bton" onclick="keyD(25)"></button></td>
+	</tr>
+	<tr>
+		<td colspan="4"><button class="bton" onclick="copyToClip()">Copy</button></td>
+		<td colspan="2"><button id="kD26" class="bton" onclick="keyD(26)"></button></td>
+		<td colspan="2"><button id="kD27" class="bton" onclick="keyD(27)"></button></td>
+		<td colspan="2"><button id="kD28" class="bton" onclick="keyD(28)"></button></td>
+		<td colspan="2"><button id="kD29" class="bton" onclick="keyD(29)"></button></td>
+		<td colspan="2"><button id="kD30" class="bton" onclick="keyD(30)"></button></td>
+		<td colspan="2"><button id="kD31" class="bton" onclick="keyD(31)"></button></td>
+		<td colspan="2"><button id="kD32" class="bton" onclick="keyD(32)"></button></td>
+		<td colspan="2"><button id="kD33" class="bton" onclick="keyD(33)"></button></td>
+		<td colspan="2"><button id="kD34" class="bton" onclick="keyD(34)"></button></td>
+		<td colspan="2"><button id="kD35" class="bton" onclick="keyD(35)"></button></td>
+		<td colspan="2"><button id="kD36" class="bton" onclick="keyD(36)"></button></td>
+		<td colspan="3"><button class="bton" onclick="insertChar('\n')">ENT</button></td>
+	</tr>
+	<tr>
+		<td colspan="5"><button class="btonpressed" onclick="layerSwitch('kbC')">SHIFT</button></td>
+		<td colspan="2"><button id="kD37" class="bton" onclick="keyD(37)"></button></td>
+		<td colspan="2"><button id="kD38" class="bton" onclick="keyD(38)"></button></td>
+		<td colspan="2"><button id="kD39" class="bton" onclick="keyD(39)"></button></td>
+		<td colspan="2"><button id="kD40" class="bton" onclick="keyD(40)"></button></td>
+		<td colspan="2"><button id="kD41" class="bton" onclick="keyD(41)"></button></td>
+		<td colspan="2"><button id="kD42" class="bton" onclick="keyD(42)"></button></td>
+		<td colspan="2"><button id="kD43" class="bton" onclick="keyD(43)"></button></td>
+		<td colspan="2"><button id="kD44" class="bton" onclick="keyD(44)"></button></td>
+		<td colspan="2"><button id="kD45" class="bton" onclick="keyD(45)"></button></td>
+		<td colspan="2"><button id="kD46" class="bton" onclick="keyD(46)"></button></td>
+		<td colspan="4"><button class="btonpressed" onclick="layerSwitch('kbC')">SHIFT</button></td>
+	</tr>
+	<tr>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('WIN')">&#x229E;</button></td> <!-- ⟮⊞⟯ &#x229E; -->
+		<td colspan="3"><button  class="bton" onclick="specialKey('ALT')">ALT</button></td>
+		<td colspan="11"><button class="bton" onclick="insertChar('&#x200B;')">zero-width space</button></td> <!-- &#8203; -->
+		<td colspan="3"><button  class="btonpressed" onclick="layerSwitch('kbB')">ALT</button></td>
+		<td colspan="3"><button  class="bton" onclick="specialKey('CTRL')">CTRL</button></td>
+		<td colspan="3"><button  class="bton" onclick="deleteChar()">DEL</button></td>
+	</tr>
+	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
+</table>
+</div>
+
+<div id="kboardTable" class="divtab" style="display:none;"><!-- ----------- Keyboards ----------- -->
+  <div class="divrow">
+    <div class="divcell">
+<div class="divtab">
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('qwerty')"    >English QWERTY</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('phonemic')"  >English Phonemic</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('writer')"    >Writer QWERTY</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('writerPlus')">Writer+ QWERTY</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('aserth')"    >Writer+ ASERTH</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('shawQwerty')">Shavian QWERTY</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('shawPlus')"  >Shavian+ QWERTY</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('shawEmpire')">Shavian Imperial</button></div></div>
+	<div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('shaw2L')"    >Shavian 2-Layer</button></div></div>
+	<!-- div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('custom')"    >Your Custom Layout</button></div></div -->
+</div>
+</div> <!-- left cell end -->
+<div class="divcell"> <!-- style="width:600px;"> -->
+  <div id="qwertyDesc" class="desc" style="display:none;">
+  <h3>English QWERTY</h3>
+   <p>Standard QWERTY layout created in early 1870s for first typewriters.</p>
+  </div>
+  <div id="phonemicDesc" class="desc" style="display:none;">
+	<h3>English Phonemic</h3>
+	 <p>With this layout you can type in English with IPA symbols.<br />
+	 The Unshifted and Shifted layers are based on Shavian QWERTY layout.<br />
+	 The AltGr and AltGr+Shift layers are based on Writer+ QWERTY.</p>
+  </div>
+  <div id="writerDesc" class="desc" style="display:none;">
+	<h3>Writer QWERTY</h3>
+	<p>Layout devised by Neil Raiden ⟮☺⟯ to type frequently used symbols<br />
+	that are not avilable on the standard QWERTY layout.<br /></p>
+  </div>
+  <div id="writerPlusDesc" class="desc" style="display:block;">
+    <h3>Writer+ QWERTY</h3>
+    <p>This layout is similar to Writer QWERTY with added IPA symbols for English phonemes.<br />
+    It is intended for only occasional typing. </p>
+  </div>
+  <div id="aserthDesc" class="desc" style="display:none;">
+    <h3>Writer+ ASERTH</h3>
+	<p>This layout is based on <a href="https://github.com/nick-gravgaard/qwerty-flip">QWERTY-Flip-Twist</a> by Nick Gravgaard<br />
+	The AltGr layers are similar to Writer+.<br />
+    </p>
+  </div>
+  <div id="shawQwertyDesc" class="desc" style="display:none;">
+    <h3>Shavian QWERTY</h3>
+	<p>This layout is based on <a href="https://keyman.com/keyboards/english_shavian_qwerty">Keyman Shaw QWERTY</a> by Ed Greville; License: MIT.</p>
+  </div>
+  <div id="shawPlusDesc" class="desc" style="display:none;">
+  <h3>Shavian+ QWERTY</h3>
+  <p>Similar to Shaw QWERTY but extended with AltGr layers for extra punctuation marks.</p>
+  </div>
+  <div id="shawEmpireDesc" class="desc" style="display:none;">
+  <h3>Shavian Imperial</h3>
+  <p>Based on the layout of the Imperial Model 6 typewriter.<br />
+  The uppercase layer was moved to the AltGr.
+  And Shifter layer contains lowercase Latin symbols.
+  Also, some extra punctuation marks are added to AltGr+Shift.</p>
+  </div>
+  <div id="shaw2LDesc" class="desc" style="display:none;">
+    <h3>Shavian 2-Layer</h3>
+	<p>Based on <a href="https://keyman.com/keyboards/shaw_2layer">Keyman Shaw (2Layer)</a> by Haley Halcyon; License: MIT.</p>
+  </div>
+</div> <!-- right cell end -->
+</div>
+</div>
+
+<div id="optionsTable" class="divtab" style="display:none;padding:40px;"> <!-- ----------- Options ----------- -->
+	<table>
+	<tr> <!-- changeTxtAreaFontSize() -->
+		<td><button onclick="changeTxtAreaFontSize(-1)">-</button></td>
+		<td>Text area font size :</td>
+		<td id="txtAfontSize">14</td>
+		<td><button onclick="changeTxtAreaFontSize(1)">+</button></td>
+	</tr>
+	<tr> <!-- changeKboardFontSize() -->
+		<td><button onclick="changeKboardFontSize(-1)">-</button></td>
+		<td>Keyboard font size :</td>
+		<td id="kbFontSize">12</td>
+		<td><button onclick="changeKboardFontSize(1)">+</button></td>
+	</tr>
+	<tr> <!-- changeKeyboardWidth() -->
+		<td><button onclick="changeKeyboardWidth(-1)">-</button></td>
+		<td>Keyboard width :</td>
+		<td id="kbKeySize">14</td>
+		<td><button onclick="changeKeyboardWidth(1)">+</button></td>
+	</tr>
+	<tr> <!-- changeKeysHeight() -->
+		<td><button onclick="changeKeysHeight(-1)">-</button></td>
+		<td>Keyboard height :</td>
+		<td id="kbKeyHigh">28</td>
+		<td><button onclick="changeKeysHeight(1)">+</button></td>
+	</tr>
+	<tr> <!-- changeOpacity() -->
+		<td><button onclick="changeOpacity(-0.1)">-</button></td>
+		<td>Opacity :</td>
+		<td id="bodOpacit">0.8</td>
+		<td><button onclick="changeOpacity(0.1)">+</button></td>
+	</tr>
+	<tr><td colspan="4" style="text-align:center;">Select font:</td></tr>
+	<tr> <!-- changeFont() -->
+		<td colspan="4" style="text-align:center;width:100%;">
+			<select id="fontSelect" name="Select font" onchange="changeFont(this)">
+				<option value="Andagii"  >Andagii.ttf</option>
+				<option value="CafeI"    >CafeMajestic-Inline.otf</option>
+				<option value="CafeR"    >CafeMajestic-Regular.otf</option>
+				<option value="DoolittI" >DoolittleGaramond-Italic.otf</option>
+				<option value="DoolittR" >DoolittleGaramond-Regular.otf</option>
+				<option value="Ghotic"   >EslGothicUnicode.ttf</option>
+				<option value="Fairfax"  >FairFaxHD.ttf</option>
+				<option value="Higgins"  >HenryHigginsSans-Regular.otf</option>
+				<option value="IntAliaR" >InterAlia-Regular.woff2</option>
+				<option value="IntAliaI" >InterAlia-Italic.woff2</option>
+				<option value="IntAliaB" >InterAlia-Bold.woff2</option>
+				<option value="IntAliaBI" >InterAlia-BoldItalic.woff2</option>
+				<option value="MPH"      >MPH-2B-Damase_v2.ttf</option>
+				<option value="Noto"     >NotoSansShavian-Regular.ttf</option>
+				<option value="Ormin"    >Ormin-Regular.otf</option>
+				<option value="Trabajo"  >Trabajo.otf</option>
+				<option value="Segoe"    >SegoeUI-Historic.ttf</option>
+			</select>
+		</td>
+	</tr>
+	</table>
+</div>
+
+<div id="fontsTable" class="divtab" style="display:none;"> <!-- ----------- Fonts ----------- -->
+	<h3>Fonts used by this keyboard</h3>
+	<p>This HTML file is looking for the following font files in a “fonts” folder in the current directory (except for SegoeUI-Historic¹):</p>
+	<table style="font-weight:normal">
+		<tr><td id="anda">?</td><td>Andagii.ttf</td><td class="pAndagii">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="cafi">?</td><td>CafeMajestic-Inline.otf</td><td class="pCafeI">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="cafe">?</td><td>CafeMajestic-Regular.otf</td><td class="pCafeR">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="dool">?</td><td>DoolittleGaramond-Italic.otf</td><td class="pDoolittI">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="door">?</td><td>DoolittleGaramond-Regular.otf</td><td class="pDoolittR">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="goth">?</td><td>EslGothicUnicode.ttf</td><td class="pGhotic">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="fair">?</td><td>FairFaxHD.ttf</td><td class="pFairfax">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="higg">?</td><td>HenryHigginsSans-Regular.otf</td><td class="pHiggins">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="alia">?</td><td>InterAlia-Regular.woff2</td><td class="pIntAliaR">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="alii">?</td><td>InterAlia-Italic.woff2</td><td class="pIntAliaI">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="alib">?</td><td>InterAlia-Bold.woff2</td><td class="pIntAliaB">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="albi">?</td><td>InterAlia-BoldItalic.woff2</td><td class="pIntAliaBI">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="mphd">?</td><td>MPH-2B-Damase_v2.ttf</td><td class="pMPH">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="noto">?</td><td>NotoSansShavian-Regular.ttf</td><td class="pNoto">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="ormi">?</td><td>Ormin-Regular.otf</td><td class="pOrmin">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="trab">?</td><td>Trabajo.otf</td><td class="pTrabajo">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+		<tr><td id="sego">?</td><td>SegoeUI-Historic.ttf <b>¹</b></td><td class="pSegoe">𐑥𐑯𐑩𐑧𐑨𐑪𐑳𐑦𐑰𐑫𐑵𐑭𐑷𐑬𐑶𐑴𐑱𐑲𐑔𐑞𐑓𐑝𐑐𐑚𐑘𐑢𐑑𐑛𐑒𐑜𐑤𐑮𐑕𐑟𐑖𐑠𐑗𐑡𐑼𐑺𐑻𐑸𐑹𐑽𐑾𐑿</td></tr>
+	</table>
+	<div style="text-align:center;width:50%;margin:auto;margin-top:20px;"><button class="bton" onclick="fontDetector()">Reload fonts</button></div>
+	<p style="text-align:center;"><i>This functionality to reload fonts may NOT work in all browsers.</i></p>
+	<p>Please download and place desired font files into a folder “<b>fonts</b>” in the same directory as this HTML file.</p>
+	<p>Then use the “<b>Reload Fonts</b>” button to verify that the HTML document can use them.</p>
+	<p>For font files that are present, you should see a blue check‐mark ⟮<span style="color:RoyalBlue">☑</span>⟯ — and you should see different styles in the table above.</p>
+	<p>For font files that are missing, you should see a red checkbox with an “×” inside ⟮<span style="color:Red">☒</span>⟯.</p>
+	<p>If the font is missing, you will see an empty line — the font fallback is disabled in the table above on purpose.</p>
+	<p>That way you will not mistake the font listed here, with the one provided by your OS as a fallback.</p>
+	<p>Please note: the font fallback is disabled only in the table above — the font used in the keyboard will be either of the:</p>
+	<ul>
+		<li>A random font rendered by your browser from whatever font fallback mechanism will find in your OS.</li>
+		<li>If you're on Windows, then <i>SegoeUI-Historic</i> will be used.</li>
+		<li>Default one: <b>Henry Higgins Sans Regular</b> - if present in the local “fonts” folder.</li>
+		<li>A font chosen by you from the “<b>Options</b>” panel — only if present in “fonts” folder.</li>
+	</ul>
+	<hr style="width:50%;" />
+	<p>¹&nbsp;SegoeUI-Historic is not a free font. It is located in 'c:\Windows\Fonts\seguihis.ttf'.<br />&emsp;For some reason, it is not added to the font fallback in Windows — at least not in all versions of Windows.<br />&emsp;Do not copy that file to your website.<br />&emsp;It is used here as a font fallback, in case you didn't install any shavian fonts yet.</p>
+	<hr style="width:50%;" />
+	<p>Where to find these fonts:</p>
+	<table>
+		<tr><th>#</th><th>Font</th><th>Link to source</th><th>Author</th></tr>
+		<tr><td>1</td><td>Andagii</td><td><a href="http://www.i18nguy.com/unicode/unicode-font.html">i18nguy.com</a>)</td><td>Mark Williamson</td></tr>
+		<tr><td>2</td><td>Cafe Majestic</td><td><a href="https://shavian.info/shavian_fonts/">Shavian.info</a></td><td>Ed Greville</td></tr>
+		<tr><td>3</td><td>Doolittle Garamond</td><td><a href="https://shavian.info/shavian_fonts/">Shavian.info</a></td><td>Ed Greville</td></tr>
+		<tr><td>4</td><td>ESL Gothic Unicode</td><td>www.30below.com/%7EthanL (dead link)</td><td>Ethan Lamoreaux</td></tr>
+		<tr><td>5</td><td>Fairfax HD</td><td><a href="http://www.kreativekorp.com/software/fonts/fairfaxhd.shtml">KreativeKorp.com</a></td><td>Rebecca G. Bettencourt</td></tr>
+		<tr><td>6</td><td>Henry Higgins</td><td><a href="https://shavian.info/shavian_fonts/">Shavian.info</a></td><td>Ed Greville</td></tr>
+		<tr><td>7</td><td>InterAlia</td><td><a href="https://github.com/Shavian-info/interalia">Shavian.info and GitHub</a></td><td>Inter Project Authors and Shavian.Info</td></tr>
+		<tr><td>8</td><td>MPH 2B Damase v2</td><td><a href="https://FedoraProject.org/wiki/MPH_2B_Damase_fonts">FedoraProject.org</a></td><td>Mark Williamson</td></tr>
+		<tr><td>9</td><td>Noto Sans Shavian</td><td><a href="https://fonts.google.com/noto/specimen/Noto+Sans+Shavian">Google Fonts</a></td><td>Noto Project Authors (and Shavian.info?)</td></tr>
+		<tr><td>10</td><td>Ormin</td><td><a href="https://shavian.info/shavian_fonts/">Shavian.info</a></td><td>Ed Greville</td></tr>
+		<tr><td>11</td><td>Trabajo</td><td><a href="https://fontlibrary.org/en/font/trabajo">FontLibrary.org</a></td><td>Phillip Driscoll and Linus/Trabajar</td></tr>
+		<tr><td>12</td><td>SegoeUI-Historic</td><td>Comes with Windows</td><td>Microsoft Corporation</td></tr>
+	</table>
+	<p>For even more Shavian fonts please visit <a href="https://shavian.info/shavian_fonts/">Shavian.info</a></p>
+</div>
+
+<div id="aboutTable" class="divtab" style="display:none;"> <!-- ----------- About ----------- -->
+	<h3>About</p>
+	<p>If you like this simple demo, and you'd like to modify it, post it on your website, etc — please feel free to do so.<br />This is open source after all.<br />This single HTML file contains all the code needed to run it (HTML, JavaScript, CSS) except for the font files — simply save the file locally, download any of the fonts used by this example (click the “Fonts” button to see the list), update paths to font files (if you place them in other location), and open it in the browser.<br />If you modify it, you may change the copyright string to “<b>Copyright (c) 20xx Your Name</b>”.<br />However, you will have to publish it with the same license, which is <b>Affero GPL v.3</b>.</p>
+
+	<p style="margin:2px;font-size:10pt;font-weight:bold;text-align:center;">Copyright (c) 2024 NeilRaiden.com (<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v.3</a>)</p>
+</div>
+
+<div id="CTRL"  class="divtab"  style="display:none;"> <!-- CTRL key -->
+	<div class="divrow">
+		<div class="divcell" style="padding:20px;">
+			<h3>CTRL (Control) key</h3>
+			<p>Examples of ⟮CTRL⟯ key shortcuts (NOT IMPLEMENTED HERE - FOR INFORMATION ONLY):</p>
+			<table>
+				<tr><th colspan="2">Keyboard Layouts:</th></tr>
+				<tr><td>CTRL + SHIFT</td><td>Cycle through keyboard layouts forward - same as &#x229E;+⟮space⟯</td></tr>
+				<tr><th colspan="2">Useful editing shortcuts:</th></tr>
+				<tr><td>CTRL + ⟮←/→⟯</td><td>Skip words backward/forward</td></tr>
+				<tr><td>CTRL + DEL</td><td>Delete whole word on the right</td></tr>
+				<tr><td>CTRL + Shift + DEL</td><td>Delete to the end of line</td></tr>
+				<tr><td>CTRL + BKSP</td><td>Delete whole word on the left</td></tr>
+				<tr><td>CTRL + Shift + BKSP</td><td>Delete to the beginning of line</td></tr>
+			</table>
+			<p><button class="bton" onclick="document.getElementById('CTRL').style.display='none';">Close</button></p>
+		</div>
+	</div>
+</div>
+
+<div id="WIN"  class="divtab"  style="display:none;"> <!-- WIN key -->
+	<div class="divrow">
+		<div class="divcell" style="padding:20px;">
+			<h3>Windows key ⟮&#x229E;⟯</h3>
+			<p>The Windows key, or Super key, or Command key on MacOS ⟮&#x2318;⟯.</p>
+			<p>Windows key popular shortcuts (NOT IMPLEMENTED HERE!):</p>
+			<table>
+				<tr><th colspan="2">Keyboard Layouts</th></tr>
+				<tr><td>&#x229E; + ⟮space⟯</td><td>Cycle through keyboard layout list forward</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮space⟯</td><td>Cycle through keyboard layout list backward</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮space⟯</td><td>Switch to previous keyboard layout</td></tr>
+				<tr><th colspan="2">Managing windows</th></tr>
+				<tr><td>&#x229E; + ⟮←⟯</td><td>Snap window to left</td></tr>
+				<tr><td>&#x229E; + ⟮→⟯</td><td>Snap window to right</td></tr>
+				<tr><td>&#x229E; + ⟮↑⟯</td><td>Maximize window</td></tr>
+				<tr><td>&#x229E; + ⟮↓⟯</td><td>Minimize window</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮↑⟯</td><td>Maximize vertically</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮↓⟯</td><td>Restore vertically</td></tr>
+				<tr><td>&#x229E; + ⟮Home⟯</td><td>Minimize/maximize all but the active window</td></tr>
+				<tr><td>&#x229E; + ⟮d⟯</td><td>Display/Hide Desktop</td></tr>
+				<tr><td>&#x229E; + ⟮m⟯</td><td>Minimize all windows</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮m⟯</td><td>Restore minimized windows</td></tr>
+				<tr><th colspan="2">Lock and unlock</th></tr>
+				<tr><td>&#x229E; + ⟮l⟯</td><td>Lock computer</td></tr>
+				<tr><td>&#x229E; + Ctl + Shift + ⟮b⟯</td><td>Wake up from black or a blank screen</td></tr>
+				<tr><th colspan="2">Settings and Starting Apps</th></tr>
+				<tr><td>&#x229E;</td><td>Start menu</td></tr>
+				<tr><td>&#x229E; + ⟮a⟩</td><td>Action Center</td></tr>
+				<tr><td>&#x229E; + ⟮c⟯</td><td>Cortana</td></tr>
+				<tr><td>&#x229E; + ⟮e⟯</td><td>File Explorer</td></tr>
+				<tr><td>&#x229E; + ⟮f⟯</td><td>Feedback Hub</td></tr>
+				<tr><td>&#x229E; + ⟮g⟯</td><td>Game Bar</td></tr>
+				<tr><td>&#x229E; + ⟮h⟯</td><td>Dictation and Speech recognition</td></tr>
+				<tr><td>&#x229E; + ⟮i⟯</td><td>Settings</td></tr>
+				<tr><td>&#x229E; + ⟮k⟯</td><td>Connect menu for Bluetooth devices</td></tr>
+				<tr><td>&#x229E; + ⟮o⟯</td><td>Autorotate ON/OFF</td></tr>
+				<tr><td>&#x229E; + ⟮p⟯</td><td>Project to another monitor</td></tr>
+				<tr><td>&#x229E; + ⟮q⟯</td><td>Search</td></tr>
+				<tr><td>&#x229E; + ⟮r⟯</td><td>Run command</td></tr>
+				<tr><td>&#x229E; + ⟮s⟯</td><td>Search</td></tr>
+				<tr><td>&#x229E; + ⟮u⟯</td><td>Settings > Display</td></tr>
+				<tr><td>&#x229E; + ⟮v⟯</td><td> Clipboard bin</td></tr>
+				<tr><td>&#x229E; + ⟮w⟯</td><td>Ink Workspace</td></tr>
+				<tr><td>&#x229E; + ⟮x⟯</td><td>Quick Link menu</td></tr>
+				<tr><td>&#x229E; + Pause</td><td>Show System About</td></tr>
+				<tr><td>&#x229E; + ⟮.⟯</td><td>Emoji panel</td></tr>
+				<tr><td>&#x229E; + ⟮;⟯</td><td>Emoji panel</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮f⟯</td><td>Find computers on local network</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮q⟯</td><td>Quick Assist</td></tr>
+				<tr><td>&#x229E; + Ctl + Enter</td><td>Narrator</td></tr>
+				<tr><td>&#x229E; + Alt + ⟮d⟯</td><td>Calendar and Date & Time</td></tr>
+				<tr><th colspan="2">Taskbar</th></tr>
+ 				<tr><td>&#x229E; + ⟮t⟯</td><td>TaskBar: Tab (cycle toolbars), ⟮←→⟯ cycle within group, Enter (open), Shift+F10 (menu)</td></tr>
+				<tr><td>&#x229E; + ⟮b⟯</td><td>Focus on Status Bar drop down</td></tr>
+				<tr><td>&#x229E; + ⟮0-9⟯</td><td>Switch to the app in number position in the Taskbar</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮1-9⟯</td><td>Open app pinned to Taskbar in a new instance</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮0-9⟯</td><td>The last active window of the app in the number position in the Taskbar</td></tr>
+				<tr><td>&#x229E; + Alt + ⟮0-9⟯</td><td>Same as Right-Click on icon in the number position in the Taskbar</td></tr>
+				<tr><td>&#x229E; + Ctl + Shift + ⟮0-9⟯</td><td>Run as an Administrator</td></tr>
+				<tr><th colspan="2">Virtual desktops</th></tr>
+				<tr><td>&#x229E; + ⟮t⟯</td><td>Cycle through apps in the Taskbar</td></tr>
+				<tr><td>&#x229E; + ⟮Tab⟯</td><td>Cycle Task View and Virtual Desktops</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮Tab⟯</td><td>Cycle in reverse order</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮d⟯</td><td>New virtual desktop</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮→⟯</td><td>Switch to the virtual desktop on the right</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮←⟯</td><td>Switch to the virtual desktop on the left</td></tr>
+				<tr><td>&#x229E; + Ctl + ⟮F4⟯</td><td>Close current virtual desktop</td></tr>
+				<tr><th colspan="2">Magnifier</th></tr>
+				<tr><td>&#x229E; + ⟮+⟯</td><td>Magnifier: zoom IN</td></tr>
+				<tr><td>&#x229E; + ⟮-⟯</td><td>Magnifier: zoom OUT</td></tr>
+				<tr><td>&#x229E; + Esc</td><td>Exit magnifier</td></tr>
+				<tr><th colspan="2">Screenshots</th></tr>
+				<tr><td>&#x229E; + PrtScn</td><td>Full screenshot (Windows 10 and later)</td></tr>
+				<tr><td>&#x229E; + Shift + S</td><td>Part of the screen with Snip & Sketch</td></tr>
+				<tr><td>&#x229E;  + PrtScn</td><td>Capture a full screenshot in the "Screenshots" folder</td></tr>
+				<tr><th colspan="2">Multiple Monitors</th></tr>
+				<tr><td>&#x229E; + Shift + ⟮←⟯</td><td>Move active window to monitor on the left</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮→⟯</td><td>Move active window to monitor on the right</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮↑⟯</td><td>Stretch desktop window to the top and bottom of the screen</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮0-9⟯</td><td>Open another app instance in the number position in the Taskbar</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮s⟯</td><td>Create part of the screen screenshot</td></tr>
+				<tr><td>&#x229E; + Shift + ⟮v⟯</td><td>Cycle through notifications</td></tr>
+			</table>
+			<p><button class="bton" onclick="document.getElementById('WIN').style.display='none';">Close</button></p>
+		</div>
+	</div>
+</div>
+
+<div id="ALT"  class="divtab"  style="display:none;"> <!-- Left ALT -->
+	<div class="divrow">
+		<div class="divcell" style="padding:20px;">
+			<h3>Left ALT key</h3>
+			<p>There is a number of useful Left-ALT shortcuts. Several examples below:</p>
+			<table>
+				<tr><th colspan="2">Navigation Shortcuts</th></tr>
+				<tr><td>Alt + Shift</td><td>See current keyboard layout</td></tr>
+				<tr><td>Alt + Tab</td><td>Cycle through open windows</td></tr>
+				<tr><td>Alt + ⟮space⟯</td><td>Same as right-click on title bar</td></tr>
+				<tr><td>Alt + F4</td><td>Close active window</td></tr>
+			</table>
+			<p>However, that key would be much better utilized if it was mirroring the function of the ⟮Right-ALT⟯ key.<br />This way you would be able to access all the special symbols, punctuation marks, etc; flawlessly and without interruption for a brief session of awkward finger gymnastics.<br />Especially when typing symbols located on the right side of the keyboard.</p>
+			<p>The solution is to remap the ⟮Left-ALT⟯ key to another key.</p>
+			<p>For example, most people do not use the ⟮CapsLock⟯ key.</p>
+			<p>BTW, wouldn't it be easier to press ⟮CapsLock⟯+⟮TAB⟯ instead of ⟮L-ALT⟯+⟮TAB⟯ to switch between open windows?</p>
+			<p>There are multiple ways to do this.<br />You have several options:</p>
+			<ul>
+				<li>Write an <a href="https://www.autohotkey.com">AutoHotKey</a> script and have it running in the background all the time</li>
+				<li>Use Keyboard Manager from Windows <a href="https://github.com/microsoft/PowerToys/releases/">Power Toys</a></li>
+				<li>Some more expensive keyboards come with software that is capable of remapping keys</li>
+				<li>Use <a href="https://github.com/randyrants/sharpkeys/releases/">SharpKeys</a> - single‐file executable.</li>
+				<li>Apply a simple Windows registry tweak.</li>
+			</ul>
+			<p>The choice is yours. Here is the registry tweak for Windows 10:</p>
+			<ol>
+				<li>Start Regedit as Administorator</li>
+				<li>Go to: "HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout"</li>
+				<li>Create new value "Binary value" ⟮REG_BINARY⟯ - name it "<b>Scancode Map</b>"</li>
+				<li>Enter the following value: "00 00 00 00 00 00 00 00 03 00 00 00 38 00 3A 00 38 E0 38 00 00 00 00 00"</li>
+				<li>Reboot your Windows</li>
+			</ol>
+			<div id="regkey">
+				<p><b>Explanation:</b></p>
+				<pre style="text-align:center;">hex:&nbsp;<red>00 00 00 00 00 00 00 00</red>&nbsp;<blu>03 00</blu>&nbsp;<sil>00 00</sil>&nbsp;<lg>38 00</lg>&nbsp;<ly>3A 00</ly>&nbsp;<lg>38 E0</lg>&nbsp;<ly>38 00</ly>&nbsp;<sil>00 00</sil>&nbsp;<sil>00 00</sil></pre>
+				<ul>
+					<li><red>00 00 00 00 00 00 00 00</red> - header version (4 bytes) and header flags (4 bytes) - always zeros</li>
+					<li><blu>03 00</blu> = number of remaps plus 1</li>
+					<li><sil>00 00</sil> = NULL</li>
+					<li>Note: bytes in key scancodes are reversed</li>
+					<li><lg>38 00</lg>&nbsp;<ly>3A 00</ly> - <b>Left-Alt</b> ⟮00_38⟯ will replace <b>CapsLock</b> ⟮00_3A⟯</li>
+					<li><lg>38 E0</lg>&nbsp;<ly>38 00</ly> - <b>Right-Alt</b> ⟮E0_38⟯ will replace <b>Left-Alt</b> ⟮00_38⟯</li>
+					<li>Effectively <b>CapsLock</b> is disabled - but if you still need it, you can map it to, for example, an <b>F6</b> key ⟮00_40⟯</li>
+				</ul>
+			</div>
+			<p></p>
+			<p><button class="bton" onclick="document.getElementById('ALT').style.display='none';">Close</button></p>
+		</div>
+	</div>
+</div>
+
+<script> <!-- ----------- POPULATE KEYBOARDS WITH DEFAULT LAYOUT (after page is loaded) ----------- -->
+	layoutLoad();   //load default keyboard layout
+	fontDetector(); //check which fonts were found in current directory + if SegoeUI-Historic is detected for a fallback (Windows).
+</script>
+
+<div style="display: none;">
+	<p><a href="https://www.babelstone.co.uk/Software/BabelMap.html">BabelMap (Unicode Character Map for Windows)</a></p>
+	<p><a href="https://www.babelstone.co.uk/Software/BabelPad.html">BabelPad (Unicode Text Editor for Windows)</a></p>
+	<p><a href="https://www.nemeio.com/">customizable keyboard - eeeh, someday</a></p>
+	<p><a href="https://github.com/mobzystems/SeeThroughWindows">GitHub repo: SeeThroughWindows</a></p>
+	<p><a href="https://www.mobzystems.com/tools/seethroughwindows/">Website: SeeThroughWindows</a></p>
+</div>
+	</body>
+</html>
