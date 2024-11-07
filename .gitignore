@@ -14,3 +14,9 @@ logs/
 
 # Portable Network Graphics
 *.png
+
+# Font files
+*.TTF
+*.ttf
+*.otf
+*.woff2
