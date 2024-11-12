@@ -8,6 +8,7 @@ What problems does this project aim to solve?
  4. [Shavian Layouts](#4-shavian-layouts) for typing in Shavian Alphabet
  5. [Compilation and installation](#compilation-and-installation)
  6. [On-screen keyboards](#on-screen-keyboards)
+ 7. [Wallpapers - cheat sheets](#wallpapers)
 
 -----
 
@@ -210,6 +211,11 @@ The best solution is a Shavian keyboard layout designed **specifically for your 
 
 * [Windows](Windows/README.md#On-Screen-Keyboards)
 * [Linux](Linux/README.md#On-Screen-Keyboards)
+
+## Wallpapers
+
+Several desktop [wallpapers](wallpapers/README.md) with keyboard layouts from this project.
+
 
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)
