@@ -1,0 +1,5 @@
+highlight punctuations cterm=bold ctermfg=cyan
+match punctuations "[§©®℗°±´·«»×÷ˈˌ‐‑–—‘’“”•…‹›⁃←↑→↓√≈≠⋯⌜⌝⌞⌟○◦☐☑☒☺⟨⟩⟮⟯ː¢⁰₀¹₁²₂³₃⁴₄⁵₅⁶₆⁷₇⁸₈⁹₉æɑɒðʤəɛɜɪɫŋɔʃ™ʧʊʌʍʒθµπ]"
+
+set nonumber
+

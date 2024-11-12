@@ -1,0 +1,17 @@
+
+highlight punctuations cterm=bold ctermfg=cyan
+syntax match punctuations "[§©®℗°±´·«»×÷ˈˌ‐‑–—‘’“”•…‹›⁃←↑→↓√≈≠⋯⌜⌝⌞⌟○◦☐☑☒☺⟨⟩⟮⟯ː¢⁰₀´¹¹₁²₂³₃⁴₄⁵₅⁶₆⁷₇⁸₈⁹₉æɑɒðʤəɛɜɪɫŋɔʃ™ʧʊʌʍʒθµπ]"
+
+highlight asertold cterm=bold ctermfg=blue
+syntax match asertold " [ertniERTNI] "
+
+highlight asertnew cterm=bold ctermfg=red
+syntax match asertnew " [dfgjkDFGJK] "
+
+highlight asertrotate cterm=bold ctermfg=magenta
+syntax match asertrotate " [pol;POL:] "
+
+" :echo getmatches()
+
+set nonumber
+

@@ -1,0 +1,7 @@
+highlight phonems cterm=bold ctermfg=cyan
+match phonems "[ː⟨⟩«»‹›·æɑɒdðʤeəɛɜɪjɫŋɔrɹʃʧuʊʌʍʒθa-zA-Z]"
+
+set nonumber
+
+
+
