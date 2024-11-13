@@ -6,7 +6,20 @@ The same layout as **Writer** but with additional ability to enter **English pho
 
 Required language pack: **English (United States)**
 
-The extra symbols can be entered with **AltGr** (right Alt) and **AltGr+Shift**, see the tables below.
+The extra symbols can be entered with **AltGr** (right Alt) and **AltGr+Shift**, see the screenshots and tables below.
+
+## Screenshots
+
+### Unshifted:
+![](img/1-unshifted.png)
+### Shifted:
+![](img/2-shifted.png)
+### AltGr:
+![](img/3-altgr.png)
+### AltGr+Shift:
+![](img/4-altgr-shift.png)
+
+## ASCII art
 
 ### AltGr (RightAlt or Alt+Ctrl):
 ```
@@ -33,3 +46,15 @@ The extra symbols can be entered with **AltGr** (right Alt) and **AltGr+Shift**,
 │ shift   │ ʒ │ æ │ ¢ │ ʌ │ ○ │ ŋ │ µ │ ☺ │ ☐ │ ☑ │  shift │
 └─────────┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴────────┘
 ```
+
+### Spaces
+
+| Layer       | Unicode | Whitespace name |
+|:------------|:--------|:----------------|
+| Unshifted   | U+0020  | regular space |
+| Shifted     | U+0020  | regular space |
+| AltGr       | U+2003  | Em-space - width equal to font height |
+| AltGr+Shift | U+200b  | zero-width space |
+
+-----
+Copyright (c) 2024 Neil Raiden, LLC (AGPL v3)
