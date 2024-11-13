@@ -17,6 +17,19 @@ _If you are trying to build reflexes to learn Shavian QWERTY, you might try this
 
 Writing phonemically builds phonemic awareness. 
 
+## Screenshots
+
+### Unshifted:
+![](img/1-unshifted.png)
+### Shifted:
+![](img/2-shifted.png)
+### AltGr:
+![](img/3-altgr.png)
+### AltGr+Shift:
+![](img/4-altgr-shift.png)
+
+## ASCII art
+
 ### Unshifted:
 ```
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──────┐
