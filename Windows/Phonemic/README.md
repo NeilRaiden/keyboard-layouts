@@ -90,3 +90,6 @@ Writing phonemically builds phonemic awareness.
 | Shifted | U+0020 | regular space |
 | AltGr | U+2003 | Em-space - width equal to font height |
 | AltGr+Shift | U+200b | zero-width space |
+
+-----
+Copyright (c) 2024 Neil Raiden, LLC (AGPL v3.0)
