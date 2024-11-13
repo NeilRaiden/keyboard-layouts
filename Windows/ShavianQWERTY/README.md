@@ -8,6 +8,15 @@ This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/ke
 
 >The differences: those old Shavian fonts were using forward slash ⟨/⟩ as a namer dot (instead of capital "G"). And instead of guillemets we had black squares. The custom was to use these black squares as a sort‐of CapsLock indicator — enclosing the capitalized text. The namer dot was used mostly for single words starting with a capital letter.
 
+## Screenshots
+
+### Unshifted:
+![](img/1-unshifted.png)
+### Shifted:
+![](img/2-shifted.png)
+
+
+## ASCII art
 
 ### Unshifted:
 ```
@@ -35,5 +44,6 @@ This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/ke
 └─────────┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴────────┘
 ```
 
-
+-----
+Copyright (c) 2024 Neil Raiden, LLC (AGPL v3)
 
