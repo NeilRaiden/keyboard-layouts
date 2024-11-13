@@ -1,20 +1,28 @@
 # Keyboard Layouts
 
-What problems does this project aim to solve?
+Table of contents:
 
  1. [Writer QWERTY](#1-writer-qwerty) for typing common punctuation and typography symbols
  2. [English Phonemic](#2-english-phonemic) for typing in IPA symbols
- 3. [Writer+ ASERTH](#3-writer+-aserth) for more efficient typing
+ 3. [Writer+ ASERTH](#3-writer-aserth) for more efficient typing
  4. [Shavian Layouts](#4-shavian-layouts) for typing in Shavian Alphabet
  5. [Compilation and installation](#compilation-and-installation)
  6. [On-screen keyboards](#on-screen-keyboards)
  7. [Wallpapers - cheat sheets](#wallpapers)
 
+
+Currently available keyboard layouts are only for the following OS'es:
+
+ * [Windows](Windows/README.md)
+ * [Linux](Linux/README.md)
+
 -----
+
+# What problems does this project aim to solve?
 
 ## 1. Writer QWERTY
 
-(_for typing most common punctuation marks straight from the keyboard_)
+(_typing most common punctuation marks and typographic symbols_)
 
 ### Problem:
 
@@ -55,7 +63,7 @@ Occasionally some English teachers may need to type **English IPA phonemes**.
 
 ## 2. English Phonemic
 
-(_for learners of spoken English - to type in English IPA symbols_)
+(_for learners of spoken English - typing with English IPA symbols_)
 
 ### Problem:
 
@@ -88,12 +96,13 @@ The two processes involved in learning or acquiring a new language (like English
     - **reading** (memorizing written words — building a _written/visual vocabulary_)  
     - **writing** (recalling and applying)  
 
->Note: writing in phonemic English is the best tool for building “**phonemic awareness**”
+>_Writing and/or typing in phonemic English might be the best tool for building “**phonemic awareness**”_
 
 Because of huge discrepancy between _written_ and _spoken_ English, the _audio_ and _visual_ vocabularies (that English learners build in their heads) are of **different sizes**. 
 
-Because of that, many people, especially non‑native speakers and some dyslectics, are unable to fully express their thoughts in writing. And because most non-native speakers acquire their vocabulary primarily through reading, and especially those who are self-taught do not learn the English phonemes, they end up “reading” from their _visual vocabulary_ applying spelling rules of their own language.
-Since many English vowels (schwa, strut, ash, long vowels, diphtongs) and the two consonants (thorn and eth) are unique to English — at least among the European languages — many non-native speakers use a shorter phonemic alphabet of their own language.
+Because of that, many people, especially non‑native speakers and some dyslectics, are unable to fully express their thoughts in writing. And because most non-native speakers acquire their vocabulary primarily through reading (and especially those who are self-taught), they do not learn the English phonemes and they end up “reading” from their _visual vocabulary_ applying spelling rules of their own language.
+
+Since many English vowels (schwa, strut, ash, long vowels, diphtongs) and the two consonants (thorn and eth) are unique to English — at least among the European languages — many non-native speakers do not know that, so they use a shorter phonemic alphabet of their own language.
 
 Practicing (even only occasionally) a _phonetic_ or _phonemic_ writing may help you in closing the gap between your _written_ and _spoken_ English vocabularies.
 
@@ -106,7 +115,7 @@ The **English Phonemic** keyboard layout may help you with that.
 
 ## 3. Writer+ ASERTH
 
-(_for more efficient typing_)
+(_more efficient typing_)
 
 ### Problem:
 
@@ -164,7 +173,7 @@ ASERT, Minimak and QWERTY-flip layouts focus on **reducing the learning curve** 
 
 ## 4. Shavian Layouts
 
-(_for typing in Shavian Alphabet_)
+(_typing in Shavian Alphabet_)
 
 ### Problem:
 
@@ -202,20 +211,24 @@ The best solution is a Shavian keyboard layout designed **specifically for your 
 * Keyboard layout [Shavian (Imperial)](Linux/docs/ShawImp.md) for Linux
 
 -----
+
 ## Compilation and installation
 
 * read more: [Linux layouts](Linux/README.md) — Linux layouts are simple text files, no need to compile.
 * read more: [Windows layouts](Windows/README.md) — Windows layouts need to be compiled, then installed.
+
+-----
 
 ## On-screen keyboards
 
 * [Windows](Windows/README.md#On-Screen-Keyboards)
 * [Linux](Linux/README.md#On-Screen-Keyboards)
 
+-----
+
 ## Wallpapers
 
 Several desktop [wallpapers](wallpapers/README.md) with keyboard layouts from this project.
-
 
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)

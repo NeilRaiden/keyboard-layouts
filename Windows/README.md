@@ -1,5 +1,29 @@
 
+# Keyboard Layouts for Windows:
+
+ * [English (Phonemic)](Phonemic/README.md) - for writing in phonemic English using traditional IPA notation
+ * [Writer (QWERTY)](Writer/README.md) - standard QWERTY with extra symbols on AltGr and AltGr+Shift layers
+ * [Writer+ (QWERTY)](Writer+/README.md) - similar Writer(QWERTY) but with extra IPA symbols on AltGr and AltGr+Shift layers
+ * [Writer+ (ASERTH)](WriterASERTH/README.md) - Writer+ with most frequently used letters on the home row (QWERTY-flip-twist)
+ * [Shavian (QWERTY)](ShavianQWERTY/README.md) - standard Shavian(QWERTY) layout
+ * [Shavian+ (QWERTY)](ShavianQWERTY+/README.md) - Shavian(QWERTY) with extra symbols on AltGr and AltGr+Shift layers
+ * [Shavian (Imperial)](ShavianImperial/README.md) - slightly modified layout of the **Model 6** Shavian typewriter
+
+
+#### Example screenshots (Phonemic layout):
+
+![](Phonemic/img/1-unshifted.png)
+![](Phonemic/img/2-shifted.png)
+
+#### Download
+
+To download pre-compiled binaries go to resources section of this project.
+
+----- 
+
 ## How to compile .klc files
+
+If you'd like to modify the layout you want to use so it better suits your needs, download the KLC file and follow the steps below to compile and install:
 
 1. Download the `.klc` file of your choice from this repository
 2. Download MSKLC v1.4 (Microsoft Keyboard Layout Creator version 1.4) from Microsoft website:
