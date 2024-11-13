@@ -7,6 +7,19 @@ It is the same Shavian QWERTY keyboard layout with added common symbols to **Alt
 
 This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/keyboard/english_shavian_qwerty/1.1.1/english_shavian_qwerty) made by **Ed Greville** under the MIT license.
 
+## Screenshots
+
+### Unshifted:
+![](img/1-unshifted.png)
+### Shifted:
+![](img/2-shifted.png)
+### AltGr:
+![](img/3-altgr.png)
+### AltGr+Shift:
+![](img/4-altgr-shift.png)
+
+## ASCII art
+
 
 ### Unshifted:
 ```
@@ -63,12 +76,12 @@ This keyboard layout is based on [Keyman Shaw QWERTY](https://help.keyman.com/ke
 
 ### Spaces
 
-| Layer | Unicode | Whitespace name |
-|:----- |:------- |:--------------- |
-| Unshifted | U+0020 | regular space |
-| Shifted | U+0020 | regular space |
-| AltGr | U+2003 | Em-space - width equal to font height |
-| AltGr+Shift | U+200b | zero-width space |
+| Layer       | Unicode | Whitespace name |
+|:------------|:--------|:----------------|
+| Unshifted   | U+0020  | regular space |
+| Shifted     | U+0020  | regular space |
+| AltGr       | U+2003  | Em-space - width equal to font height |
+| AltGr+Shift | U+200b  | zero-width space |
 
 -----
 Copyright (c) 2024 Neil Raiden (AGPL v3)
