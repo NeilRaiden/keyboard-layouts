@@ -146,7 +146,8 @@ li blu { color: blue; }
 li sil { background-color: silver; }
 li lg { background-color: lightgreen; font-weight: bold; }
 li ly { background-color: yellow; font-weight: bold; }
-/* ---- reg tweak styles end ------ */
+
+/* ---- Shavian fonts table ------ */
 .pAndagii   { font-family: Andagii, AdobeBlank2;   font-size: 16pt; }
 .pCafeI     { font-family: CafeI, AdobeBlank2;     font-size: 16pt; }
 .pCafeR     { font-family: CafeR, AdobeBlank2;     font-size: 16pt; }
@@ -164,8 +165,11 @@ li ly { background-color: yellow; font-weight: bold; }
 .pOrmin     { font-family: Ormin, AdobeBlank2;     font-size: 16pt; }
 .pTrabajo   { font-family: Trabajo, AdobeBlank2;   font-size: 16pt; }
 .pSegoe     { font-family: Segoe, AdobeBlank2;     font-size: 16pt; }
+
+/* ---- common styles ---- */
 ul { text-align: left; font-weight:normal; }
 ol { text-align: left; font-weight:normal; }
+
 textarea {
 	font-family: var(--defaultfont), Segoe; 
 	font-size: 14pt;
@@ -559,6 +563,8 @@ function layoutSwitch(laiout) {
 		document.getElementById('cheatTable').style.display='none';
 	}
 }
+
+// ------ textarea functions
 function insertChar(ch) {
 	const textArea = document.getElementById('txtWin');
 	textArea.focus();
@@ -680,6 +686,8 @@ function specialKey(spcKey) {
 		spcKeyId.style.display = 'table';
 	}
 }
+
+// ------ Options functions
 function changeTxtAreaFontSize(valu) {
 	var txtWin = document.getElementById("txtWin");
 	textAreaFontSize += valu;
@@ -718,6 +726,8 @@ function changeFont(selObj) {
 	console.log("Selected font:" + selectedText + " index: " +selectedIndex + " value: " + selectedValue);
 	r.style.setProperty('--defaultfont', selectedValue );
 }
+
+// ------ detecting installed fonts
 function fontDetector() {
 	const fontFaceSet = document.fonts;
 	const fontList = [	'ANDAGII.TTF','CafeMajestic-Inline.otf','CafeMajestic-Regular.otf',
@@ -760,7 +770,9 @@ function fontDetector() {
 				tdId.style.color = 'Red';
 		});
 }
-// global variables - important: some of these variables have their corresponding counterpart in the ":root" CSS global variables
+
+// ------ global variables 
+// - important: some of these variables have their corresponding counterpart in the ":root" CSS global variables
 var textAreaFontSize  =  14; 	// textarea font-size (default 14pt)
 var kboardFontSize    =  12; 	// class .bton font-size (default 14pt)
 var kboardSpacerWidth =  14;	// keys width (default 12px)  - CSS variable ""
@@ -778,10 +790,12 @@ var keysD = writepD;
 </script>
 	<title>Keyboard Layouts</title>
 </head>
+
 <body>
 	<div><!-- textArea -->
 		<form accept-charset="UTF-8"><textarea cols="50" rows="7" id="txtWin" autofocus></textarea></form>
 	</div>
+
 	<div id="cheatTable" class="divtab" style="display:none;border: 1px solid #ddd;"> <!-- cheat sheet -->
 		<div class="divrow">
 		<div class="divcellch">a<br>𐑩<br>ə</div>
@@ -924,6 +938,7 @@ var keysD = writepD;
 	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
 </table>
 </div>
+
 <div id="kbB" style="display: none;">  <!-- ----------- KEYBOARD B (Shifted)           ----------- -->
 <table class="rounded-corners" >
 	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
@@ -1000,6 +1015,7 @@ var keysD = writepD;
 	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
 </table>
 </div>
+
 <div id="kbC" style="display: none;">  <!-- ----------- KEYBOARD C (right ALT)         ----------- -->
 <table class="rounded-corners" >
 	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
@@ -1076,6 +1092,7 @@ var keysD = writepD;
 	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
 </table>
 </div>
+
 <div id="kbD" style="display: none;">  <!-- ----------- KEYBOARD D (right ALT + SHIFT) ----------- -->
 <table class="rounded-corners" >
 	<tr class="trSpacer"><script>for ( let i=0; i<29; i++ ) { document.write("<td></td>"); }</script></tr>
@@ -1169,6 +1186,8 @@ var keysD = writepD;
 	<!-- div class="divrow"><div class="divcell"><button style="width:100%" onclick="layoutSwitch('custom')"    >Your Custom Layout</button></div></div -->
 </div>
 </div> <!-- left cell end -->
+
+<!--  ------ laytout descritpions ------ -->
 <div class="divcell"> <!-- style="width:600px;"> -->
   <div id="qwertyDesc" class="desc" style="display:none;">
   <h3>English QWERTY</h3>
@@ -1338,7 +1357,7 @@ var keysD = writepD;
 </div>
 
 <div id="aboutTable" class="divtab" style="display:none;"> <!-- ----------- About ----------- -->
-	<h3>About</p>
+	<h4>About</h4>
 	<p>If you like this simple demo, and you'd like to modify it, post it on your website, etc — please feel free to do so.<br />This is open source after all.<br />This single HTML file contains all the code needed to run it (HTML, JavaScript, CSS) except for the font files — simply save the file locally, download any of the fonts used by this example (click the “Fonts” button to see the list), update paths to font files (if you place them in other location), and open it in the browser.<br />If you modify it, you may change the copyright string to “<b>Copyright (c) 20xx Your Name</b>”.<br />However, you will have to publish it with the same license, which is <b>Affero GPL v.3</b>.</p>
 
 	<p style="margin:2px;font-size:10pt;font-weight:bold;text-align:center;">Copyright (c) 2024 NeilRaiden.com (<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v.3</a>)</p>
@@ -1347,7 +1366,7 @@ var keysD = writepD;
 <div id="CTRL"  class="divtab"  style="display:none;"> <!-- CTRL key -->
 	<div class="divrow">
 		<div class="divcell" style="padding:20px;">
-			<h3>CTRL (Control) key</h3>
+			<h4>CTRL (Control) key</h4>
 			<p>Examples of ⟮CTRL⟯ key shortcuts (NOT IMPLEMENTED HERE - FOR INFORMATION ONLY):</p>
 			<table>
 				<tr><th colspan="2">Keyboard Layouts:</th></tr>
@@ -1452,7 +1471,8 @@ var keysD = writepD;
 	</div>
 </div>
 
-<div id="ALT"  class="divtab"  style="display:none;"> <!-- Left ALT -->
+<!-- Left ALT -->
+<div id="ALT"  class="divtab"  style="display:none;"> 
 	<div class="divrow">
 		<div class="divcell" style="padding:20px;">
 			<h3>Left ALT key</h3>
