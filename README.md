@@ -1,3 +1,22 @@
+# Important note
+
+This project is being superseded by three separate projects:
+
+* [keyboard-layouts-macOS](https://github.com/NeilRaiden/keyboard-layouts-macOS)
+* [keyboard-layouts-Windows](https://github.com/NeilRaiden/keyboard-layouts-Windows)
+* [keyboard-layouts-Linux](https://github.com/NeilRaiden/keyboard-layouts-Linux)
+
+The main reasons for abandoning work on this project are:
+
+1. Windows 11 requires all software installers to be digitally signed (even the installer compiled by the _Microsoft Keyboard Layout Creator_).
+    - the new project [keyboard-layouts-Windows](https://github.com/NeilRaiden/keyboard-layouts-Windows), contains keyboard layouts made in AutoHotKey v2 (no need to digitally sign, nor to install anything except AHK, off course)
+2. The [English Phonemic](#2-english-phonemic) keyboard layout offered here is actually for British English only. In the new project there are three separate layouts:
+    - US phonemic (for General American)
+    - UK phonemic (for Received Pronunciantion)
+    - UK rhotic (similar to RP with the exception of R-colored vowels — the symbol ⟨ʳ⟩ being replaced by regular ⟨r⟩)
+
+---
+
 # Keyboard Layouts
 
 Table of contents:
